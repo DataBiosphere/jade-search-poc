@@ -1,0 +1,46 @@
+indexer library
+
+- function indexSnapshot(snapshot_id)
+
+	- fetch elasticsearch highest root_row_id with this snapshot_id
+	- if none, set root_row_id to zero
+
+	// single-threaded version
+	while (true)
+		- fetch next highest root_row_id from this snapshot
+		- if none, then done
+		- update root_row_id with new value
+
+		- call buildIndexDocument(root_row_id)
+		- add two fields to the index document: snapshot_id, root_row_id
+
+		- add document to elasticsearch via REST API
+
+	// multi-threaded version
+	- use producer/consumer pattern with ExecutorService and BlockingQueue
+	- producer thread:
+		- makes a BQ query for the next 100 root_row_ids
+		- calls queue.put(), which is blocking, 100 times
+		- goal is to batch the calls to BQ to fetch the next root_row_id
+	- consumer thread:
+		- calls queue.take(), which is blocking, to fetch the root_row_id to process
+		- executes the while loop codde once from the single-threaded version
+
+
+- function buildIndexDocument(root_row_id)
+
+	- this is where the custom dataset-specific logic lives
+
+	- execute queries against BQ tables to build JSON document
+	- use Jackson library for handling JSON
+
+	- return JSON document
+
+
+- function deleteIndexDocument(root_row_id)
+
+	- delete document from elasticsearch via REST API
+
+================
+
+- integrate with eventing, pub/sub?
