@@ -1,5 +1,6 @@
 Steps to ingest 1000 Genomes phase 1 data.
 
+
 ===========================================
 - Pull table schemas for BigQuery tables into local JSON files. Use JQ to reformat them into the expected JSON format for Data Repo's create dataset command.
 
@@ -45,9 +46,32 @@ class DatasetSummaryModel {
 
 
 ===========================================
+- Export the BQ tabular data into JSON files in a bucket. This is the sample_info and pedigree tables. Then grant the Data Repo service account read access to the bucket.
+
+gsutil mb -p broad-jade-mm gs://broad-jade-mm-ingestdata/
+
+bq extract --destination_format NEWLINE_DELIMITED_JSON 'bigquery-public-data:human_genome_variants.1000_genomes_sample_info' gs://broad-jade-mm-ingestdata/1000_genomes_sample_info.json
+
+bq extract --destination_format NEWLINE_DELIMITED_JSON 'bigquery-public-data:human_genome_variants.1000_genomes_pedigree' gs://broad-jade-mm-ingestdata/1000_genomes_pedigree.json
+
+gsutil iam ch serviceAccount:jade-k8-sa@broad-jade-dev.iam.gserviceaccount.com:roles/storage.objectViewer gs://broad-jade-mm-ingestdata/
+
+
+===========================================
 - Upload the BQ tabular data that does NOT include file references. This is the sample_info and pedigree tables.
+
+jc dataset table load --table sample_info --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_sample_info.json --input-format json 1000GenomesDataset
+
+jc dataset table load --table pedigree  --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_pedigree.json --input-format json 1000GenomesDataset
+
+If successful, the output looks like:
+Loaded 3500 rows; 0 bad rows skipped
+Loaded 3501 rows; 0 bad rows skipped
 
 
 ===========================================
 - Upload the BAM and VCF files and save the file IDs returned.
+
+
+
 
