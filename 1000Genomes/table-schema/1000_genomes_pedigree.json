@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Family_ID",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Individual_ID",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Paternal_ID",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Maternal_ID",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Gender",
+    "datatype": "INTEGER"
+  },
+  {
+    "name": "Phenotype",
+    "datatype": "INTEGER"
+  },
+  {
+    "name": "Population",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Relationship",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Siblings",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Second_Order",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Third_Order",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Other_Comments",
+    "datatype": "STRING"
+  }
+]

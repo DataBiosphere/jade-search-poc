@@ -1,0 +1,250 @@
+[
+  {
+    "name": "Sample",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Family_ID",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Population",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Population_Description",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Gender",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Relationship",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Unexpected_Parent_Child",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Non_Paternity",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Siblings",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Grandparents",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Avuncular",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Half_Siblings",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Unknown_Second_Order",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Third_Order",
+    "datatype": "STRING"
+  },
+  {
+    "name": "In_Low_Coverage_Pilot",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "LC_Pilot_Platforms",
+    "datatype": "STRING"
+  },
+  {
+    "name": "LC_Pilot_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "In_High_Coverage_Pilot",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "HC_Pilot_Platforms",
+    "datatype": "STRING"
+  },
+  {
+    "name": "HC_Pilot_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "In_Exon_Targetted_Pilot",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "ET_Pilot_Platforms",
+    "datatype": "STRING"
+  },
+  {
+    "name": "ET_Pilot_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Has_Sequence_in_Phase1",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Phase1_LC_Platform",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Phase1_LC_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Phase1_E_Platform",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Phase1_E_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "In_Phase1_Integrated_Variant_Set",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_Phase1_chrY_SNPS",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_phase1_chrY_Deletions",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_phase1_chrMT_SNPs",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Main_project_LC_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Main_project_LC_platform",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Total_LC_Sequence",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "LC_Non_Duplicated_Aligned_Coverage",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "Main_Project_E_Centers",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Main_Project_E_Platform",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Total_Exome_Sequence",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "X_Targets_Covered_to_20x_or_greater",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_E_Omni_Free",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_E_Affy_Free",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_E_Omni_Chip",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_E_Affy_Chip",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_LC_Omni_Free",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_LC_Affy_Free",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_LC_Omni_Chip",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "VerifyBam_LC_Affy_Chip",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "LC_Indel_Ratio",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "E_Indel_Ratio",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "LC_Passed_QC",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "E_Passed_QC",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "In_Final_Phase_Variant_Calling",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_Omni_Genotypes",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_Axiom_Genotypes",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_Affy_6_0_Genotypes",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Has_Exome_LOF_Genotypes",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "EBV_Coverage",
+    "datatype": "FLOAT"
+  },
+  {
+    "name": "DNA_Source_from_Coriell",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Has_Sequence_from_Blood_in_Index",
+    "datatype": "BOOLEAN"
+  },
+  {
+    "name": "Super_Population",
+    "datatype": "STRING"
+  },
+  {
+    "name": "Super_Population_Description",
+    "datatype": "STRING"
+  }
+]

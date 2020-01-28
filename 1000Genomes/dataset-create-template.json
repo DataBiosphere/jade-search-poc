@@ -1,0 +1,38 @@
+{
+  "name":        "1000GenomesDataset",
+  "description": "Public dataset 1000 Genomes.",
+  "defaultProfileId": "0907c613-cec8-4e9f-938e-4906b7734018",
+  "schema":      {
+    "tables":        [
+      {
+        "name":    "sample_info",
+        "columns": [
+        ]
+      },
+      {
+        "name":    "pedigree",
+        "columns": [
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "participant_sample",
+        "to":   {"table": "sample", "column": "participant_id", "cardinality": "many"},
+        "from": {"table": "participant", "column": "id", "cardinality": "one"}
+      }
+    ],
+    "assets":        [
+      {
+        "name":   "sample",
+        "rootTable": "sample",
+        "rootColumn": "id",
+        "tables": [
+          {"name": "sample", "columns": []},
+          {"name": "participant", "columns": []}
+        ],
+        "follow": ["participant_sample"]
+      }
+    ]
+  }
+}

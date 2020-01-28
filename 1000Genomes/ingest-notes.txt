@@ -1,0 +1,22 @@
+Steps to ingest 1000 Genomes phase 1 data.
+
+
+- Pull table schemas for BigQuery tables into local JSON files. Use JQ to reformat them into the expected JSON format for Data Repo's create dataset command.
+
+cd ~/Workspaces/elasticsearch-poc/1000Genomes 
+
+bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_sample_info | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_sample_info.json
+
+bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_pedigree | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_pedigree.json
+
+
+- Generate a create dataset JSON request with just the table data. This is to confirm that the table schema is reformatted correctly.
+
+jq --argjson sampleInfoColumns "$(cat ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_sample_info.json)" '.schema.tables[0].columns = [$sampleInfoColumns]' ../elasticsearch-poc/1000Genomes/dataset-create-template.json > ../elasticsearch-poc/1000Genomes/dataset-create.json
+
+cp ../elasticsearch-poc/1000Genomes/dataset-create.json ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json
+
+jq --argjson pedigreeColumns "$(cat ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_pedigree.json)" '.schema.tables[1].columns = [$pedigreeColumns]' ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json > ../elasticsearch-poc/1000Genomes/dataset-create.json
+
+rm ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json
+
