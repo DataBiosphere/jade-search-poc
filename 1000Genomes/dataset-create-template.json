@@ -1,7 +1,6 @@
 {
   "name":        "1000GenomesDataset",
   "description": "Public dataset 1000 Genomes.",
-  "defaultProfileId": "0907c613-cec8-4e9f-938e-4906b7734018",
   "schema":      {
     "tables":        [
       {
@@ -17,21 +16,21 @@
     ],
     "relationships": [
       {
-        "name": "participant_sample",
-        "to":   {"table": "sample", "column": "participant_id", "cardinality": "many"},
-        "from": {"table": "participant", "column": "id", "cardinality": "one"}
+        "name": "pedigree_sample_info",
+        "to":   {"table": "sample_info", "column": "Family_ID", "cardinality": "many"},
+        "from": {"table": "pedigree", "column": "Family_ID", "cardinality": "one"}
       }
     ],
     "assets":        [
       {
-        "name":   "sample",
-        "rootTable": "sample",
-        "rootColumn": "id",
+        "name":   "sample_info",
+        "rootTable": "sample_info",
+        "rootColumn": "Sample",
         "tables": [
-          {"name": "sample", "columns": []},
-          {"name": "participant", "columns": []}
+          {"name": "sample_info", "columns": []},
+          {"name": "pedigree", "columns": []}
         ],
-        "follow": ["participant_sample"]
+        "follow": ["pedigree_sample_info"]
       }
     ]
   }

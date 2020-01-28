@@ -5,18 +5,38 @@ Steps to ingest 1000 Genomes phase 1 data.
 
 cd ~/Workspaces/elasticsearch-poc/1000Genomes 
 
-bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_sample_info | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_sample_info.json
+bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_sample_info | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ./table-schema/1000_genomes_sample_info.json
 
-bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_pedigree | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_pedigree.json
+bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_pedigree | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ./table-schema/1000_genomes_pedigree.json
 
 
-- Generate a create dataset JSON request with just the table data. This is to confirm that the table schema is reformatted correctly.
+- Build a create dataset JSON request with that includes the BigQuery table schemas.
 
-jq --argjson sampleInfoColumns "$(cat ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_sample_info.json)" '.schema.tables[0].columns = [$sampleInfoColumns]' ../elasticsearch-poc/1000Genomes/dataset-create-template.json > ../elasticsearch-poc/1000Genomes/dataset-create.json
+jq --argjson sampleInfoColumns "$(cat ./table-schema/1000_genomes_sample_info.json)" '.schema.tables[0].columns = $sampleInfoColumns' ./dataset-create-template.json > ./dataset-create.json
 
-cp ../elasticsearch-poc/1000Genomes/dataset-create.json ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json
+cp ./dataset-create.json ./dataset-create-tmp.json
 
-jq --argjson pedigreeColumns "$(cat ../elasticsearch-poc/1000Genomes/table-schema/1000_genomes_pedigree.json)" '.schema.tables[1].columns = [$pedigreeColumns]' ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json > ../elasticsearch-poc/1000Genomes/dataset-create.json
+jq --argjson pedigreeColumns "$(cat ./table-schema/1000_genomes_pedigree.json)" '.schema.tables[1].columns = $pedigreeColumns' ./dataset-create-tmp.json > ./dataset-create.json
 
-rm ../elasticsearch-poc/1000Genomes/dataset-create-tmp.json
+rm ./dataset-create-tmp.json
+
+
+- Create a dataset with the JSON request built so far. Note that the table schemas will need to be modified to include file references. This step is just a test to confirm that the table schemas are formatted correctly in the create dataset JSON request.
+
+alias jc=~/Workspaces/jade-data-repo-cli/build/install/jadecli/bin/jadecli
+
+jc profile create --name 1000GenomesProfile --account 00708C-45D19D-27AAFA
+
+jc dataset create --input-json ./dataset-create.json --profile 1000GenomesProfile
+
+If successful, the output looks like:
+class DatasetSummaryModel {
+    id: 0a7eb73d-01ce-45a1-8e46-fc5248e9a11b
+    name: 1000GenomesDataset
+    description: Public dataset 1000 Genomes.
+    defaultProfileId: 3185b759-f9e7-4487-9a35-0e776f669864
+    additionalProfileIds: null
+    createdDate: 2020-01-28T19:08:47.307136Z
+}
+
 
