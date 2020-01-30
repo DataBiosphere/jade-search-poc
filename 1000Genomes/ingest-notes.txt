@@ -72,6 +72,10 @@ Loaded 3501 rows; 0 bad rows skipped
 ===========================================
 - Upload the BAM and VCF files and save the file IDs returned.
 
+gsutil ls -r gs://genomics-public-data/1000-genomes/bam/** > file-load/filepath-list.txt
 
+cat file-load/filepath-list.txt | sed 's/\(gs:\/\/genomics\-public\-data\/1000\-genomes\/bam\/\(\([^\.]*\)\..*\)\)/jc dataset file load --profile 1000GenomesProfile --input-gspath \1 --target-path \/bam\_files\/\2 --mime-type "application\/octet-stream" --description "\3 BAM file" --format json 1000GenomesDataset/' > file-load/load-cmd-list.txt
+
+Then run the commands in the file-load/load-cmd-list.txt. Either one at a time, in batches, or all at once. For me, each command takes about 15-30 minutes to show up in the output of "jc dr tree".
 
 
