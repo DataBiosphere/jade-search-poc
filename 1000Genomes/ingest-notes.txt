@@ -76,14 +76,21 @@ gsutil ls -r gs://genomics-public-data/1000-genomes/bam/** > file-load/filepath-
 
 cat file-load/filepath-list.txt | sed 's/\(gs:\/\/genomics\-public\-data\/1000\-genomes\/bam\/\(\([^\.]*\)\..*\)\)/jc dataset file load --profile 1000GenomesProfile --input-gspath \1 --target-path \/bam\_files\/\2 --mime-type "application\/octet-stream" --description "\3 BAM file" --format json 1000GenomesDataset \&/' > file-load/load-cmd-list.txt
 
-Then run the commands in the file-load/load-cmd-list.txt. Either one at a time, in batches, or all at once. For me, each command takes about 15-30 minutes to show up in the output of "jc dr tree".
+Then run the commands in the file-load/load-cmd-list.txt. I did this in chunks, so the rest of the instructions operate on batches. For me, each file load took about 15-30 minutes to show up in the output of "jc dr tree".
 
-To make a temp file with a subset of the rows:
-*****TODO*****
+Make a batch file with a subset of the commands. Set the environment variables to the values for the current subest. The example values below pull 6 load commands, line numbers 5 through 11 inclusive.
+
+export LAST_LINE_NUM=11
+export NUM_FILES=6
+head -$LAST_LINE_NUM file-load/load-cmd-list.txt | tail -$NUM_FILES > file-load/load-cmd-list-batch.txt
 
 
 ===========================================
 - Fetch the file IDs of the BAM files and build rows for the bam_file table. Then load the table rows.
+
+Make a batch file with a subset of the files. Set the environment variables to the values for the current subest. The values of these environment variables should match the values from the file uploading batch. The bash script also uses the environment variables, so be sure to export them.
+
+head -$LAST_LINE_NUM file-load/filepath-list.txt | tail -$NUM_FILES > file-load/filepath-list-batch.txt
 
 sh ./write-bam-load-json.sh
 
@@ -93,9 +100,6 @@ jc dataset table load --table bam_file --input-gspath gs://broad-jade-mm-ingestd
 
 If successful, the output looks like:
 Loaded 5 rows; 0 bad rows skipped
-
-To make a temp file with a subset of the rows:
-*****TODO*****
 
 
 ===========================================
@@ -110,3 +114,4 @@ To make a temp file with a subset of the rows:
 - Fetch the file IDs of the VCF files and build rows for the vcf_file table. Then load the table rows.
 
 - This won't affect the Data Explorer POC because the VCF files are multi-sample. They are organized by chromosome and contain information from all the samples. So they don't fit the pattern of searching for a subset of samples to build a cohort.
+

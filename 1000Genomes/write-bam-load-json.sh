@@ -23,10 +23,10 @@ while read inputGSPath; do
 	# write the table row as JSON to a file
 	echo "{\"Sample\":$fileName, \"BAM_File_Ref\":$fileId, \"BAM_File_Id\":\"$filePath\"}" >> file-load/bam-table-load.json
 
-	if [ $ctr -gt 4 ]; then
+	if [ $ctr -ge $NUM_FILES ]; then
 		break
 	fi
-done <file-load/filepath-list-test.txt
+done <file-load/filepath-list-batch.txt
 
 echo "Processed $ctr files"
 
