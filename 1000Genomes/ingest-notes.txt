@@ -74,27 +74,28 @@ Loaded 3501 rows; 0 bad rows skipped
 
 gsutil ls -r gs://genomics-public-data/1000-genomes/bam/** > file-load/filepath-list.txt
 
-cat file-load/filepath-list.txt | sed 's/\(gs:\/\/genomics\-public\-data\/1000\-genomes\/bam\/\(\([^\.]*\)\..*\)\)/jc dataset file load --profile 1000GenomesProfile --input-gspath \1 --target-path \/bam\_files\/\2 --mime-type "application\/octet-stream" --description "\3 BAM file" --format json 1000GenomesDataset/' > file-load/load-cmd-list.txt
+cat file-load/filepath-list.txt | sed 's/\(gs:\/\/genomics\-public\-data\/1000\-genomes\/bam\/\(\([^\.]*\)\..*\)\)/jc dataset file load --profile 1000GenomesProfile --input-gspath \1 --target-path \/bam\_files\/\2 --mime-type "application\/octet-stream" --description "\3 BAM file" --format json 1000GenomesDataset \&/' > file-load/load-cmd-list.txt
 
 Then run the commands in the file-load/load-cmd-list.txt. Either one at a time, in batches, or all at once. For me, each command takes about 15-30 minutes to show up in the output of "jc dr tree".
+
+To make a temp file with a subset of the rows:
+*****TODO*****
 
 
 ===========================================
 - Fetch the file IDs of the BAM files and build rows for the bam_file table. Then load the table rows.
 
-gsutil cp file-load/bam-table-load.json gs://broad-jade-mm-ingestdata/bam-table-load-1.json
+sh ./write-bam-load-json.sh
 
-jc dataset table load --table bam_file --input-gspath gs://broad-jade-mm-ingestdata/bam-table-load-1.json --input-format json 1000GenomesDataset
+gsutil cp file-load/bam-table-load.json gs://broad-jade-mm-ingestdata/bam-table-load.json
+
+jc dataset table load --table bam_file --input-gspath gs://broad-jade-mm-ingestdata/bam-table-load.json --input-format json 1000GenomesDataset
 
 If successful, the output looks like:
 Loaded 5 rows; 0 bad rows skipped
 
-===========================================
-- Upload the VCF files.
-
-
-===========================================
-- Fetch the file IDs of the VCF files and build rows for the vcf_file table. Then load the table rows.
+To make a temp file with a subset of the rows:
+*****TODO*****
 
 
 ===========================================
@@ -103,4 +104,9 @@ Loaded 5 rows; 0 bad rows skipped
 - Add my user to the policy on all three Snapshots. Create a second dummy user and only add them to the policy for the First2RowsDataset. Create a third dummy user and only add them to the policy for the Next3RowsDataset.
 
 
+===========================================
+(POSTPONED FOR LATER, SINCE THIS WILL NOT AFFECT THE DATA EXPLORER PROOF-OF-CONCEPT)
+- Upload the VCF files.
+- Fetch the file IDs of the VCF files and build rows for the vcf_file table. Then load the table rows.
 
+- This won't affect the Data Explorer POC because the VCF files are multi-sample. They are organized by chromosome and contain information from all the samples. So they don't fit the pattern of searching for a subset of samples to build a cohort.
