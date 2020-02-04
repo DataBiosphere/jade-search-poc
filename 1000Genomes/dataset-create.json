@@ -317,7 +317,7 @@
             "datatype": "STRING"
           },
           {
-            "name": "BAM_File_Id",
+            "name": "BAM_File_Path",
             "datatype": "STRING"
           },
           {
@@ -330,7 +330,7 @@
         "name": "vcf_file",
         "columns": [
           {
-            "name": "VCF_File_Id",
+            "name": "VCF_File_Path",
             "datatype": "STRING"
           },
           {

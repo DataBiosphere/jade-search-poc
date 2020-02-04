@@ -1,5 +1,5 @@
-{"Sample":"HG00096", "BAM_File_Ref":"ca518fc9-a93e-46b8-91fc-0c1dea346d3b", "BAM_File_Id":"/bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam"}
-{"Sample":"HG00097", "BAM_File_Ref":"03f5bc0d-a291-470f-a597-f66dadf36681", "BAM_File_Id":"/bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
-{"Sample":"HG00099", "BAM_File_Ref":"0835197f-f9c1-4d6e-92ce-fbac03335b9c", "BAM_File_Id":"/bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
-{"Sample":"HG00100", "BAM_File_Ref":"5781a9ef-ec2d-42c6-b1ed-1197b4310908", "BAM_File_Id":"/bam_files/HG00100.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
-{"Sample":"HG00101", "BAM_File_Ref":"6f78510d-dcdf-447c-9b3f-b9c01247b9aa", "BAM_File_Id":"/bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
+{"Sample":"HG00096", "BAM_File_Ref":"e767cfdb-9bed-4462-8f73-0072a0f2c87d", "BAM_File_Id":"/bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam"}
+{"Sample":"HG00097", "BAM_File_Ref":"7e8618ab-b8a5-453a-bbf1-d982c748ea84", "BAM_File_Id":"/bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
+{"Sample":"HG00099", "BAM_File_Ref":"0c13eaf7-98fe-460c-a733-10d8dfc6da34", "BAM_File_Id":"/bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
+{"Sample":"HG00100", "BAM_File_Ref":"5124ecea-51ae-4690-9d95-de62f31a001e", "BAM_File_Id":"/bam_files/HG00100.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}
+{"Sample":"HG00101", "BAM_File_Ref":"028b5d35-6c51-4c7d-b698-c1c68ebb29fd", "BAM_File_Id":"/bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam"}

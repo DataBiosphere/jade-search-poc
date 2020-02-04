@@ -17,14 +17,14 @@
         "name":    "bam_file",
         "columns": [
           {"name":"Sample", "datatype":"STRING"},
-          {"name":"BAM_File_Id", "datatype":"STRING"},
+          {"name":"BAM_File_Path", "datatype":"STRING"},
           {"name":"BAM_File_Ref", "datatype":"FILEREF"}
         ]
       },
       {
         "name":    "vcf_file",
         "columns": [
-          {"name":"VCF_File_Id", "datatype":"STRING"},
+          {"name":"VCF_File_Path", "datatype":"STRING"},
           {"name":"VCF_File_Ref", "datatype":"FILEREF"},
           {"name":"Description", "datatype":"STRING"}
         ]

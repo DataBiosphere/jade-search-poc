@@ -14,7 +14,7 @@ while read inputGSPath; do
 	filePath=$(echo $inputGSPath | sed 's/gs:\/\/genomics\-public\-data\/1000\-genomes\/bam\/\(.*\)/\/bam_files\/\1/')
 
 	# lookup the file details from the dataset file path
-	fileDetails=$(jc dataset file lookup --file-path "$filePath" --format json 1000GenomesDataset)
+	fileDetails=$(jc dataset file show --file-path "$filePath" --format json 1000GenomesDataset)
 
 	# parse out the file id and name
 	fileId=$(echo $fileDetails | jq .fileId)

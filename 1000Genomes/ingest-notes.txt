@@ -4,7 +4,7 @@ Steps to ingest 1000 Genomes phase 1 data.
 ===========================================
 - Pull table schemas for BigQuery tables into local JSON files. Use JQ to reformat them into the expected JSON format for Data Repo's create dataset command.
 
-cd ~/Workspaces/elasticsearch-poc/1000Genomes 
+cd ~/Workspaces/jade-search-poc/1000Genomes 
 
 bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_genomes_sample_info | jq '.schema.fields[] |= del(.description)' | jq '.schema.fields[] |= with_entries(if .key == "type" then .key = "datatype" else . end)' | jq '.schema.fields' > ./table-schema/1000_genomes_sample_info.json
 
@@ -14,7 +14,7 @@ bq show --format=prettyjson bigquery-public-data:human_genome_variants.1000_geno
 ===========================================
 - Build a create dataset JSON request with that includes the BigQuery table schemas.
 
-cd ~/Workspaces/elasticsearch-poc/1000Genomes 
+cd ~/Workspaces/jade-search-poc/1000Genomes 
 
 jq --argjson sampleInfoColumns "$(cat ./table-schema/1000_genomes_sample_info.json)" '.schema.tables[0].columns = $sampleInfoColumns' ./dataset-create-template.json > ./dataset-create.json
 
@@ -36,12 +36,12 @@ jc dataset create --input-json ./dataset-create.json --profile 1000GenomesProfil
 
 If successful, the output looks like:
 class DatasetSummaryModel {
-    id: 471f52b3-e12e-43d6-bf4a-8e3e8e5bb384
+    id: 51f7d24b-60b6-4935-9876-6954b66b938d
     name: 1000GenomesDataset
     description: Public dataset 1000 Genomes.
     defaultProfileId: 3185b759-f9e7-4487-9a35-0e776f669864
     additionalProfileIds: null
-    createdDate: 2020-01-28T20:57:25.702579Z
+    createdDate: 2020-02-04T15:06:31.905583Z
 }
 
 
@@ -80,8 +80,8 @@ Then run the commands in the file-load/load-cmd-list.txt. I did this in chunks, 
 
 Make a batch file with a subset of the commands. Set the environment variables to the values for the current subest. The example values below pull 6 load commands, line numbers 5 through 11 inclusive.
 
-export LAST_LINE_NUM=11
-export NUM_FILES=6
+export LAST_LINE_NUM=5
+export NUM_FILES=5
 head -$LAST_LINE_NUM file-load/load-cmd-list.txt | tail -$NUM_FILES > file-load/load-cmd-list-batch.txt
 
 Note about batch size: There are 4 stairway threads in the pool, so that is the maximum number of files that can be loaded in parallel. If you make more than 4 requests, they get queued up. The file ingest will make Data Repo unresponsive to other requests if all the threads are occupied.
