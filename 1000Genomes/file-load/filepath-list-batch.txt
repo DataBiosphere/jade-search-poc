@@ -1,5 +1,5 @@
-gs://genomics-public-data/1000-genomes/bam/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
-gs://genomics-public-data/1000-genomes/bam/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
-gs://genomics-public-data/1000-genomes/bam/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
-gs://genomics-public-data/1000-genomes/bam/HG00100.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
-gs://genomics-public-data/1000-genomes/bam/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
+gs://genomics-public-data/1000-genomes/bam/HG00108.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
+gs://genomics-public-data/1000-genomes/bam/HG00109.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
+gs://genomics-public-data/1000-genomes/bam/HG00110.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
+gs://genomics-public-data/1000-genomes/bam/HG00111.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam
+gs://genomics-public-data/1000-genomes/bam/HG00112.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam

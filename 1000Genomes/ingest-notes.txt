@@ -80,11 +80,12 @@ Then run the commands in the file-load/load-cmd-list.txt. I did this in chunks, 
 
 Make a batch file with a subset of the commands. Set the environment variables to the values for the current subest. The example values below pull 6 load commands, line numbers 5 through 11 inclusive.
 
-export LAST_LINE_NUM=5
+export LAST_LINE_NUM=15
 export NUM_FILES=5
 head -$LAST_LINE_NUM file-load/load-cmd-list.txt | tail -$NUM_FILES > file-load/load-cmd-list-batch.txt
 
 Note about batch size: There are 4 stairway threads in the pool, so that is the maximum number of files that can be loaded in parallel. If you make more than 4 requests, they get queued up. The file ingest will make Data Repo unresponsive to other requests if all the threads are occupied.
+
 
 ===========================================
 - Fetch the file IDs of the BAM files and build rows for the bam_file table. Then load the table rows.
@@ -104,9 +105,23 @@ Loaded 5 rows; 0 bad rows skipped
 
 
 ===========================================
-(POST-INGEST)
 - Create three Snapshots: 1000Genomes-EntireDataset, 1000Genomes-First2RowsDataset, 1000Genomes-Next3RowsDataset.
-- Add my user to the policy on all three Snapshots. Create a second dummy user and only add them to the policy for the First2RowsDataset. Create a third dummy user and only add them to the policy for the Next3RowsDataset.
+
+jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotA --input-json ./snapshot-create.json
+
+(TODO: two more snapshots, possibly generate rootValues)
+
+
+===========================================
+- Add a user to the policy on all three Snapshots. Create a second dummy user and only add them to the policy for the First2RowsDataset. Create a third dummy user and only add them to the policy for the Next3RowsDataset.
+
+jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotA
+
+If successful, the output looks like:
+Policy reader
+  mmdevverily@gmail.com
+
+(TODO: different users on each snapshot)
 
 
 ===========================================
