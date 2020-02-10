@@ -80,7 +80,7 @@ Then run the commands in the file-load/load-cmd-list.txt. I did this in chunks, 
 
 Make a batch file with a subset of the commands. Set the environment variables to the values for the current subest. The example values below pull 6 load commands, line numbers 5 through 11 inclusive.
 
-export LAST_LINE_NUM=15
+export LAST_LINE_NUM=20
 export NUM_FILES=5
 head -$LAST_LINE_NUM file-load/load-cmd-list.txt | tail -$NUM_FILES > file-load/load-cmd-list-batch.txt
 
