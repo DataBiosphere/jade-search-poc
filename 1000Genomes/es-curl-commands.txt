@@ -1,0 +1,62 @@
+// check cluster status. the ip address here is to the cluster deployed in dev.
+curl -X GET "35.232.178.35:9200/_cluster/health?wait_for_status=yellow&timeout=50s&pretty"
+
+// index a document
+curl -X PUT "35.232.178.35:9200/testindex/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
+  "root_row_id": 10
+}
+'
+curl -X PUT "35.232.178.35:9200/testindex/_doc/2?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
+  "root_row_id": 11
+}
+'
+curl -X PUT "35.232.178.35:9200/testindex/_doc/3?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
+  "root_row_id": 12
+}
+'
+curl -X PUT "35.232.178.35:9200/testindex/_doc/4?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
+  "root_row_id": 13
+}
+'
+curl -X PUT "35.232.178.35:9200/testindex/_doc/5?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
+  "root_row_id": 14
+}
+'
+
+// search for all documents with a snapshot_id
+curl -X GET "35.232.178.35:9200/testindex/_search?q=snapshot_id:bb2ea099-d621-42b6-b2b3-faaa95b20849&pretty"
+
+// search for the largest root_row_id, note this is not filtered by snapshot_id
+curl -X POST "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+	"size" : 0,
+    "aggs" : {
+        "max_root_row_id" : { "max" : { "field" : "root_row_id" } }
+    }
+}
+'
+
+// search for the largest root_row_id among all documents with a specific snapshot_id
+curl -X POST "35.232.178.35:9200/testindex/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "aggs" : {
+        "snapshot_rows" : {
+            "filter" : { "match": { "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849" } },
+            "aggs" : {
+                "max_root_row_id" : { "max" : { "field" : "root_row_id" } }
+            }
+        }
+    }
+}
+'
+
