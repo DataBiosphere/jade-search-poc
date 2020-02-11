@@ -1,0 +1,10 @@
+# Swagger Codegen Ignore
+docs/
+git_push.sh
+build.sbt
+src/main/AndroidManifest.xml
+pom.xml
+.travis.yml
+.gitignore
+gradle.properties
+gradle/wrapper/gradle-wrapper.properties
