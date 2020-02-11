@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <Match>
+        <!-- Skip Swagger-generated tests -->
+        <Package name="bio.terra.datarepo.api"/>
+    </Match>
+    <Match>
+        <!-- Skip Swagger-generated classes -->
+        <Package name="bio.terra.datarepo.client"/>
+    </Match>
+</FindBugsFilter>
