@@ -18,9 +18,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
-* Utility functions to call ElasticSearch endpoints.
+* Utility functions to call REST endpoints.
 */
-public class ElasticSearchUtils {
+public class HTTPUtils {
     /**
      * Sends an HTTP request using Java's HTTPURLConnection class.
      * @param urlStr where to direct the request
