@@ -1,3 +1,5 @@
+package jadesearchpoc;
+
 public class Indexer {
 
 	// single-threaded version
@@ -5,6 +7,7 @@ public class Indexer {
 
 		// fetch elasticsearch highest root_row_id with this snapshot_id
 		// if none, set root_row_id to zero
+
 		while (true) {
 			// fetch next highest root_row_id from this snapshot
 			// if none, then done
