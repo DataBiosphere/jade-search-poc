@@ -1,11 +1,10 @@
 package jadesearchpoc.command;
 
-import bio.terra.datarepo.client.ApiException;
-import bio.terra.datarepo.model.EnumerateSnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jadesearchpoc.DataRepoAPIs;
-import org.apache.commons.lang3.StringUtils;
+import jadesearchpoc.Indexer;
+import jadesearchpoc.application.APIPointers;
+import jadesearchpoc.utils.DataRepoUtils;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
@@ -26,29 +25,20 @@ public class IndexSnapshot implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("inside IndexSnapshot call()");
-        System.out.println("update = " + update);
-        System.out.println("snapshot name = " + snapshotName);
-
-        SnapshotSummaryModel snapshotSummaryModel = null;
-        try {
-            EnumerateSnapshotModel enumerateSnapshot = DataRepoAPIs.getRepositoryApi()
-                    .enumerateSnapshots(0, 100000, null, null, snapshotName);
-
-            List<SnapshotSummaryModel> studies = enumerateSnapshot.getItems();
-            for (SnapshotSummaryModel summary : studies) {
-                if (StringUtils.equals(summary.getName(), snapshotName)) {
-                    snapshotSummaryModel = summary;
-                    break;
-                }
-            }
-
-            String json = (new ObjectMapper()).writerWithDefaultPrettyPrinter()
-                    .writeValueAsString(snapshotSummaryModel);
-            System.out.println(json);
-        } catch (ApiException ex) {
-            throw new IllegalArgumentException("Error processing find snapshot by name");
+        // lookup snapshot id from name
+        SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
+        if (snapshotSummaryModel == null) {
+            throw new Exception ("snapshot not found");
         }
+
+//        String json = (new ObjectMapper()).writerWithDefaultPrettyPrinter()
+//                .writeValueAsString(snapshotSummaryModel);
+//        System.out.println(json);
+
+        // call indexer with the snapshot id
+        String snapshotId = snapshotSummaryModel.getId();
+        APIPointers.getIndexerApi().indexSnapshot(snapshotId);
+
         return 0;
     }
 }

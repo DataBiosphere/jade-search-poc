@@ -3,6 +3,7 @@ package jadesearchpoc.command;
 import picocli.CommandLine;
 import picocli.CommandLine.RunAll;
 import picocli.CommandLine.Command;
+import picocli.CommandLine.ParseResult;
 
 @Command(name = "poc",
 		subcommands = { IndexSnapshot.class, CommandLine.HelpCommand.class },
@@ -15,7 +16,8 @@ class Main implements Runnable {
 	 * @param args from stdin
 	 */
 	public static void main(String... args) {
-		CommandLine cmd = new CommandLine(new Main());
+		CommandLine cmd = new CommandLine(new Main())
+				.setExecutionExceptionHandler(new PrintExceptionMessageHandler());
 		cmd.setExecutionStrategy(new RunAll());
 		cmd.execute(args);
 
@@ -24,4 +26,21 @@ class Main implements Runnable {
 
 	@Override
 	public void run() { }
+
+	/**
+	 * Custom exception handler class that suppresses the stack trace when an exception is thrown.
+	 * Instead, it just prints the exception message and exits the process.
+	 */
+	private static class PrintExceptionMessageHandler implements CommandLine.IExecutionExceptionHandler {
+			public int handleExecutionException(Exception ex,
+					CommandLine cmd,
+					ParseResult parseResult) {
+
+				cmd.getErr().println(ex.getMessage());
+
+				return cmd.getExitCodeExceptionMapper() != null
+						? cmd.getExitCodeExceptionMapper().getExitCode(ex)
+						: cmd.getCommandSpec().exitCodeOnExecutionException();
+			}
+		}
 }

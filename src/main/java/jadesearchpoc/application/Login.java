@@ -1,4 +1,4 @@
-package jadesearchpoc;
+package jadesearchpoc.application;
 
 import bio.terra.datarepo.client.Configuration;
 import com.google.api.client.auth.oauth2.Credential;
@@ -11,6 +11,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
+import jadesearchpoc.application.Config;
 
 import java.io.File;
 import java.io.FileInputStream;

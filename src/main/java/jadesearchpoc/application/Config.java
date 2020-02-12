@@ -1,4 +1,4 @@
-package jadesearchpoc;
+package jadesearchpoc.application;
 
 public class Config {
 	// placeholder class for configuration parameters
