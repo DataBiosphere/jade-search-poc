@@ -145,11 +145,6 @@ clean.doFirst {
 }
 // -- End of Swagger Client Generation --
 
-task checkApiUpToDate(type: Exec) {
-    commandLine 'sh'
-    args './checkApiUpToDate.sh'
-}
-
 sourceSets {
     generated {
         compileClasspath = configurations.generatedCompile
