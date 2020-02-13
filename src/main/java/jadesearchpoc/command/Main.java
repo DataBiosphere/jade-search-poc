@@ -1,5 +1,9 @@
 package jadesearchpoc.command;
 
+import jadesearchpoc.application.Config;
+import org.slf4j.LoggerFactory;
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
 import picocli.CommandLine;
 import picocli.CommandLine.RunAll;
 import picocli.CommandLine.Command;
@@ -16,6 +20,10 @@ class Main implements Runnable {
 	 * @param args from stdin
 	 */
 	public static void main(String... args) {
+		// set the logging level from the config
+		Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+		root.setLevel(Level.toLevel(Config.LoggerLevel));
+
 		CommandLine cmd = new CommandLine(new Main())
 				.setExecutionExceptionHandler(new PrintExceptionMessageHandler());
 		cmd.setExecutionStrategy(new RunAll());

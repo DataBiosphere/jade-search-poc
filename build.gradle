@@ -79,8 +79,8 @@ dependencies {
     generatedCompile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: "${jackson}"
 
     compile "org.apache.commons:commons-lang3:${commonsLang3}"
-//    compile 'ch.qos.logback:logback-classic:1.2.3'       // Logger
-//    compile 'org.slf4j:slf4j-api:1.7.30'                 // Logging facade
+    compile 'ch.qos.logback:logback-classic:1.2.3'       // Logger
+    compile 'org.slf4j:slf4j-api:1.7.30'                 // Logging facade
 
     compile 'info.picocli:picocli:4.2.0'
     annotationProcessor 'info.picocli:picocli-codegen:4.2.0'

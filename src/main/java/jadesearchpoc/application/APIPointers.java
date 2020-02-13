@@ -2,10 +2,13 @@ package jadesearchpoc.application;
 
 import bio.terra.datarepo.api.RepositoryApi;
 import bio.terra.datarepo.api.ResourcesApi;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jadesearchpoc.Indexer;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -14,10 +17,14 @@ import java.io.IOException;
  * Singleton container for pointers to the Data Repo API objects
  */
 public final class APIPointers {
+
+    private static Logger LOG = LoggerFactory.getLogger(APIPointers.class);
+
     private static RepositoryApi repositoryApi;
     private static ResourcesApi resourcesApi;
     private static Indexer indexerApi;
     private static RestHighLevelClient elasticsearchApi;
+    private static ObjectMapper jacksonObjectMapper;
 
     private APIPointers() { }
 
@@ -25,7 +32,6 @@ public final class APIPointers {
         if (repositoryApi == null) {
             repositoryApi = new RepositoryApi();
         }
-
         Login.checkLogin();
         return repositoryApi;
     }
@@ -34,7 +40,6 @@ public final class APIPointers {
         if (resourcesApi == null) {
             resourcesApi = new ResourcesApi();
         }
-
         Login.checkLogin();
         return resourcesApi;
     }
@@ -43,7 +48,6 @@ public final class APIPointers {
         if (indexerApi == null) {
             indexerApi = new Indexer();
         }
-
         return indexerApi;
     }
 
@@ -53,7 +57,6 @@ public final class APIPointers {
                     RestClient.builder(
                             new HttpHost(Config.ElasticSearchIPAddress, Config.ElasticSearchPort, "http")));
         }
-
         return elasticsearchApi;
     }
 
@@ -61,14 +64,19 @@ public final class APIPointers {
         if (elasticsearchApi == null) {
             return;
         }
-
-        // free the resources allocated by the ES client (e.g. thread pools)
         try {
+            // free the resources allocated by the ES client (e.g. thread pools)
             elasticsearchApi.close();
         } catch (IOException ioEx) {
-            System.out.println("error closing elasticsearch client");
+            LOG.error("error closing elasticsearch client");
         }
-
         elasticsearchApi = null;
+    }
+
+    public static ObjectMapper getJacksonObjectMapper() {
+        if (jacksonObjectMapper == null) {
+            jacksonObjectMapper = new ObjectMapper();
+        }
+        return jacksonObjectMapper;
     }
 }
