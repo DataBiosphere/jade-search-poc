@@ -3,6 +3,11 @@ package jadesearchpoc.application;
 import bio.terra.datarepo.api.RepositoryApi;
 import bio.terra.datarepo.api.ResourcesApi;
 import jadesearchpoc.Indexer;
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+
+import java.io.IOException;
 
 
 /**
@@ -12,6 +17,7 @@ public final class APIPointers {
     private static RepositoryApi repositoryApi;
     private static ResourcesApi resourcesApi;
     private static Indexer indexerApi;
+    private static RestHighLevelClient elasticsearchApi;
 
     private APIPointers() { }
 
@@ -39,5 +45,30 @@ public final class APIPointers {
         }
 
         return indexerApi;
+    }
+
+    public static RestHighLevelClient getElasticsearchApi() {
+        if (elasticsearchApi == null) {
+            elasticsearchApi = new RestHighLevelClient(
+                    RestClient.builder(
+                            new HttpHost(Config.ElasticSearchIPAddress, Config.ElasticSearchPort, "http")));
+        }
+
+        return elasticsearchApi;
+    }
+
+    public static void closeElasticsearchApi() {
+        if (elasticsearchApi == null) {
+            return;
+        }
+
+        // free the resources allocated by the ES client (e.g. thread pools)
+        try {
+            elasticsearchApi.close();
+        } catch (IOException ioEx) {
+            System.out.println("error closing elasticsearch client");
+        }
+
+        elasticsearchApi = null;
     }
 }

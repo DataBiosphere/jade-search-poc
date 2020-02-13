@@ -1,7 +1,16 @@
 package jadesearchpoc;
 
+import bio.terra.datarepo.model.SnapshotSummaryModel;
+import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.application.Config;
+import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.HTTPUtils;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,8 +18,26 @@ import java.util.Map;
 
 public class Indexer {
 
+	public void indexSnapshotByName(String snapshotName) throws Exception {
+//		// lookup snapshot id from name
+//		SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
+//		if (snapshotSummaryModel == null) {
+//			throw new Exception ("snapshot not found");
+//		}
+////        String json = (new ObjectMapper()).writerWithDefaultPrettyPrinter()
+////                .writeValueAsString(snapshotSummaryModel);
+////        System.out.println(json);
+//
+//		// call indexer with the snapshot id
+//		String snapshotId = snapshotSummaryModel.getId();
+//		APIPointers.getIndexerApi().indexSnapshot(snapshotId);
+
+		indexSnapshot("bb2ea099-d621-42b6-b2b3-faaa95b20849");
+		APIPointers.closeElasticsearchApi();
+	}
+
 	// single-threaded version
-	public void indexSnapshot(String snapshot_id) throws Exception {
+	private void indexSnapshot(String snapshot_id) throws Exception {
 
 		System.out.println("indexing snapshot: " + snapshot_id);
 
@@ -19,10 +46,19 @@ public class Indexer {
 		Map<String, String> httpParams = new HashMap<>();
 		httpParams.put("wait_for_status", "yellow");
 		Map<String, Object> httpResult = HTTPUtils.sendJavaHttpRequest(
-				Config.ElasticSearchIPAddress + ":" + Config.ElasticSearchPort + "/_cluster/health",
+				"http://" + Config.ElasticSearchIPAddress + ":" + Config.ElasticSearchPort + "/_cluster/health",
 				"GET",
 				httpParams);
 		System.out.println(httpResult);
+
+		RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
+		System.out.println(esApi);
+		SearchRequest searchRequest = new SearchRequest("testindex");
+		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+		searchSourceBuilder.query(QueryBuilders.matchAllQuery());
+		searchRequest.source(searchSourceBuilder);
+		SearchResponse searchResponse = esApi.search(searchRequest, RequestOptions.DEFAULT);
+		System.out.println(searchResponse);
 
 		// fetch elasticsearch highest root_row_id with this snapshot_id
 		// if none, set root_row_id to zero

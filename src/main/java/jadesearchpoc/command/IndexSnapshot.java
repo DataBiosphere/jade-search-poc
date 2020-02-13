@@ -25,20 +25,7 @@ public class IndexSnapshot implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        // lookup snapshot id from name
-        SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
-        if (snapshotSummaryModel == null) {
-            throw new Exception ("snapshot not found");
-        }
-
-//        String json = (new ObjectMapper()).writerWithDefaultPrettyPrinter()
-//                .writeValueAsString(snapshotSummaryModel);
-//        System.out.println(json);
-
-        // call indexer with the snapshot id
-        String snapshotId = snapshotSummaryModel.getId();
-        APIPointers.getIndexerApi().indexSnapshot(snapshotId);
-
+        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName);
         return 0;
     }
 }
