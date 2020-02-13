@@ -33,6 +33,20 @@ curl -X PUT "35.232.178.35:9200/testindex/_doc/5?pretty" -H 'Content-Type: appli
 }
 '
 
+curl -X PUT "35.232.178.35:9200/testindex/_doc/6?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "abc",
+  "root_row_id": 15
+}
+'
+curl -X PUT "35.232.178.35:9200/testindex/_doc/7?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "abc",
+  "root_row_id": 16
+}
+'
+
+
 // search for all documents with a snapshot_id
 curl -X GET "35.232.178.35:9200/testindex/_search?q=snapshot_id:bb2ea099-d621-42b6-b2b3-faaa95b20849&pretty"
 
