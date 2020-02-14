@@ -87,6 +87,7 @@ dependencies {
     compile 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.6.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+    compile 'com.google.cloud:google-cloud-bigquery:1.106.0'
 
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "${jackson}"
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: "${jackson}"

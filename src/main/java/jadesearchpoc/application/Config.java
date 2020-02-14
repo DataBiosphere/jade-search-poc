@@ -8,7 +8,7 @@ public class Config {
 	public static final int ElasticSearchPort = 9200;
 
 	public static final String DataRepoIPAddress = "https://jade-mm.datarepo-dev.broadinstitute.org";
-	public static final String GoogleProjectId = "broad-jade-mm";
+	public static final String GoogleDataProjectId = "broad-jade-mm-data";
 	public static final String DataRepoClientName = "jade-search-poc";
 
 	public static final String ClientSecretFilePath = "/Users/marikomedlock/.jadecli/client/jadecli_client_secret.json";
