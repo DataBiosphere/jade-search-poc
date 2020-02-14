@@ -27,27 +27,25 @@ public class Indexer {
 	private static Logger LOG = LoggerFactory.getLogger(Indexer.class);
 
 	public void indexSnapshotByName(String snapshotName) throws Exception {
-		ElasticSearchUtils.checkClusterHealth();
+		LOG.info("indexing snapshot (name): " + snapshotName);
 
 		// lookup snapshot id from name
-//		SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
-//		if (snapshotSummaryModel == null) {
-//			throw new Exception ("snapshot not found");
-//		}
-//		LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
+		SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
+		if (snapshotSummaryModel == null) {
+			throw new Exception ("snapshot not found");
+		}
+		LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
 		// call indexer with the snapshot id
-		indexSnapshot(snapshotName);
-//		indexSnapshot(snapshotSummaryModel.getId());
+		indexSnapshot(snapshotSummaryModel.getId());
 
 		// cleanup
 		APIPointers.closeElasticsearchApi();
 	}
 
 	// single-threaded version
-	private void indexSnapshot(String snapshot_id) throws Exception {
-
-		LOG.info("indexing snapshot: " + snapshot_id);
+	private void indexSnapshot(String snapshotId) throws Exception {
+		LOG.info("indexing snapshot (id): " + snapshotId);
 
 		RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
 		SearchRequest searchRequest = new SearchRequest("testindex");
@@ -55,7 +53,7 @@ public class Indexer {
 
 		// search for the largest root_row_id among all documents with a specific snapshot_id
 		//     - build the request object
-		QueryBuilder filterQuery = QueryBuilders.matchQuery("snapshot_id", snapshot_id);
+		QueryBuilder filterQuery = QueryBuilders.matchQuery("snapshot_id", snapshotId);
 		FilterAggregationBuilder filter = AggregationBuilders.filter("snapshot_rows", filterQuery);
 		MaxAggregationBuilder max = AggregationBuilders.max("max_root_row_id").field("root_row_id");
 		filter.subAggregation(max);
