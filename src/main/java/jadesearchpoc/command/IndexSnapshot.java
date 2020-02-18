@@ -15,10 +15,13 @@ public class IndexSnapshot implements Callable<Integer> {
     @Parameters(index = "0", description = "snapshot name")
     private String snapshotName;
 
-    @Parameters(index = "1", description = "root table name")
+    @Option(required = true, names = {"-i", "--index"}, description = "index name")
+    private String indexName;
+
+    @Option(required = true, names = {"-t", "--rootTable"}, description = "root table name")
     private String rootTableName;
 
-    @Parameters(index = "2", description = "root column name")
+    @Option(required = true, names = {"-c", "--rootColumn"}, description = "root column name")
     private String rootColumnName;
 
     @Option(names = {"-u", "--update"}, description = "update existing documents")
@@ -26,7 +29,7 @@ public class IndexSnapshot implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, rootTableName, rootColumnName, update);
+        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, indexName, rootTableName, rootColumnName, update);
         return 0;
     }
 }

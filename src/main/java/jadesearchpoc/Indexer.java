@@ -54,12 +54,14 @@ public class Indexer {
 	 * Note that this method takes the snapshot_name. It is basically a wrapper of the indexSnapshot
 	 * method below, but includes a call to Data Repo to convert the snapshot name to its id.
 	 * @param snapshotName
+	 * @param indexName
 	 * @param rootTableName
 	 * @param rootColumnName this parameter should be eliminated once the datarepo_row_id column is included
 	 *                       in the snapshot view. then that column should always be used as the rootColumn.
 	 * @param update true to overwrite existing documents, false to skip them.
 	 */
-	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName, Boolean update) {
+	public void indexSnapshotByName(String snapshotName, String indexName,
+									String rootTableName, String rootColumnName, Boolean update) {
 		try {
 			LOG.info("indexing snapshot (name): " + snapshotName);
 
@@ -71,7 +73,7 @@ public class Indexer {
 			LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
 			// call indexer with the snapshot id
-			indexSnapshot(snapshotSummaryModel.getId(), rootTableName, rootColumnName, update);
+			indexSnapshot(snapshotSummaryModel.getId(), indexName, rootTableName, rootColumnName, update);
 
 			// cleanup
 			APIPointers.closeElasticsearchApi();
@@ -88,14 +90,13 @@ public class Indexer {
 	 * Note that this method takes the snapshot_id instead of its name.
 	 * (single-threaded version)
 	 * @param snapshotId
+	 * @param indexName
 	 * @param rootTableName
 	 * @param rootColumnName
 	 * @param update
 	 */
-	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName, Boolean update) {
-		// TODO: this field needs to be passed in as an argument
-		String indexName = "testindex";
-
+	private void indexSnapshot(String snapshotId, String indexName,
+							   String rootTableName, String rootColumnName, Boolean update) {
 		// fetch all the root_row_ids for this snapshot
 		List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
 
@@ -113,7 +114,7 @@ public class Indexer {
 				continue;
 			}
 
-			// call buildIndexDocument(root_row_id)
+			// call user-supplied document generation code
 			String jsonStr = buildIndexDocument(snapshotId, rootRowId);
 			LOG.debug(jsonStr);
 
