@@ -11,7 +11,6 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
-import jadesearchpoc.application.Config;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,7 +31,7 @@ public final class Login {
             return;
         }
 
-        authorize(Config.CredentialsDirectory, Config.ClientSecretFilePath);
+        authorize(Config.getCredentialsDirectory(), Config.getClientSecretFilePath());
         Configuration.getDefaultApiClient()
                 .setUserAgent(Config.DataRepoClientName)
                 .setBasePath(Config.DataRepoIPAddress)

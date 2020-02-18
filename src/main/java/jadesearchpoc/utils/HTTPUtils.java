@@ -20,7 +20,10 @@ import java.util.Map;
 /**
 * Utility functions to call REST endpoints.
 */
-public class HTTPUtils {
+public final class HTTPUtils {
+
+    private HTTPUtils() { }
+
     /**
      * Sends an HTTP request using Java's HTTPURLConnection class.
      * @param urlStr where to direct the request
@@ -123,4 +126,4 @@ public class HTTPUtils {
 
         return map;
     }
- }
+}

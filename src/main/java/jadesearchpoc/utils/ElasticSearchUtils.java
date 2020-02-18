@@ -8,9 +8,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ElasticSearchUtils {
+public final class ElasticSearchUtils {
 
     private static Logger LOG = LoggerFactory.getLogger(ElasticSearchUtils.class);
+
+    private ElasticSearchUtils() { }
 
     public static void checkClusterHealth() {
         // check cluster status. the ip address here is to the cluster deployed in dev.

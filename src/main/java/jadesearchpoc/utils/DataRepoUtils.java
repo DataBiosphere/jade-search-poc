@@ -4,13 +4,14 @@ import bio.terra.datarepo.client.ApiException;
 import bio.terra.datarepo.model.EnumerateSnapshotModel;
 import bio.terra.datarepo.model.SnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
-import com.google.protobuf.Api;
 import jadesearchpoc.application.APIPointers;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
-public class DataRepoUtils {
+public final class DataRepoUtils {
+
+    private DataRepoUtils() { }
 
     /**
      * Lookup a Snapshot by its name.
