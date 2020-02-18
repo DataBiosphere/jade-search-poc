@@ -26,7 +26,7 @@ public class IndexSnapshot implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, rootTableName, rootColumnName);
+        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, rootTableName, rootColumnName, update);
         return 0;
     }
 }

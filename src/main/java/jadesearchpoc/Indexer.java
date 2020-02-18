@@ -48,8 +48,9 @@ public class Indexer {
 	 * @param rootTableName
 	 * @param rootColumnName this parameter should be eliminated once the datarepo_row_id column is included
 	 *                       in the snapshot view. then that column should always be used as the rootColumn.
+	 * @param update true to overwrite existing documents, false to skip them.
 	 */
-	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName) {
+	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName, Boolean update) {
 		try {
 			LOG.info("indexing snapshot (name): " + snapshotName);
 
@@ -61,7 +62,7 @@ public class Indexer {
 			LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
 			// call indexer with the snapshot id
-			indexSnapshot(snapshotSummaryModel.getId(), rootTableName, rootColumnName);
+			indexSnapshot(snapshotSummaryModel.getId(), rootTableName, rootColumnName, update);
 
 			// cleanup
 			APIPointers.closeElasticsearchApi();
@@ -80,8 +81,9 @@ public class Indexer {
 	 * @param snapshotId
 	 * @param rootTableName
 	 * @param rootColumnName
+	 * @param update
 	 */
-	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName) {
+	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName, Boolean update) {
 		// fetch all the root_row_ids for this snapshot
 		List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
 
@@ -95,6 +97,9 @@ public class Indexer {
 			LOG.debug("documentExists: " + documentExists);
 
 			// if yes and NOT overwriting, then continue
+			if (documentExists && update.booleanValue()) {
+				continue;
+			}
 
 			// call buildIndexDocument(root_row_id)
 			// add two fields to the index document: snapshot_id, root_row_id
