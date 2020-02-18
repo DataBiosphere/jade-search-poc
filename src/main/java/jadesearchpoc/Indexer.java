@@ -15,18 +15,13 @@ import com.google.cloud.bigquery.TableResult;
 import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
-import org.apache.lucene.search.TotalHits;
-import org.elasticsearch.action.DocWriteResponse;
-import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.action.index.IndexResponse;
+import jadesearchpoc.utils.ElasticSearchUtils;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.filter.Filter;
@@ -55,12 +50,13 @@ public class Indexer {
      * method below, but includes a call to Data Repo to convert the snapshot name to its id.
      * @param snapshotName
      * @param indexName
+     * @param buildIndexDocumentCmd
      * @param rootTableName
      * @param rootColumnName this parameter should be eliminated once the datarepo_row_id column is included
      *                       in the snapshot view. then that column should always be used as the rootColumn.
      * @param update true to overwrite existing documents, false to skip them.
      */
-    public void indexSnapshotByName(String snapshotName, String indexName,
+    public void indexSnapshotByName(String snapshotName, String indexName, String buildIndexDocumentCmd,
                                     String rootTableName, String rootColumnName, Boolean update) {
         try {
             LOG.info("indexing snapshot (name): " + snapshotName);
@@ -73,7 +69,8 @@ public class Indexer {
             LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
             // call indexer with the snapshot id
-            indexSnapshot(snapshotSummaryModel.getId(), indexName, rootTableName, rootColumnName, update);
+            indexSnapshot(snapshotSummaryModel.getId(), indexName, buildIndexDocumentCmd,
+                    rootTableName, rootColumnName, update);
 
             // cleanup
             APIPointers.closeElasticsearchApi();
@@ -91,11 +88,12 @@ public class Indexer {
      * (single-threaded version)
      * @param snapshotId
      * @param indexName
+     * @param buildIndexDocumentCmd
      * @param rootTableName
      * @param rootColumnName
      * @param update
      */
-    private void indexSnapshot(String snapshotId, String indexName,
+    private void indexSnapshot(String snapshotId, String indexName, String buildIndexDocumentCmd,
                                String rootTableName, String rootColumnName, Boolean update) {
         // fetch all the root_row_ids for this snapshot
         List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
@@ -106,7 +104,7 @@ public class Indexer {
             LOG.debug("processing root_row_id: " + rootRowId);
 
             // check if there exists an ElasticSearch document with this id already
-            String documentIdExists = findExistingDocumentId(indexName, rootRowId);
+            String documentIdExists = ElasticSearchUtils.findExistingDocumentId(indexName, rootRowId);
             LOG.debug("documentIdExists: " + documentIdExists);
 
             // if yes and NOT overwriting, then continue
@@ -115,14 +113,14 @@ public class Indexer {
             }
 
             // call user-supplied document generation code
-            String jsonStr = buildIndexDocument(snapshotId, rootRowId);
+            String jsonStr = buildIndexDocument(snapshotId, rootRowId, buildIndexDocumentCmd);
             LOG.debug(jsonStr);
 
             // add two fields to the index document: snapshot_id, root_row_id
             Map<String, String> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshotId, rootRowId);
 
             // add document to elasticsearch via REST API
-            addDocumentToIndex(indexName, documentIdExists, jsonMap);
+            ElasticSearchUtils.addDocumentToIndex(indexName, documentIdExists, jsonMap);
         }
     }
 
@@ -185,70 +183,21 @@ public class Indexer {
     }
 
     /**
-     * Check the ElasticSearch index to see if a document with the given root_row_id exists.
-     * @param indexName the index to search
-     * @param rootRowId the root_row_id by which to filter the documents
-     * @return the id of the ElasticSearch document that matches the given root_row_id, null if none exists
-     */
-    private String findExistingDocumentId(String indexName, String rootRowId) {
-        try {
-            LOG.info("searching for root_row_id: " + rootRowId + " in index: " + indexName);
-
-            RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
-            SearchRequest searchRequest = new SearchRequest("testindex");
-            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-
-            QueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("datarepo_rootRowId", rootRowId)
-                    .fuzziness(Fuzziness.ZERO);
-            searchSourceBuilder.query(matchQueryBuilder);
-
-            // send the request
-            searchRequest.source(searchSourceBuilder);
-            SearchResponse searchResponse = esApi.search(searchRequest, RequestOptions.DEFAULT);
-            LOG.trace(DisplayUtils.prettyPrintJson(searchResponse));
-
-            // check for errors
-            RestStatus status = searchResponse.status();
-            if (!status.equals(RestStatus.OK)) {
-                throw new RuntimeException("Error executing ElasticSearch search request");
-            }
-
-            // parse the result object to find how many documents matched
-            TotalHits totalHits = searchResponse.getHits().getTotalHits();
-            if (totalHits == null) {
-                throw new RuntimeException("Error parsing ElasticSearch search response");
-            }
-            long count = totalHits.value;
-            LOG.trace("count: " + count);
-            if (count == 0) {
-                return null; // no document exists
-            } else if (count == 1) {
-                return searchResponse.getHits().getAt(0).getId(); // document exists, return its id
-            } else {
-                // bad count, something is wrong
-                throw new RuntimeException("Unexpected count (" + count + ") of documents with the same root_row_id");
-            }
-        } catch (IOException ioEx) {
-            LOG.debug(ioEx.getMessage());
-            throw new RuntimeException("Error executing ElasticSearch query");
-        }
-    }
-
-    /**
      * Call the user-supplied ElasticSearch document generation code, passing the snapshot_id
      * and root_row_id as arguments.
      * @param snapshotId
      * @param rootRowId
+     * @param buildIndexDocumentCmd
      * @return an ElasticSearch document as a JSON-formatted string
      */
-    private String buildIndexDocument(String snapshotId, String rootRowId) {
+    private String buildIndexDocument(String snapshotId, String rootRowId, String buildIndexDocumentCmd) {
         try {
+            LOG.debug("buildIndexDocumentCmd: " + buildIndexDocumentCmd);
+
             // this code is the default document generation if there is no user-supplied function
             Map<String, Object> jsonMap = new HashMap<>();
             jsonMap.put("date_created", new Date());
             return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
-
-            // TODO: need to add call out to other process to run user-supplied code
         } catch (JsonProcessingException ex) {
             throw new RuntimeException("Error processing JSON");
         }
@@ -273,31 +222,6 @@ public class Indexer {
             return jsonMap;
         } catch (JsonProcessingException jsonEx) {
             throw new RuntimeException("Error processing JSON");
-        }
-    }
-
-    private void addDocumentToIndex(String indexName, String documentId, Map<String, String> jsonMap) {
-        try {
-            IndexRequest request = new IndexRequest(indexName);
-            if (documentId != null) {
-                request.id(documentId);
-                LOG.debug("Preserving document id: " + documentId);
-            }
-            request.source(jsonMap);
-            IndexResponse indexResponse = APIPointers.getElasticsearchApi().index(request, RequestOptions.DEFAULT);
-
-            // parse the result object to see if it passed
-            String index = indexResponse.getIndex();
-            String id = indexResponse.getId();
-            LOG.debug("index: " + index + ", id: " + id);
-            if (indexResponse.getResult() == DocWriteResponse.Result.CREATED) {
-                LOG.debug("new index document created");
-            } else if (indexResponse.getResult() == DocWriteResponse.Result.UPDATED) {
-                LOG.debug("existing index document updated");
-            }
-        } catch (IOException ioEx) {
-            LOG.debug(ioEx.getMessage());
-            throw new RuntimeException("Error executing ElasticSearch index request");
         }
     }
 

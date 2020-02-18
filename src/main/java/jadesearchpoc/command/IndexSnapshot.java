@@ -18,6 +18,9 @@ public class IndexSnapshot implements Callable<Integer> {
     @Option(required = true, names = {"-i", "--index"}, description = "index name")
     private String indexName;
 
+    @Option(required = true, names = {"-b", "--buildIndexCmd"}, description = "build index document command")
+    private String buildIndexDocumentCmd;
+
     @Option(required = true, names = {"-t", "--rootTable"}, description = "root table name")
     private String rootTableName;
 
@@ -29,7 +32,8 @@ public class IndexSnapshot implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, indexName, rootTableName, rootColumnName, update);
+        APIPointers.getIndexerApi().indexSnapshotByName(snapshotName, indexName, buildIndexDocumentCmd,
+                rootTableName, rootColumnName, update);
         return 0;
     }
 }
