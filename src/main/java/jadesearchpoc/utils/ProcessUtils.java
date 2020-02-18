@@ -18,17 +18,17 @@ public final class ProcessUtils {
     private ProcessUtils() { }
 
     /**
-     * Call a CLI command in a separate process.
+     * Executes a command in a separate process.
      * @param cmdArgs a list of the command line arguments=
      * @return a List of the lines written to stdout
      * @throws IOException
      */
-    private static List<String> callCLICommand(String cmd, List<String> cmdArgs) throws IOException {
+    public static List<String> executeCommand(String cmd, List<String> cmdArgs) throws IOException {
         // build and run process
         cmdArgs.add(0, cmd);
         ProcessBuilder procBuilder = new ProcessBuilder(cmdArgs);
         Process proc = procBuilder.start();
-        LOG.debug("started process: " + cmd);
+        LOG.debug("started process: " + String.join(" ", cmdArgs));
 
         // read in all lines written to stdout
         BufferedReader bufferedReader =
@@ -36,7 +36,7 @@ public final class ProcessUtils {
         String outputLine;
         List<String> outputLines = new ArrayList<>();
         while ((outputLine = bufferedReader.readLine()) != null) {
-            LOG.debug(outputLine);
+            LOG.trace(outputLine);
             outputLines.add(outputLine);
         }
         bufferedReader.close();

@@ -16,6 +16,7 @@ import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
+import jadesearchpoc.utils.ProcessUtils;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -94,7 +95,7 @@ public class Indexer {
      * @param update
      */
     private void indexSnapshot(String snapshotId, String indexName, String buildIndexDocumentCmd,
-                               String rootTableName, String rootColumnName, Boolean update) {
+                               String rootTableName, String rootColumnName, Boolean update) throws IOException {
         // fetch all the root_row_ids for this snapshot
         List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
 
@@ -190,14 +191,48 @@ public class Indexer {
      * @param buildIndexDocumentCmd
      * @return an ElasticSearch document as a JSON-formatted string
      */
-    private String buildIndexDocument(String snapshotId, String rootRowId, String buildIndexDocumentCmd) {
+    private String buildIndexDocument(String snapshotId, String rootRowId, String buildIndexDocumentCmd)
+            throws IOException {
         try {
-            LOG.debug("buildIndexDocumentCmd: " + buildIndexDocumentCmd);
+            // the process launcher accepts the command line version split by spaces
+            // so split the user-specified command here by spaces
+            String[] splitResult = buildIndexDocumentCmd.split(" ");
+            if (splitResult.length < 1) {
+                // this should maybe be an error instead, but for testing purposes, it's helpful
+                // to have a default generator without having to define a separate script
+                LOG.info("No index document generation command specified, using default.");
 
-            // this code is the default document generation if there is no user-supplied function
-            Map<String, Object> jsonMap = new HashMap<>();
-            jsonMap.put("date_created", new Date());
-            return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+                // this code is the default document generation if there is no user-supplied function
+                Map<String, Object> jsonMap = new HashMap<>();
+                jsonMap.put("date_created", new Date());
+                return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+            }
+            String cmd = "";
+            List<String> cmdArgs = new ArrayList<>();
+            for (int ctr=0; ctr<splitResult.length; ctr++) {
+                if (ctr == 0) {
+                    cmd = splitResult[ctr];
+                } else {
+                    cmdArgs.add(splitResult[ctr]);
+                }
+            }
+
+            // add the snapshot_id and root_row_id as arguments to the script
+            cmdArgs.add(snapshotId);
+            cmdArgs.add(rootRowId);
+
+            // execute the command
+            List<String> cmdOutput = ProcessUtils.executeCommand(cmd, cmdArgs);
+
+            // join all output lines into a single string
+            String jsonStr = String.join("", cmdOutput);
+            if (jsonStr.equals("")) {
+                // any invalid JSON will throw an error down the line when we try to
+                // serialize it back into a map, but checking this case here since it
+                // probably means there was a problem calling the user-specified script
+                throw new RuntimeException("Empty string generated for index document");
+            }
+            return jsonStr;
         } catch (JsonProcessingException ex) {
             throw new RuntimeException("Error processing JSON");
         }
