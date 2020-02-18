@@ -16,8 +16,11 @@ import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.core.CountRequest;
+import org.elasticsearch.client.core.CountResponse;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.filter.Filter;
@@ -29,7 +32,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.security.Policy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -48,20 +50,27 @@ public class Indexer {
 	 *                       in the snapshot view. then that column should always be used as the rootColumn.
 	 */
 	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName) {
-		LOG.info("indexing snapshot (name): " + snapshotName);
+		try {
+			LOG.info("indexing snapshot (name): " + snapshotName);
 
-		// lookup snapshot id from name
-		SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
-		if (snapshotSummaryModel == null) {
-			throw new RuntimeException("snapshot not found");
+			// lookup snapshot id from name
+			SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
+			if (snapshotSummaryModel == null) {
+				throw new RuntimeException("snapshot not found");
+			}
+			LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
+
+			// call indexer with the snapshot id
+			indexSnapshot(snapshotSummaryModel.getId(), rootTableName, rootColumnName);
+
+			// cleanup
+			APIPointers.closeElasticsearchApi();
+		} catch (Exception ex) {
+			// cleanup
+			APIPointers.closeElasticsearchApi();
+
+			throw new RuntimeException(ex);
 		}
-		LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
-
-		// call indexer with the snapshot id
-		indexSnapshot(snapshotSummaryModel.getId(), rootTableName, rootColumnName);
-
-		// cleanup
-		APIPointers.closeElasticsearchApi();
 	}
 
 	/**
@@ -82,6 +91,8 @@ public class Indexer {
 			LOG.debug("processing root_row_id: " + rootRowId);
 
 			// check if there exists an ElasticSearch document with this id already
+			boolean documentExists = checkIfDocumentExists("testindex", rootRowId);
+			LOG.debug("documentExists: " + documentExists);
 
 			// if yes and NOT overwriting, then continue
 
@@ -147,6 +158,39 @@ public class Indexer {
 			return rootRowIds;
 		} catch (InterruptedException interruptEx) {
 			throw new RuntimeException("BigQuery job was interrupted");
+		}
+	}
+
+	private boolean checkIfDocumentExists(String indexName, String rootRowId) {
+		try {
+			LOG.info("searching for root_row_id: " + rootRowId + " in index: " + indexName);
+
+			// build the request object
+			RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
+			CountRequest countRequest = new CountRequest(indexName);
+			QueryBuilder countQuery = QueryBuilders.termQuery("root_row_id", rootRowId);
+			countRequest.query(countQuery);
+
+			// send the request
+			CountResponse countResponse = esApi.count(countRequest, RequestOptions.DEFAULT);
+			LOG.trace(DisplayUtils.prettyPrintJson(countResponse));
+
+			// check for errors
+			RestStatus status = countResponse.status();
+			if (!status.equals(RestStatus.OK)) {
+				throw new RuntimeException("Error executing ElasticSearch search request");
+			}
+
+			// parse the result object to find how many documents matched
+			long count = countResponse.getCount();
+			LOG.debug("count: " + count);
+			if (count < 0 || count > 1) {
+				throw new RuntimeException("Unexpected count (" + count + ") of documents with the same root_row_id");
+			}
+			return (count == 1);
+		} catch (IOException ioEx) {
+			LOG.debug(ioEx.getMessage());
+			throw new RuntimeException("Error executing ElasticSearch query");
 		}
 	}
 

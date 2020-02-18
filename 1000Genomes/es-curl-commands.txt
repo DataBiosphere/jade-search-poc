@@ -5,46 +5,53 @@ curl -X GET "35.232.178.35:9200/_cluster/health?wait_for_status=yellow&timeout=5
 curl -X PUT "35.232.178.35:9200/testindex/_doc/1?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
-  "root_row_id": 10
+  "root_row_id": "sample10"
 }
 '
 curl -X PUT "35.232.178.35:9200/testindex/_doc/2?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
-  "root_row_id": 11
+  "root_row_id": "sample11"
 }
 '
 curl -X PUT "35.232.178.35:9200/testindex/_doc/3?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
-  "root_row_id": 12
+  "root_row_id": "sample12"
 }
 '
 curl -X PUT "35.232.178.35:9200/testindex/_doc/4?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
-  "root_row_id": 13
+  "root_row_id": "sample13"
 }
 '
 curl -X PUT "35.232.178.35:9200/testindex/_doc/5?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "bb2ea099-d621-42b6-b2b3-faaa95b20849",
-  "root_row_id": 14
+  "root_row_id": "sample14"
 }
 '
 
 curl -X PUT "35.232.178.35:9200/testindex/_doc/6?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "abc",
-  "root_row_id": 15
+  "root_row_id": "abc15"
 }
 '
 curl -X PUT "35.232.178.35:9200/testindex/_doc/7?pretty" -H 'Content-Type: application/json' -d'
 {
   "snapshot_id": "abc",
-  "root_row_id": 16
+  "root_row_id": "abc16"
 }
 '
+curl -X PUT "35.232.178.35:9200/testindex/_doc/8?pretty" -H 'Content-Type: application/json' -d'
+{
+  "snapshot_id": "abc",
+  "root_row_id": "abc17"
+}
+'
+
 
 
 // search for all documents with a snapshot_id
@@ -74,3 +81,19 @@ curl -X POST "35.232.178.35:9200/testindex/_search?size=0&pretty" -H 'Content-Ty
 }
 '
 
+// delete the index
+curl -X DELETE "35.232.178.35:9200/testindex?pretty"
+
+curl -X GET "35.232.178.35:9200/testindex/_search?q=root_row_id:abc-10&pretty"
+
+curl -X GET "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "filter": [
+        { "term":  { "root_row_id": "abc17" }}
+      ]
+    }
+  }
+}
+'
