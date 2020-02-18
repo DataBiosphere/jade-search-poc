@@ -97,3 +97,10 @@ curl -X GET "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: appl
   }
 }
 '
+
+curl -X GET "35.232.178.35:9200/testindex/_search?q=datarepo_snapshotId:bb2ea099-d621-42b6-b2b3-faaa95b20849&pretty"
+
+curl -X PUT "35.232.178.35:9200/testindex/_doc/1?pretty" -H 'Content-Type: application/json' -d'
+{"date_created":"1582048368795","datarepo_snapshotId":"abc","datarepo_rootRowId":"mariko"}'
+
+curl -X GET "35.232.178.35:9200/testindex/_search?pretty"

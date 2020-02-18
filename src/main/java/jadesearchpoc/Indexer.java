@@ -15,6 +15,7 @@ import com.google.cloud.bigquery.TableResult;
 import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
+import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
@@ -92,6 +93,9 @@ public class Indexer {
 	 * @param update
 	 */
 	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName, Boolean update) {
+		// TODO: this field needs to be passed in as an argument
+		String indexName = "testindex";
+
 		// fetch all the root_row_ids for this snapshot
 		List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
 
@@ -101,26 +105,23 @@ public class Indexer {
 			LOG.debug("processing root_row_id: " + rootRowId);
 
 			// check if there exists an ElasticSearch document with this id already
-			String documentIdExists = findExistingDocumentId("testindex", rootRowId);
+			String documentIdExists = findExistingDocumentId(indexName, rootRowId);
 			LOG.debug("documentIdExists: " + documentIdExists);
 
 			// if yes and NOT overwriting, then continue
-			if (documentIdExists!=null && update.booleanValue()) {
+			if (documentIdExists!=null && !update.booleanValue()) {
 				continue;
 			}
 
 			// call buildIndexDocument(root_row_id)
 			String jsonStr = buildIndexDocument(snapshotId, rootRowId);
-
-			// add two fields to the index document: snapshot_id, root_row_id
-			jsonStr = addSupplementaryFieldsToDocument(jsonStr, snapshotId, rootRowId);
 			LOG.debug(jsonStr);
 
+			// add two fields to the index document: snapshot_id, root_row_id
+			Map<String, String> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshotId, rootRowId);
+
 			// add document to elasticsearch via REST API
-//		IndexRequest request = new IndexRequest("posts");
-//		request.id("1");
-//		request.source(jsonString, XContentType.JSON);
-//		IndexResponse indexResponse = APIPointers.getElasticsearchApi().index(request, RequestOptions.DEFAULT);
+			addDocumentToIndex(indexName, documentIdExists, jsonMap);
 		}
 	}
 
@@ -196,7 +197,7 @@ public class Indexer {
 			SearchRequest searchRequest = new SearchRequest("testindex");
 			SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
-			QueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("root_row_id", rootRowId)
+			QueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("datarepo_rootRowId", rootRowId)
 					.fuzziness(Fuzziness.ZERO);
 			searchSourceBuilder.query(matchQueryBuilder);
 
@@ -257,16 +258,41 @@ public class Indexer {
 	 * @param rootRowId the root_row_id to add as a supplementary field
 	 * @return the updated document as a JSON-formatted string, including the supplementary fields
 	 */
-	private String addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
+	private Map<String, String> addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
 		try {
 			ObjectMapper jacksonMapper = APIPointers.getJacksonObjectMapper();
 			Map<String, String> jsonMap = jacksonMapper
 					.readValue(jsonStr, new TypeReference<Map<String, String>>() { });
 			jsonMap.put("datarepo_snapshotId", snapshotId);
 			jsonMap.put("datarepo_rootRowId", rootRowId);
-			return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+			return jsonMap;
 		} catch (JsonProcessingException jsonEx) {
 			throw new RuntimeException("Error processing JSON");
+		}
+	}
+
+	private void addDocumentToIndex(String indexName, String documentId, Map<String, String> jsonMap) {
+		try {
+			IndexRequest request = new IndexRequest(indexName);
+			if (documentId != null) {
+				request.id(documentId);
+				LOG.debug("Preserving document id: " + documentId);
+			}
+			request.source(jsonMap);
+			IndexResponse indexResponse = APIPointers.getElasticsearchApi().index(request, RequestOptions.DEFAULT);
+
+			// parse the result object to see if it passed
+			String index = indexResponse.getIndex();
+			String id = indexResponse.getId();
+			LOG.debug("index: " + index + ", id: " + id);
+			if (indexResponse.getResult() == DocWriteResponse.Result.CREATED) {
+				LOG.debug("new index document created");
+			} else if (indexResponse.getResult() == DocWriteResponse.Result.UPDATED) {
+				LOG.debug("existing index document updated");
+			}
+		} catch (IOException ioEx) {
+			LOG.debug(ioEx.getMessage());
+			throw new RuntimeException("Error executing ElasticSearch index request");
 		}
 	}
 
