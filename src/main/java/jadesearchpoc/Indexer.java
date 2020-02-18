@@ -209,7 +209,7 @@ public class Indexer {
             }
             String cmd = "";
             List<String> cmdArgs = new ArrayList<>();
-            for (int ctr=0; ctr<splitResult.length; ctr++) {
+            for (int ctr = 0; ctr < splitResult.length; ctr++) {
                 if (ctr == 0) {
                     cmd = splitResult[ctr];
                 } else {
