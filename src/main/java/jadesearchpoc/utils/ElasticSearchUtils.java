@@ -21,7 +21,8 @@ public final class ElasticSearchUtils {
 
         try {
             Map<String, Object> httpResult = HTTPUtils.sendJavaHttpRequest(
-                    "http://" + Config.ElasticSearchIPAddress + ":" + Config.ElasticSearchPort + "/_cluster/health",
+                    "http://" + Config.getElasticSearchIPAddress() + ":"
+                            + Config.getElasticSearchPort() + "/_cluster/health",
                     "GET",
                     httpParams);
             LOG.trace(DisplayUtils.prettyPrintJson(httpResult));

@@ -60,7 +60,8 @@ public final class APIPointers {
         if (elasticsearchApi == null) {
             elasticsearchApi = new RestHighLevelClient(
                     RestClient.builder(
-                            new HttpHost(Config.ElasticSearchIPAddress, Config.ElasticSearchPort, "http")));
+                            new HttpHost(Config.getElasticSearchIPAddress(), Config.getElasticSearchPort(),
+                                    "http")));
         }
         return elasticsearchApi;
     }
@@ -90,7 +91,7 @@ public final class APIPointers {
             GoogleCredentials googleCredentials = GoogleCredentials.create(
                     new AccessToken(Login.getUserCredential().getAccessToken(), null));
             bigQueryApi = BigQueryOptions.newBuilder()
-                    .setProjectId(Config.GoogleDataProjectId)
+                    .setProjectId(Config.getGoogleDataProjectId())
                     .setCredentials(googleCredentials)
                     .build()
                     .getService();

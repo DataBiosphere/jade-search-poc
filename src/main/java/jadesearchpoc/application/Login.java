@@ -33,8 +33,8 @@ public final class Login {
 
         authorize(Config.getCredentialsDirectory(), Config.getClientSecretFilePath());
         Configuration.getDefaultApiClient()
-                .setUserAgent(Config.DataRepoClientName)
-                .setBasePath(Config.DataRepoIPAddress)
+                .setUserAgent(Config.getDataRepoClientName())
+                .setBasePath(Config.getDataRepoIPAddress())
                 .setAccessToken(userCredential.getAccessToken());
     }
 

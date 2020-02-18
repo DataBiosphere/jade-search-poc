@@ -22,7 +22,7 @@ class Main implements Runnable {
     public static void main(String... args) {
         // set the logging level from the config
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-        root.setLevel(Level.toLevel(Config.LoggerLevel));
+        root.setLevel(Level.toLevel(Config.getLoggerLevel()));
 
         CommandLine cmd = new CommandLine(new Main())
                 .setExecutionExceptionHandler(new PrintExceptionMessageHandler());
