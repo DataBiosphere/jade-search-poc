@@ -2,6 +2,8 @@ package jadesearchpoc;
 
 import bio.terra.datarepo.model.SnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.api.client.json.Json;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
@@ -12,12 +14,16 @@ import com.google.cloud.bigquery.TableResult;
 import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.core.CountRequest;
 import org.elasticsearch.client.core.CountResponse;
+import org.elasticsearch.common.unit.Fuzziness;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.rest.RestStatus;
@@ -33,7 +39,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class Indexer {
@@ -93,18 +102,33 @@ public class Indexer {
 			LOG.debug("processing root_row_id: " + rootRowId);
 
 			// check if there exists an ElasticSearch document with this id already
-			boolean documentExists = checkIfDocumentExists("testindex", rootRowId);
-			LOG.debug("documentExists: " + documentExists);
+			String documentIdExists = findExistingDocumentId("testindex", rootRowId);
+			LOG.debug("documentIdExists: " + documentIdExists);
 
 			// if yes and NOT overwriting, then continue
-			if (documentExists && update.booleanValue()) {
+			if (documentIdExists!=null && update.booleanValue()) {
 				continue;
 			}
 
 			// call buildIndexDocument(root_row_id)
+			String jsonStr = buildIndexDocument(snapshotId, rootRowId);
+
 			// add two fields to the index document: snapshot_id, root_row_id
+			Map<String, String> jsonMap = new HashMap<>();
+			jsonMap.put("datarepo_snapshotId", snapshotId);
+			jsonMap.put("datarepo_rootRowId", rootRowId);
+			try {
+				jsonStr = APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+			} catch (JsonProcessingException jsonEx) {
+				throw new RuntimeException("Error processing JSON");
+			}
+			LOG.debug(jsonStr);
 
 			// add document to elasticsearch via REST API
+//		IndexRequest request = new IndexRequest("posts");
+//		request.id("1");
+//		request.source(jsonString, XContentType.JSON);
+//		IndexResponse indexResponse = APIPointers.getElasticsearchApi().index(request, RequestOptions.DEFAULT);
 		}
 	}
 
@@ -166,36 +190,61 @@ public class Indexer {
 		}
 	}
 
-	private boolean checkIfDocumentExists(String indexName, String rootRowId) {
+	/**
+	 * Check the ElasticSearch index to see if a document with the given root_row_id exists.
+	 * @param indexName the index to search
+	 * @param rootRowId the root_row_id by which to filter the documents
+	 * @return the id of the ElasticSearch document that matches the given root_row_id, null if none exists
+	 */
+	private String findExistingDocumentId(String indexName, String rootRowId) {
 		try {
 			LOG.info("searching for root_row_id: " + rootRowId + " in index: " + indexName);
 
-			// build the request object
 			RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
-			CountRequest countRequest = new CountRequest(indexName);
-			QueryBuilder countQuery = QueryBuilders.termQuery("root_row_id", rootRowId);
-			countRequest.query(countQuery);
+			SearchRequest searchRequest = new SearchRequest("testindex");
+			SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+			QueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("root_row_id", rootRowId)
+					.fuzziness(Fuzziness.ZERO);
+			searchSourceBuilder.query(matchQueryBuilder);
 
 			// send the request
-			CountResponse countResponse = esApi.count(countRequest, RequestOptions.DEFAULT);
-			LOG.trace(DisplayUtils.prettyPrintJson(countResponse));
+			searchRequest.source(searchSourceBuilder);
+			SearchResponse searchResponse = esApi.search(searchRequest, RequestOptions.DEFAULT);
+			LOG.debug(DisplayUtils.prettyPrintJson(searchResponse));
 
 			// check for errors
-			RestStatus status = countResponse.status();
+			RestStatus status = searchResponse.status();
 			if (!status.equals(RestStatus.OK)) {
 				throw new RuntimeException("Error executing ElasticSearch search request");
 			}
 
 			// parse the result object to find how many documents matched
-			long count = countResponse.getCount();
+			long count = searchResponse.getHits().getTotalHits().value;
 			LOG.debug("count: " + count);
-			if (count < 0 || count > 1) {
+			if (count == 0) {
+				return null; // no document exists
+			} else if (count == 1) {
+				return searchResponse.getHits().getAt(0).getId(); // document exists, return its id
+			} else {
+				// bad count, something is wrong
 				throw new RuntimeException("Unexpected count (" + count + ") of documents with the same root_row_id");
 			}
-			return (count == 1);
 		} catch (IOException ioEx) {
 			LOG.debug(ioEx.getMessage());
 			throw new RuntimeException("Error executing ElasticSearch query");
+		}
+	}
+
+	private String buildIndexDocument(String snapshotId, String rootRowId) {
+		try {
+			Map<String, Object> jsonMap = new HashMap<>();
+			jsonMap.put("date_created", new Date());
+			String jsonStr = APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+			LOG.debug(jsonStr);
+			return jsonStr;
+		} catch (JsonProcessingException ex) {
+			throw new RuntimeException("Error processing JSON");
 		}
 	}
 
