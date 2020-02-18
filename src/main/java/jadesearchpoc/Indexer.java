@@ -3,7 +3,8 @@ package jadesearchpoc;
 import bio.terra.datarepo.model.SnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.api.client.json.Json;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
@@ -20,8 +21,6 @@ import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.client.core.CountRequest;
-import org.elasticsearch.client.core.CountResponse;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilder;
@@ -114,14 +113,7 @@ public class Indexer {
 			String jsonStr = buildIndexDocument(snapshotId, rootRowId);
 
 			// add two fields to the index document: snapshot_id, root_row_id
-			Map<String, String> jsonMap = new HashMap<>();
-			jsonMap.put("datarepo_snapshotId", snapshotId);
-			jsonMap.put("datarepo_rootRowId", rootRowId);
-			try {
-				jsonStr = APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
-			} catch (JsonProcessingException jsonEx) {
-				throw new RuntimeException("Error processing JSON");
-			}
+			jsonStr = addSupplementaryFieldsToDocument(jsonStr, snapshotId, rootRowId);
 			LOG.debug(jsonStr);
 
 			// add document to elasticsearch via REST API
@@ -211,7 +203,7 @@ public class Indexer {
 			// send the request
 			searchRequest.source(searchSourceBuilder);
 			SearchResponse searchResponse = esApi.search(searchRequest, RequestOptions.DEFAULT);
-			LOG.debug(DisplayUtils.prettyPrintJson(searchResponse));
+			LOG.trace(DisplayUtils.prettyPrintJson(searchResponse));
 
 			// check for errors
 			RestStatus status = searchResponse.status();
@@ -221,7 +213,7 @@ public class Indexer {
 
 			// parse the result object to find how many documents matched
 			long count = searchResponse.getHits().getTotalHits().value;
-			LOG.debug("count: " + count);
+			LOG.trace("count: " + count);
 			if (count == 0) {
 				return null; // no document exists
 			} else if (count == 1) {
@@ -236,14 +228,44 @@ public class Indexer {
 		}
 	}
 
+	/**
+	 * Call the user-supplied ElasticSearch document generation code, passing the snapshot_id
+	 * and root_row_id as arguments.
+	 * @param snapshotId
+	 * @param rootRowId
+	 * @return an ElasticSearch document as a JSON-formatted string
+	 */
 	private String buildIndexDocument(String snapshotId, String rootRowId) {
 		try {
+			// this code is the default document generation if there is no user-supplied function
 			Map<String, Object> jsonMap = new HashMap<>();
 			jsonMap.put("date_created", new Date());
-			String jsonStr = APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
-			LOG.debug(jsonStr);
-			return jsonStr;
+			return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+
+			// TODO: need to add call out to other process to run user-supplied code
 		} catch (JsonProcessingException ex) {
+			throw new RuntimeException("Error processing JSON");
+		}
+	}
+
+	/**
+	 * Add two fields to the index document: snapshot_id, root_row_id
+	 * This method first attempts to parse the given string into a map, then adds the fields to the map,
+	 * and then re-serializes it to a string.
+	 * @param jsonStr ElasticSearch document as a JSON-formatted string
+	 * @param snapshotId the snapshot_id to add as a supplementary field
+	 * @param rootRowId the root_row_id to add as a supplementary field
+	 * @return the updated document as a JSON-formatted string, including the supplementary fields
+	 */
+	private String addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
+		try {
+			ObjectMapper jacksonMapper = APIPointers.getJacksonObjectMapper();
+			Map<String, String> jsonMap = jacksonMapper
+					.readValue(jsonStr, new TypeReference<Map<String, String>>() { });
+			jsonMap.put("datarepo_snapshotId", snapshotId);
+			jsonMap.put("datarepo_rootRowId", rootRowId);
+			return APIPointers.getJacksonObjectMapper().writeValueAsString(jsonMap);
+		} catch (JsonProcessingException jsonEx) {
 			throw new RuntimeException("Error processing JSON");
 		}
 	}
