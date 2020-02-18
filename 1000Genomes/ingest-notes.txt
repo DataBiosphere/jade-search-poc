@@ -105,23 +105,29 @@ Loaded 5 rows; 0 bad rows skipped
 
 
 ===========================================
-- Create three Snapshots: 1000Genomes-EntireDataset, 1000Genomes-First2RowsDataset, 1000Genomes-Next3RowsDataset.
+- Create two Snapshots that contain different rows.
 
-jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotA --input-json ./snapshot-create.json
+jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotA --input-json ./snapshotA-create.json
 
-(TODO: two more snapshots, possibly generate rootValues)
+jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotB --input-json ./snapshotB-create.json
 
 
 ===========================================
-- Add a user to the policy on all three Snapshots. Create a second dummy user and only add them to the policy for the First2RowsDataset. Create a third dummy user and only add them to the policy for the Next3RowsDataset.
+- Add different users to the reader policy on each Snapshot. Note that the scrap Gmail accounts need to be registered users on dev Terra (https://bvdp-saturn-dev.appspot.com/).
 
 jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotA
+
+jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotB
+
+jc snapshot policy add --policy reader --email mmdevverily2@gmail.com 1000GenomesSnapshotB
 
 If successful, the output looks like:
 Policy reader
   mmdevverily@gmail.com
 
-(TODO: different users on each snapshot)
+Policy reader
+  mmdevverily@gmail.com
+  mmdevverily2@gmail.com
 
 
 ===========================================
