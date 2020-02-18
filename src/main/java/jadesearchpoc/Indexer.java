@@ -1,5 +1,6 @@
 package jadesearchpoc;
 
+import bio.terra.datarepo.model.SnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.FieldValueList;
@@ -28,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -44,15 +46,14 @@ public class Indexer {
 	 * @param rootTableName
 	 * @param rootColumnName this parameter should be eliminated once the datarepo_row_id column is included
 	 *                       in the snapshot view. then that column should always be used as the rootColumn.
-	 * @throws Exception
 	 */
-	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName) throws Exception {
+	public void indexSnapshotByName(String snapshotName, String rootTableName, String rootColumnName) {
 		LOG.info("indexing snapshot (name): " + snapshotName);
 
 		// lookup snapshot id from name
 		SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
 		if (snapshotSummaryModel == null) {
-			throw new Exception ("snapshot not found");
+			throw new RuntimeException("snapshot not found");
 		}
 		LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
@@ -70,9 +71,8 @@ public class Indexer {
 	 * @param snapshotId
 	 * @param rootTableName
 	 * @param rootColumnName
-	 * @throws Exception
 	 */
-	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName) throws Exception {
+	private void indexSnapshot(String snapshotId, String rootTableName, String rootColumnName) {
 		// fetch all the root_row_ids for this snapshot
 		List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
 
@@ -102,14 +102,19 @@ public class Indexer {
 	private List<String> getRootRowIdsForSnapshot(String snapshotId, String rootTableName, String rootColumnName) {
 		try {
 			// fetch the Snapshot full model to get the data project name
-			String snapshotProject = "broad-jade-mm-data";
-			String snapshotName = "1000GenomesSnapshotA";
+			SnapshotModel snapshotModel = DataRepoUtils.snapshotFromId(snapshotId);
+			if (snapshotModel == null) {
+				throw new RuntimeException("snapshot not found");
+			}
+			LOG.trace(DisplayUtils.prettyPrintJson(snapshotModel));
+			String snapshotDataProject = snapshotModel.getDataProject();
+			String snapshotName = snapshotModel.getName();
 
 			// build the query to fetch all the root_row_ids from the snapshot
 			BigQuery bigquery = APIPointers.getBigQueryApi();
 			String queryStr = "SELECT "
 					+ rootColumnName + " AS root_column "
-					+ "FROM `" + snapshotProject + "." + snapshotName + "." + rootTableName + "` "
+					+ "FROM `" + snapshotDataProject + "." + snapshotName + "." + rootTableName + "` "
 					+ "WHERE " + rootColumnName + " IS NOT NULL "
 					+ "ORDER BY " + rootColumnName + " ASC";
 			LOG.debug(queryStr);

@@ -2,7 +2,9 @@ package jadesearchpoc.utils;
 
 import bio.terra.datarepo.client.ApiException;
 import bio.terra.datarepo.model.EnumerateSnapshotModel;
+import bio.terra.datarepo.model.SnapshotModel;
 import bio.terra.datarepo.model.SnapshotSummaryModel;
+import com.google.protobuf.Api;
 import jadesearchpoc.application.APIPointers;
 import org.apache.commons.lang3.StringUtils;
 
@@ -32,6 +34,23 @@ public class DataRepoUtils {
             return null;
         } catch (ApiException ex) {
             throw new IllegalArgumentException("Error processing find snapshot by name");
+        }
+    }
+
+    /**
+     * Lookup a Snapshot by its id.
+     * @param snapshotId
+     * @return the full model, not the summary
+     */
+    public static SnapshotModel snapshotFromId(String snapshotId) {
+        try {
+            // call the retrieve snapshot endpoint with the id
+            SnapshotModel snapshotModel = APIPointers.getRepositoryApi()
+                    .retrieveSnapshot(snapshotId);
+
+            return snapshotModel;
+        } catch (ApiException ex) {
+            throw new IllegalArgumentException("Error processing find snapshot by id");
         }
     }
 }
