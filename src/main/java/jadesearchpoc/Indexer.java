@@ -195,7 +195,7 @@ public class Indexer {
             // the process launcher accepts the command line version split by spaces
             // so split the user-specified command here by spaces
             String[] splitResult = buildIndexDocumentCmd.split(" ");
-            if (splitResult.length < 1) {
+            if (splitResult.length < 1 || (splitResult.length == 1 && splitResult[0].equals(""))) {
                 // this should maybe be an error instead, but for testing purposes, it's helpful
                 // to have a default generator without having to define a separate script
                 LOG.info("No index document generation command specified, using default.");
