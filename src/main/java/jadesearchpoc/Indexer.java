@@ -48,7 +48,7 @@ public class Indexer {
     /**
      * Create or update ElasticSearch index documents for each of the root_row_ids in the snapshot.
      * Note that this method takes the snapshot_name. It is basically a wrapper of the indexSnapshot
-     * method below, but includes a call to Data Repo to convert the snapshot name to its id.
+     * method below, but includes a call to Data Repo to convert the snapshot name to the snapshot full model.
      * @param snapshotName
      * @param indexName
      * @param buildIndexDocumentCmd
@@ -69,8 +69,15 @@ public class Indexer {
             }
             LOG.trace(DisplayUtils.prettyPrintJson(snapshotSummaryModel));
 
+            // fetch the Snapshot full model to get the data project name
+            SnapshotModel snapshotModel = DataRepoUtils.snapshotFromId(snapshotSummaryModel.getId());
+            if (snapshotModel == null) {
+                throw new RuntimeException("snapshot not found");
+            }
+            LOG.trace(DisplayUtils.prettyPrintJson(snapshotModel));
+
             // call indexer with the snapshot id
-            indexSnapshot(snapshotSummaryModel.getId(), indexName, buildIndexDocumentCmd,
+            indexSnapshot(snapshotModel, indexName, buildIndexDocumentCmd,
                     rootTableName, rootColumnName, update);
 
             // cleanup
@@ -87,17 +94,17 @@ public class Indexer {
      * Create or update ElasticSearch index documents for each of the root_row_ids in the snapshot.
      * Note that this method takes the snapshot_id instead of its name.
      * (single-threaded version)
-     * @param snapshotId
+     * @param snapshot full model, not summary
      * @param indexName
      * @param buildIndexDocumentCmd
      * @param rootTableName
      * @param rootColumnName
      * @param update
      */
-    private void indexSnapshot(String snapshotId, String indexName, String buildIndexDocumentCmd,
+    private void indexSnapshot(SnapshotModel snapshot, String indexName, String buildIndexDocumentCmd,
                                String rootTableName, String rootColumnName, Boolean update) throws IOException {
         // fetch all the root_row_ids for this snapshot
-        List<String> rootRowIds = getRootRowIdsForSnapshot(snapshotId, rootTableName, rootColumnName);
+        List<String> rootRowIds = getRootRowIdsForSnapshot(snapshot, rootTableName, rootColumnName);
 
         // loop through all the root_row_ids in this snapshot
         for (int ctr = 0; ctr < rootRowIds.size(); ctr++) {
@@ -114,11 +121,11 @@ public class Indexer {
             }
 
             // call user-supplied document generation code
-            String jsonStr = buildIndexDocument(snapshotId, rootRowId, buildIndexDocumentCmd);
+            String jsonStr = buildIndexDocument(snapshot, rootRowId, buildIndexDocumentCmd);
             LOG.debug(jsonStr);
 
             // add two fields to the index document: snapshot_id, root_row_id
-            Map<String, String> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshotId, rootRowId);
+            Map<String, String> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshot.getId(), rootRowId);
 
             // add document to elasticsearch via REST API
             ElasticSearchUtils.addDocumentToIndex(indexName, documentIdExists, jsonMap);
@@ -127,27 +134,18 @@ public class Indexer {
 
     /**
      * Fetch a list of the root_row_ids for a specific snapshot_id
-     * @param snapshotId by which to filter the ElasticSearch documents in the index
+     * @param snapshot full model to use for filtering the ElasticSearch documents in the index
      * @param rootTableName
      * @param rootColumnName
      * @return the list of the root_row_ids. will be empty if none found
      */
-    private List<String> getRootRowIdsForSnapshot(String snapshotId, String rootTableName, String rootColumnName) {
+    private List<String> getRootRowIdsForSnapshot(SnapshotModel snapshot, String rootTableName, String rootColumnName) {
         try {
-            // fetch the Snapshot full model to get the data project name
-            SnapshotModel snapshotModel = DataRepoUtils.snapshotFromId(snapshotId);
-            if (snapshotModel == null) {
-                throw new RuntimeException("snapshot not found");
-            }
-            LOG.trace(DisplayUtils.prettyPrintJson(snapshotModel));
-            String snapshotDataProject = snapshotModel.getDataProject();
-            String snapshotName = snapshotModel.getName();
-
             // build the query to fetch all the root_row_ids from the snapshot
             BigQuery bigquery = APIPointers.getBigQueryApi();
             String queryStr = "SELECT "
                     + rootColumnName + " AS root_column "
-                    + "FROM `" + snapshotDataProject + "." + snapshotName + "." + rootTableName + "` "
+                    + "FROM `" + snapshot.getDataProject() + "." + snapshot.getName() + "." + rootTableName + "` "
                     + "WHERE " + rootColumnName + " IS NOT NULL "
                     + "ORDER BY " + rootColumnName + " ASC";
             LOG.debug(queryStr);
@@ -186,12 +184,12 @@ public class Indexer {
     /**
      * Call the user-supplied ElasticSearch document generation code, passing the snapshot_id
      * and root_row_id as arguments.
-     * @param snapshotId
+     * @param snapshot full model, not summary
      * @param rootRowId
      * @param buildIndexDocumentCmd
      * @return an ElasticSearch document as a JSON-formatted string
      */
-    private String buildIndexDocument(String snapshotId, String rootRowId, String buildIndexDocumentCmd)
+    private String buildIndexDocument(SnapshotModel snapshot, String rootRowId, String buildIndexDocumentCmd)
             throws IOException {
         try {
             // the process launcher accepts the command line version split by spaces
@@ -217,11 +215,15 @@ public class Indexer {
                 }
             }
 
-            // add the snapshot_id and root_row_id as arguments to the script
-            cmdArgs.add(snapshotId);
+            // add the root_row_id, snapshot_id, snapshot_name, snapshot_data_project as arguments to the script.
+            // the snapshot name and data_project could be derived from the snapshot id, but since the BigQuery
+            // tables use the name and data_project, it's convenient to just pass these fields, too.
             cmdArgs.add(rootRowId);
+            cmdArgs.add(snapshot.getId());
+            cmdArgs.add(snapshot.getName());
+            cmdArgs.add(snapshot.getDataProject());
 
-            // execute the command
+            // execute the command in a separate process
             List<String> cmdOutput = ProcessUtils.executeCommand(cmd, cmdArgs);
 
             // join all output lines into a single string
@@ -229,7 +231,7 @@ public class Indexer {
             if (jsonStr.equals("")) {
                 // any invalid JSON will throw an error down the line when we try to
                 // serialize it back into a map, but checking this case here since it
-                // probably means there was a problem calling the user-specified script
+                // probably means there was a problem calling the user-specified command
                 throw new RuntimeException("Empty string generated for index document");
             }
             return jsonStr;
