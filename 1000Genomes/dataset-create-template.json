@@ -33,13 +33,13 @@
     "relationships": [
       {
         "name": "pedigree_sample",
-        "to":   {"table": "sample_info", "column": "Family_ID", "cardinality": "many"},
-        "from": {"table": "pedigree", "column": "Family_ID", "cardinality": "one"}
+        "to":   {"table": "sample_info", "column": "Family_ID"},
+        "from": {"table": "pedigree", "column": "Family_ID"}
       },
       {
         "name": "sample_bam",
-        "to": {"table": "bam_file", "column": "Sample", "cardinality": "many"},
-        "from": {"table": "sample_info", "column": "Sample", "cardinality": "one"}
+        "to": {"table": "bam_file", "column": "Sample"},
+        "from": {"table": "sample_info", "column": "Sample"}
       }
     ],
     "assets":        [

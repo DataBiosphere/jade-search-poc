@@ -349,26 +349,22 @@
         "name": "pedigree_sample",
         "to": {
           "table": "sample_info",
-          "column": "Family_ID",
-          "cardinality": "many"
+          "column": "Family_ID"
         },
         "from": {
           "table": "pedigree",
-          "column": "Family_ID",
-          "cardinality": "one"
+          "column": "Family_ID"
         }
       },
       {
         "name": "sample_bam",
         "to": {
           "table": "bam_file",
-          "column": "Sample",
-          "cardinality": "many"
+          "column": "Sample"
         },
         "from": {
           "table": "sample_info",
-          "column": "Sample",
-          "cardinality": "one"
+          "column": "Sample"
         }
       }
     ],
