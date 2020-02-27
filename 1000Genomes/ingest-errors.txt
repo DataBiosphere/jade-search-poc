@@ -1,0 +1,131 @@
+For future investigation/discussion:
+
+********************************
+#2
+
+If you delete a file ingest while the job is still running, specifically when it's in the copy file/create primary data step, then you can't recreate the file because the path already exists, but you also can't delete it because it doesn't have a fileid yet.
+
+********************************
+#1
+
+I think this is the result of several flights calling DataLocationService.getOrCreateBucketForFile at the same time. Only one succeeds and the rest just need to try again. Maybe this is an okay error, since the solution is just to try again almost immediately after. So do one file ingest first, wait for it to finish or at least run for a few minutes so it has time to create the bucket, and then go ahead and ingest as many more files as you want. On the other hand, since we know this is going to be resolved shortly, then maybe we can add a retry rule to the IngestFilePrimaryDataStep.
+
+Below is a StackOverflow link about re-trying PostGres serializable errors.
+https://stackoverflow.com/questions/21706858/org-postgresql-util-psqlexception-error-could-not-serialize-access-due-to-read
+********************************
+
+I ran 5 file ingest commands for a new dataset, so there were no existing files. 1 file was ingested successfully and 4 of them failed almost immediately.
+
+Here are the exceptions returned to the CLI:
+
+marikomedlock-macbookpro:1000Genomes marikomedlock$ Failed to retrieve job status or result: {"message":"Could not commit JDBC transaction; nested exception is org.postgresql.util.PSQLException: ERROR: could not serialize access due to read/write dependencies among transactions\n  Detail: Reason code: Canceled on identification as a pivot, during commit attempt.\n  Hint: The transaction might succeed if retried.","errorDetail":null}
+Failed to retrieve job status or result: {"message":"PreparedStatementCallback; SQL [INSERT INTO load (load_tag, locked, locking_flight_id) VALUES (?, true, ?)]; ERROR: could not serialize access due to read/write dependencies among transactions\n  Detail: Reason code: Canceled on identification as a pivot, during write.\n  Hint: The transaction might succeed if retried.; nested exception is org.postgresql.util.PSQLException: ERROR: could not serialize access due to read/write dependencies among transactions\n  Detail: Reason code: Canceled on identification as a pivot, during write.\n  Hint: The transaction might succeed if retried.","errorDetail":null}
+Failed to retrieve job status or result: {"message":"PreparedStatementCallback; SQL [INSERT INTO bucket_resource (project_resource_id, name) VALUES (?, ?)]; ERROR: duplicate key value violates unique constraint \"bucket_resource_name_key\"\n  Detail: Key (name)=(broad-jade-mm-data-bucket) already exists.; nested exception is org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint \"bucket_resource_name_key\"\n  Detail: Key (name)=(broad-jade-mm-data-bucket) already exists.","errorDetail":null}
+Failed to retrieve job status or result: {"message":"PreparedStatementCallback; SQL [INSERT INTO bucket_resource (project_resource_id, name) VALUES (?, ?)]; ERROR: duplicate key value violates unique constraint \"bucket_resource_name_key\"\n  Detail: Key (name)=(broad-jade-mm-data-bucket) already exists.; nested exception is org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint \"bucket_resource_name_key\"\n  Detail: Key (name)=(broad-jade-mm-data-bucket) already exists.","errorDetail":null}
+
+Here is the result of a call to enumerateJobs from the Swagger UI:
+
+[
+  {
+    "id": "f0edfbbf-ef79-462f-8ce5-0c041a4bbfcf",
+    "description": "Create dataset 1000GenomesDataset",
+    "job_status": "succeeded",
+    "status_code": 201,
+    "submitted": "2020-02-20T22:53:43.487143Z",
+    "completed": "2020-02-20T22:54:00.509755Z"
+  },
+  {
+    "id": "3ae1571a-d5ea-4df9-bde7-80bd43e85f92",
+    "description": "Ingest from gs://broad-jade-mm-ingestdata/1000_genomes_sample_info.json to sample_info in dataset id 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:55:27.900402Z",
+    "completed": "2020-02-20T22:55:36.318419Z"
+  },
+  {
+    "id": "04c6f349-ba62-4994-b527-92e1ea52b602",
+    "description": "Ingest from gs://broad-jade-mm-ingestdata/1000_genomes_pedigree.json to pedigree in dataset id 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:55:43.680498Z",
+    "completed": "2020-02-20T22:55:50.446268Z"
+  },
+  {
+    "id": "34ead950-2021-4df5-bc6f-35f8e12585b1",
+    "description": "Ingest file /bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:58:21.153906Z",
+    "completed": "2020-02-20T22:58:21.770849Z"
+  },
+  {
+    "id": "b83e044e-5d95-4347-bd92-79cd29af45c1",
+    "description": "Ingest file /bam_files/HG00100.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:58:21.197073Z",
+    "completed": "2020-02-20T23:33:32.892642Z"
+  },
+  {
+    "id": "3ac2c95c-e3ba-4b27-9ddf-e6275f6844b1",
+    "description": "Ingest file /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:58:21.368557Z",
+    "completed": "2020-02-20T22:58:25.080952Z"
+  },
+  {
+    "id": "4ab823c7-0bb8-4a40-a5f8-eab8907ed6a2",
+    "description": "Ingest file /bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:58:21.368991Z",
+    "completed": "2020-02-20T22:58:21.484054Z"
+  },
+  {
+    "id": "6806389c-d944-44c3-8863-127604d4874e",
+    "description": "Ingest file /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-20T22:58:21.409022Z",
+    "completed": "2020-02-20T22:58:24.916087Z"
+  }
+]
+
+And then again for the 4 successful file ingests.
+
+[
+  {
+    "id": "870e261b-b453-44f5-9517-32aa9f2cbd69",
+    "description": "Ingest file /bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:27:05.671215Z",
+    "completed": "2020-02-21T14:42:28.152765Z"
+  },
+  {
+    "id": "c06b2fb1-72af-4570-8e31-23fd7697db35",
+    "description": "Ingest file /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:28.710556Z",
+    "completed": "2020-02-21T14:54:54.090645Z"
+  },
+  {
+    "id": "3b9c9fdd-5f97-4e3c-82fc-4cd2ba2bfcc0",
+    "description": "Ingest file /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:28.713076Z",
+    "completed": "2020-02-21T14:50:36.029492Z"
+  },
+  {
+    "id": "f6024d37-b552-46bb-bae9-69e4ed498262",
+    "description": "Ingest file /bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:50.740384Z",
+    "completed": "2020-02-21T14:59:56.791244Z"
+  }
+]
+

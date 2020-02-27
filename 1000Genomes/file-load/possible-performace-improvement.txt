@@ -1,0 +1,265 @@
+********************************
+ingest 4 files noCopyChunk image:
+
+[
+  {
+    "id": "870e261b-b453-44f5-9517-32aa9f2cbd69",
+    "description": "Ingest file /bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:27:05.671215Z",
+    "completed": "2020-02-21T14:42:28.152765Z"
+  },
+  {
+    "id": "c06b2fb1-72af-4570-8e31-23fd7697db35",
+    "description": "Ingest file /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:28.710556Z",
+    "completed": "2020-02-21T14:54:54.090645Z"
+  },
+  {
+    "id": "3b9c9fdd-5f97-4e3c-82fc-4cd2ba2bfcc0",
+    "description": "Ingest file /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:28.713076Z",
+    "completed": "2020-02-21T14:50:36.029492Z"
+  },
+  {
+    "id": "f6024d37-b552-46bb-bae9-69e4ed498262",
+    "description": "Ingest file /bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T14:30:50.740384Z",
+    "completed": "2020-02-21T14:59:56.791244Z"
+  }
+]
+
+
+********************************
+delete 4 files noCopyChunk image:
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jc dr list
+dataset   1000GenomesDataset    2020-02-20T22:53:43.525959Z  137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d  Public dataset 1000 Genomes.
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jc dataset file show --file-path /bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam --format json 1000GenomesDataset
+{
+  "fileId" : "5db911c6-7563-419b-b099-d042cab680c7",
+  "collectionId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+  "path" : "/bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam",
+  "size" : 15601108255,
+  "checksums" : [ {
+    "checksum" : "ecb19226",
+    "type" : "crc32c"
+  }, {
+    "checksum" : "336ea55913bc261b72875bd259753046",
+    "type" : "md5"
+  } ],
+  "created" : "2020-02-21T14:42:27.620Z",
+  "description" : "HG00096 BAM file",
+  "fileType" : "file",
+  "fileDetail" : {
+    "datasetId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "mimeType" : "application/octet-stream",
+    "accessUrl" : "gs://broad-jade-mm-data-bucket/137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d/5db911c6-7563-419b-b099-d042cab680c7",
+    "loadTag" : "load-at-2020-02-21T14:27:05.642Z"
+  },
+  "directoryDetail" : null
+}
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jc dataset file show --file-path /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam --format json 1000GenomesDataset
+{
+  "fileId" : "475a7919-da90-4295-b35f-8dbcd9020d74",
+  "collectionId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+  "path" : "/bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+  "size" : 32016783440,
+  "checksums" : [ {
+    "checksum" : "5a810bd1",
+    "type" : "crc32c"
+  }, {
+    "checksum" : "fa829afdd7fe847039acca2fb77a1bbf",
+    "type" : "md5"
+  } ],
+  "created" : "2020-02-21T14:54:53.640Z",
+  "description" : "HG00097 BAM file",
+  "fileType" : "file",
+  "fileDetail" : {
+    "datasetId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "mimeType" : "application/octet-stream",
+    "accessUrl" : "gs://broad-jade-mm-data-bucket/137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d/475a7919-da90-4295-b35f-8dbcd9020d74",
+    "loadTag" : "load-at-2020-02-21T14:30:28.687Z"
+  },
+  "directoryDetail" : null
+}
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jc dataset file show --file-path /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam --format json 1000GenomesDataset
+{
+  "fileId" : "e95b9bff-aedb-4fee-bb06-e97b0056d215",
+  "collectionId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+  "path" : "/bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+  "size" : 25962519700,
+  "checksums" : [ {
+    "checksum" : "b3817511",
+    "type" : "crc32c"
+  }, {
+    "checksum" : "86b17aa376506c7d216c089867aae653",
+    "type" : "md5"
+  } ],
+  "created" : "2020-02-21T14:50:35.527Z",
+  "description" : "HG00099 BAM file",
+  "fileType" : "file",
+  "fileDetail" : {
+    "datasetId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "mimeType" : "application/octet-stream",
+    "accessUrl" : "gs://broad-jade-mm-data-bucket/137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d/e95b9bff-aedb-4fee-bb06-e97b0056d215",
+    "loadTag" : "load-at-2020-02-21T14:30:28.680Z"
+  },
+  "directoryDetail" : null
+}
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jc dataset file show --file-path /bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam --format json 1000GenomesDataset
+{
+  "fileId" : "a0a3e03a-2e86-4708-8476-9688aa9b2296",
+  "collectionId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+  "path" : "/bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+  "size" : 23966409470,
+  "checksums" : [ {
+    "checksum" : "9b35ab6b",
+    "type" : "crc32c"
+  }, {
+    "checksum" : "0db0048ed8a6d0d845dfba490b4aa6a4",
+    "type" : "md5"
+  } ],
+  "created" : "2020-02-21T14:59:56.174Z",
+  "description" : "HG00101 BAM file",
+  "fileType" : "file",
+  "fileDetail" : {
+    "datasetId" : "137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d",
+    "mimeType" : "application/octet-stream",
+    "accessUrl" : "gs://broad-jade-mm-data-bucket/137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d/a0a3e03a-2e86-4708-8476-9688aa9b2296",
+    "loadTag" : "load-at-2020-02-21T14:30:50.697Z"
+  },
+  "directoryDetail" : null
+}
+
+Result of enumerateJobs call for the deletes of the files above.
+[
+  {
+    "id": "d890ecc3-9751-41c8-bb55-3731e8f5cf32",
+    "description": "Delete file from dataset 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d file 5db911c6-7563-419b-b099-d042cab680c7",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T15:45:03.037345Z",
+    "completed": "2020-02-21T15:45:04.118499Z"
+  },
+  {
+    "id": "6d04783b-c336-4807-afaf-e10255e3ab8c",
+    "description": "Delete file from dataset 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d file 475a7919-da90-4295-b35f-8dbcd9020d74",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T15:46:05.811114Z",
+    "completed": "2020-02-21T15:46:06.633158Z"
+  },
+  {
+    "id": "ba2fa11d-bb53-4bd8-a734-5c5743a71d60",
+    "description": "Delete file from dataset 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d file e95b9bff-aedb-4fee-bb06-e97b0056d215",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T15:46:54.123165Z",
+    "completed": "2020-02-21T15:46:54.793267Z"
+  },
+  {
+    "id": "fd8d6448-80c2-4106-b573-f3ee4e97e56b",
+    "description": "Delete file from dataset 137a9334-b9d6-4a8b-a1c6-d40cfeab8f8d file a0a3e03a-2e86-4708-8476-9688aa9b2296",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T15:47:39.782899Z",
+    "completed": "2020-02-21T15:47:40.468811Z"
+  }
+]
+
+********************************
+ingest 4 files withCopyChunk image:
+
+[
+  {
+    "id": "920d058b-209f-47b6-9c72-7ba4eac29be7",
+    "description": "Ingest file /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:04:55.620420Z",
+    "completed": "2020-02-21T16:04:55.842014Z"
+  },
+  {
+    "id": "0422f075-dc79-4bd3-95d3-add5bbc13592",
+    "description": "Ingest file /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "failed",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:04:55.621627Z",
+    "completed": "2020-02-21T16:04:55.860900Z"
+  },
+  {
+    "id": "7db04b89-44de-4cb0-bcf1-e488dfbfe6a5",
+    "description": "Ingest file /bam_files/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:04:55.622961Z",
+    "completed": "2020-02-21T16:18:46.598253Z"
+  },
+  {
+    "id": "4ccb36e3-2b19-486c-aa46-f0194b23b5a3",
+    "description": "Ingest file /bam_files/HG00097.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:05:16.258555Z",
+    "completed": "2020-02-21T16:28:45.011704Z"
+  },
+  {
+    "id": "96dc07dc-4b88-43f2-8ee6-20860c59565a",
+    "description": "Ingest file /bam_files/HG00099.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:05:27.897283Z",
+    "completed": "2020-02-21T16:26:53.543522Z"
+  },
+  {
+    "id": "6ef2ddd0-80b1-4133-b9bd-83dc3de512f3",
+    "description": "Ingest file /bam_files/HG00101.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam",
+    "job_status": "succeeded",
+    "status_code": 200,
+    "submitted": "2020-02-21T16:05:32.882796Z",
+    "completed": "2020-02-21T16:36:28.503711Z"
+  }
+]
+
+
+****************************
+measure time to copy the same file with gsutil
+start_time="$(date -u +%s)"; sleep 5; end_time="$(date -u +%s)"; elapsed="$(($end_time-$start_time))"; echo "Total of $elapsed seconds elapsed for process"
+
+gsutil cp -p broad-jade-mm gs://genomics-public-data/1000-genomes/bam/HG00102.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam gs://broad-jade-mm-ingestdata/HG00102.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam
+
+start_time="$(date -u +%s)"; gsutil cp gs://genomics-public-data/1000-genomes/bam/HG00102.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam gs://broad-jade-mm-ingestdata/HG00102.mapped.ILLUMINA.bwa.GBR.low_coverage.20130415.bam; end_time="$(date -u +%s)"; elapsed="$(($end_time-$start_time))"; echo "Total of $elapsed seconds elapsed for process"
+
+
+**************************************
+Generate a ~1GB file with random words.
+
+ruby -e 'a=STDIN.readlines;25000000.times do;b=[];4.times do; b << a[rand(a.size)].chomp end; puts b.join(" "); end' < /usr/share/dict/words > file.txt
+
+
+Upload the test file to broad-jade-mm-ingestdata bucket (us multiple regions) from web console. This will be the FROM bucket.
+
+Ingest the file with the jade CLI. This will copy the file to the TO bucket, broad-jade-mm-data-bucket.
+jc dataset file load --profile 1000GenomesProfile --input-gspath gs://broad-jade-mm-ingestdata/file.txt --target-path /mariko/testfile1GB.txt --mime-type "application/octet-stream" --description "mariko test file 1GB" --format json 1000GenomesDataset &
+
+8GB
+max memory 1807
+total memory 114
+free memory 34
+used memory 79
+nsElapsed = 64912592641
+secElapsed = 64.912592641
+rpcCtr = 125
+megabytesPerChunk = 8
