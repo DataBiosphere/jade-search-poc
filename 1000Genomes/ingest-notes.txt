@@ -80,8 +80,8 @@ Then run the commands in the file-load/load-cmd-list.txt. I did this in chunks, 
 
 Make a batch file with a subset of the commands. Set the environment variables to the values for the current subest. The example values below pull 6 load commands, line numbers 5 through 11 inclusive.
 
-export LAST_LINE_NUM=10
-export NUM_FILES=10
+export LAST_LINE_NUM=20
+export NUM_FILES=20
 head -$LAST_LINE_NUM file-load/load-cmd-list.txt | tail -$NUM_FILES > file-load/load-cmd-list-batch.txt
 
 Note about batch size: There are 4 stairway threads in the pool, so that is the maximum number of files that can be loaded in parallel. If you make more than 4 requests, they get queued up. The file ingest will make Data Repo unresponsive to other requests if all the threads are occupied.

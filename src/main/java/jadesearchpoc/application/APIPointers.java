@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import jadesearchpoc.Indexer;
+import jadesearchpoc.Searcher;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -27,6 +28,7 @@ public final class APIPointers {
     private static RepositoryApi repositoryApi;
     private static ResourcesApi resourcesApi;
     private static Indexer indexerApi;
+    private static Searcher searcherApi;
     private static RestHighLevelClient elasticsearchApi;
     private static ObjectMapper jacksonObjectMapper;
     private static BigQuery bigQueryApi;
@@ -54,6 +56,13 @@ public final class APIPointers {
             indexerApi = new Indexer();
         }
         return indexerApi;
+    }
+
+    public static Searcher getSearcherApi() {
+        if (searcherApi == null) {
+            searcherApi = new Searcher();
+        }
+        return searcherApi;
     }
 
     public static RestHighLevelClient getElasticsearchApi() {
