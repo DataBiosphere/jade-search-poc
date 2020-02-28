@@ -1,6 +1,7 @@
 package jadesearchpoc;
 
 import jadesearchpoc.application.APIPointers;
+import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -31,10 +32,11 @@ public class Searcher {
                 String index = hit.getIndex();
                 String id = hit.getId();
                 float score = hit.getScore();
-                System.out.println("index = " + index + ", id = " + id + ", score = " + score);
+                LOG.trace("index = " + index + ", id = " + id + ", score = " + score);
                 String sourceAsString = hit.getSourceAsString();
-                System.out.println(sourceAsString);
+                LOG.trace(sourceAsString);
             }
+            System.out.println(DisplayUtils.prettyPrintJson(searchResponse));
 
             // cleanup
             APIPointers.closeElasticsearchApi();
