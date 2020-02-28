@@ -106,6 +106,13 @@ public final class ElasticSearchUtils {
         }
     }
 
+    /**
+     * Execute a search request and check for errors. Throws a RuntimeException if the HTTP status
+     * is an error or the request timed out.
+     * @param indexName the index to search
+     * @param searchSourceBuilder the source of the search request
+     * @return the search response object
+     */
     public static SearchResponse searchAndCheckErrors(String indexName, SearchSourceBuilder searchSourceBuilder) {
         try {
             // build search request from source
@@ -171,8 +178,11 @@ public final class ElasticSearchUtils {
         }
     }
 
+    /**
+     * Ping the _cluster/health REST endpoint. Print the result to LOG.info.
+     */
     public static void checkClusterHealth() {
-        // check cluster status. the ip address here is to the cluster deployed in dev.
+        // build the parameters map
         Map<String, String> httpParams = new HashMap<>();
         httpParams.put("wait_for_status", "yellow");
 
@@ -182,7 +192,7 @@ public final class ElasticSearchUtils {
                             + Config.getElasticSearchPort() + "/_cluster/health",
                     "GET",
                     httpParams);
-            LOG.trace(DisplayUtils.prettyPrintJson(httpResult));
+            LOG.info(DisplayUtils.prettyPrintJson(httpResult));
         } catch (IOException ioEx) {
             LOG.error(DisplayUtils.buildJsonError("error checking elasticsearch cluster status", ioEx));
         }
