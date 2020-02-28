@@ -17,19 +17,6 @@ import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
 import jadesearchpoc.utils.ProcessUtils;
-import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.index.query.QueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.Aggregations;
-import org.elasticsearch.search.aggregations.bucket.filter.Filter;
-import org.elasticsearch.search.aggregations.bucket.filter.FilterAggregationBuilder;
-import org.elasticsearch.search.aggregations.metrics.Max;
-import org.elasticsearch.search.aggregations.metrics.MaxAggregationBuilder;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -259,50 +246,6 @@ public class Indexer {
             return jsonMap;
         } catch (JsonProcessingException jsonEx) {
             throw new RuntimeException("Error processing JSON");
-        }
-    }
-
-    /**
-     * Search for the largest root_row_id among all documents with a specific snapshot_id
-     * @param snapshotId by which to filter the ElasticSearch documents in the index
-     * @return the highest root_row_id, or the empty string if none found
-     */
-    private String getHighestRootRowIdForSnapshot(String snapshotId) throws IOException {
-        LOG.info("searching for highest root_row_id for snapshot (id): " + snapshotId);
-
-        // build the request object
-        RestHighLevelClient esApi = APIPointers.getElasticsearchApi();
-        SearchRequest searchRequest = new SearchRequest("testindex");
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-
-        QueryBuilder filterQuery = QueryBuilders.matchQuery("snapshot_id", snapshotId);
-        FilterAggregationBuilder filter = AggregationBuilders.filter("snapshot_rows", filterQuery);
-        MaxAggregationBuilder max = AggregationBuilders.max("max_root_row_id").field("root_row_id");
-        filter.subAggregation(max);
-        searchSourceBuilder.aggregation(filter);
-        searchSourceBuilder.size(0);
-
-        // send the request
-        searchRequest.source(searchSourceBuilder);
-        SearchResponse searchResponse = esApi.search(searchRequest, RequestOptions.DEFAULT);
-        LOG.trace(DisplayUtils.prettyPrintJson(searchResponse));
-
-        // parse the result object to find how many existing documents match the snapshot_id
-        Aggregations aggregations = searchResponse.getAggregations();
-        Filter snapshotRowsAgg = aggregations.get("snapshot_rows");
-        long numSnapshotRows = snapshotRowsAgg.getDocCount();
-        LOG.info("num docs found for snapshot: " + numSnapshotRows);
-
-        // if there are no existing documents, set root_row_id to empty string
-        // empty string should be before all other rows with an ORDER BY row_id clause
-        if (numSnapshotRows > 0) {
-            Max maxRootRowIdAgg = snapshotRowsAgg.getAggregations().get("max_root_row_id");
-            double maxRootRowId = maxRootRowIdAgg.getValue();
-            LOG.debug("max_root_row_id found: " + maxRootRowId);
-            return Double.toString(maxRootRowId);
-        } else {
-            LOG.debug("no max_root_row_id found");
-            return "";
         }
     }
 }

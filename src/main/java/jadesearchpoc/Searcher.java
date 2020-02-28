@@ -1,12 +1,9 @@
 package jadesearchpoc;
 
 import jadesearchpoc.application.APIPointers;
-import org.elasticsearch.action.search.SearchRequest;
+import jadesearchpoc.utils.ElasticSearchUtils;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -19,26 +16,13 @@ public class Searcher {
 
     public void dumpIndex(String indexName) {
         try {
-            // build search request
-            SearchRequest searchRequest = new SearchRequest(indexName);
+            // build the search source
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
             searchSourceBuilder.query(QueryBuilders.matchAllQuery());
             searchSourceBuilder.size(10);
-            searchRequest.source(searchSourceBuilder);
 
             // execute search
-            SearchResponse searchResponse = APIPointers.getElasticsearchApi()
-                    .search(searchRequest, RequestOptions.DEFAULT);
-
-            // examine result
-            RestStatus status = searchResponse.status();
-            TimeValue took = searchResponse.getTook();
-            Boolean terminatedEarly = searchResponse.isTerminatedEarly();
-            boolean timedOut = searchResponse.isTimedOut();
-            System.out.println("status = " + status);
-            System.out.println("took = " + took);
-            System.out.println("terminatedEarly = " + terminatedEarly);
-            System.out.println("timedOut = " + timedOut);
+            SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, searchSourceBuilder);
 
             // retrieve results
             SearchHits hits = searchResponse.getHits();
