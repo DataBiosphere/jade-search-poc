@@ -15,12 +15,20 @@ public class Searcher {
 
     private static Logger LOG = LoggerFactory.getLogger(Searcher.class);
 
-    public void dumpIndex(String indexName) {
+    /**
+     * Dump all the documents in the specified index. Optionally, limit the number of records returned.
+     * This is a utility method primarily intended for debugging.
+     * @param indexName
+     * @param maxReturned
+     */
+    public void dumpIndex(String indexName, Integer maxReturned) {
         try {
             // build the search source
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
             searchSourceBuilder.query(QueryBuilders.matchAllQuery());
-            searchSourceBuilder.size(10);
+            if (maxReturned != null) {
+                searchSourceBuilder.size(maxReturned);
+            }
 
             // execute search
             SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, searchSourceBuilder);
