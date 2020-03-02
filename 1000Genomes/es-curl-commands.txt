@@ -91,7 +91,7 @@ curl -X GET "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: appl
   "query": {
     "bool": {
       "filter": [
-        { "term":  { "root_row_id": "abc17" }}
+        { "term":  { "datarepo_rootRowId": "mariko" }}
       ]
     }
   }
@@ -104,3 +104,103 @@ curl -X PUT "35.232.178.35:9200/testindex/_doc/1?pretty" -H 'Content-Type: appli
 {"date_created":"1582048368795","datarepo_snapshotId":"abc","datarepo_rootRowId":"mariko"}'
 
 curl -X GET "35.232.178.35:9200/testindex/_search?pretty"
+
+curl -X GET "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: application/json' -d'
+ {"query":{"match":{"datarepo_snapshotId":{"query":"abc","prefix_length":0,"lenient":false}}}}
+'
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "range": { "date_created": { "lte": "12346" }}}
+      ],
+      "filter": [
+        { "term":  { "datarepo_snapshotId": "abc" }}
+      ]
+    }
+  }
+}
+'
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"wildcard": {
+            "date_created": {
+                "value": "15*",
+                "boost": 12.0,
+                "rewrite": "constant_score"
+            }
+        } }
+      ],
+      "filter": [
+        { "term":  { "datarepo_snapshotId": "abc" }}
+      ]
+    }
+  }
+}
+'
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "must": [
+        {    "bool": {
+               "must": [
+                 { "range": { "date_created": { "lte": "12346" }}}
+               ],
+               "filter": [
+                 { "term":  { "datarepo_snapshotId": "abc" }}
+               ]
+             }
+}
+      ],
+      "filter": [
+        { "term":  { "datarepo_snapshotId": "abc" }}
+      ]
+    }
+  }
+}
+'
+
+if they supply a bool query already, then append to the filter array
+if they don't supply a bool query, then stick it inside a must? block inside a new bool query
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "wildcard": {
+            "date_created": {
+                "value": "1*",
+                "boost": 1.0,
+                "rewrite": "constant_score"
+            }
+        }
+    }
+}
+'
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "boosting" : {
+            "positive" : {
+                "term" : {
+                    "date_created" : "1"
+                }
+            },
+            "negative" : {
+                 "term" : {
+                     "text" : "pie tart fruit crumble tree"
+                }
+            },
+            "negative_boost" : 0.5
+        }
+    }
+}
+'
