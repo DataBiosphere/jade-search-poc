@@ -3,6 +3,7 @@ package jadesearchpoc;
 import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
+import jadesearchpoc.utils.IAMUtils;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.xcontent.DeprecationHandler;
@@ -48,7 +49,8 @@ public class Searcher {
             }
 
             // build a match query on the snapshotId
-            MatchQueryBuilder filterQuery = QueryBuilders.matchQuery("datarepo_snapshotId", "abc");
+            String snapshotId = IAMUtils.getSnapshotIdsForUser();
+            MatchQueryBuilder filterQuery = QueryBuilders.matchQuery("datarepo_snapshotId", snapshotId);
 
             // build a compound boolean query with the user-specified query as the must clause
             // and the filter query as the snapshotId filter built above.
