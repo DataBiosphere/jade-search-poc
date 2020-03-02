@@ -15,6 +15,8 @@ public final class Config {
             "/Users/marikomedlock/.jadecli/client/jadecli_client_secret.json";
     private static final String CredentialsDirectory = "/Users/marikomedlock/.jadecli/creds/";
 
+    private static final String SAMIPAddress = "https://sam.dsde-dev.broadinstitute.org";
+
     // ch.qos.logback.classic.Level : ALL, TRACE, DEBUG, INFO, WARN, ERROR, OFF
     private static final String LoggerLevel = "DEBUG";
 
@@ -46,6 +48,10 @@ public final class Config {
 
     public static String getCredentialsDirectory() {
         return CredentialsDirectory;
+    }
+
+    public static String getSAMIPAddress() {
+        return SAMIPAddress;
     }
 
     public static String getLoggerLevel() {

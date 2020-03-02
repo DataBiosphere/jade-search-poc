@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
+import org.broadinstitute.dsde.workbench.client.sam.ApiClient;
 
 import java.io.IOException;
 
@@ -32,6 +33,7 @@ public final class APIPointers {
     private static RestHighLevelClient elasticsearchApi;
     private static ObjectMapper jacksonObjectMapper;
     private static BigQuery bigQueryApi;
+    private static ApiClient samApi;
 
     private APIPointers() { }
 
@@ -107,4 +109,12 @@ public final class APIPointers {
         }
         return bigQueryApi;
     }
+
+    private ApiClient getApiClient(String accessToken) {
+        ApiClient apiClient = new ApiClient();
+        apiClient.setAccessToken(accessToken);
+        apiClient.setUserAgent("OpenAPI-Generator/1.0.0 java");  // only logs an error in sam
+        return apiClient.setBasePath(Config.getSAMIPAddress());
+    }
+
 }
