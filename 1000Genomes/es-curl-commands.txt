@@ -204,3 +204,46 @@ curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/js
     }
 }
 '
+
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+  "bool" : {
+    "must" : [
+      {
+        "match_all" : {
+          "boost" : 1.2
+        }
+      }
+    ],
+    "filter" : [
+      {
+        "match" : {
+          "datarepo_snapshotId" : {
+            "query" : "abc",
+            "operator" : "OR",
+            "prefix_length" : 0,
+            "max_expansions" : 50,
+            "fuzzy_transpositions" : true,
+            "lenient" : false,
+            "zero_terms_query" : "NONE",
+            "auto_generate_synonyms_phrase_query" : true,
+            "boost" : 1.0
+          }
+        }
+      }
+    ],
+    "adjust_pure_negative" : true,
+    "boost" : 1.0
+  }
+    }
+}
+'
+curl -X GET "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "match_all": { "boost" : 1.2 },
+            "size":2
+    }
+}
+'

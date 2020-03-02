@@ -37,19 +37,14 @@ public class Searcher {
      */
     public void searchIndex(String indexName, Integer maxReturned, String queryStr) {
         try {
-            // build the search source for the user-specified query
-            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-            searchSourceBuilder.query(QueryBuilders.matchAllQuery());
-            if (maxReturned != null) {
-                searchSourceBuilder.size(maxReturned);
-            }
-
             // parse the JSON formatted user-specified query string
+            // use a SearchSourceBuilder to turn the queryStr into a QueryBuilder
+            SearchSourceBuilder userQuerySource = new SearchSourceBuilder();
             SearchModule searchModule = new SearchModule(Settings.EMPTY, false, Collections.emptyList());
             try (XContentParser parser = XContentFactory.xContent(XContentType.JSON)
                     .createParser(new NamedXContentRegistry(searchModule
                     .getNamedXContents()), DeprecationHandler.THROW_UNSUPPORTED_OPERATION, queryStr)) {
-                searchSourceBuilder.parseXContent(parser);
+                userQuerySource.parseXContent(parser);
             }
 
             // build a match query on the snapshotId
@@ -58,12 +53,21 @@ public class Searcher {
             // build a compound boolean query with the user-specified query as the must clause
             // and the filter query as the snapshotId filter built above.
             BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
-            boolQuery.must(searchSourceBuilder.query());
+            boolQuery.must(userQuerySource.query());
             boolQuery.filter(filterQuery);
-            LOG.debug(boolQuery.toString());
+            SearchSourceBuilder compoundQuerySource = new SearchSourceBuilder();
+            compoundQuerySource.query(boolQuery);
+
+            // need to set top-level search parameters, such as size, on the compound query, not the user's query
+            // other top-level parameters are here:
+            // https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html
+            if (maxReturned != null) {
+                compoundQuerySource.size(maxReturned);
+            }
+            LOG.debug(compoundQuerySource.query().toString());
 
             // execute search
-            SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, searchSourceBuilder);
+            SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, compoundQuerySource);
 
             // print response to stdout
             System.out.println(DisplayUtils.prettyPrintJson(searchResponse));
