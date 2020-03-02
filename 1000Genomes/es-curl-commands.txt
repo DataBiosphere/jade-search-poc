@@ -239,11 +239,34 @@ curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/js
     }
 }
 '
-curl -X GET "localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
+curl -X GET "35.232.178.35:9200/_search?pretty" -H 'Content-Type: application/json' -d'
 {
     "query": {
-        "match_all": { "boost" : 1.2 },
-            "size":2
+        "match_all": { "boost" : 1.2 }
     }
 }
 '
+
+curl -X PUT "35.232.178.35:9200/test?pretty" -H 'Content-Type: application/json' -d'
+{
+    "mappings" : {
+        "properties" : {
+            "marikoCLI_1" : { "type" : "text" }
+        }
+    }
+}
+'
+
+curl -X PUT "35.232.178.35:9200/testindex2/_mapping?pretty" -H 'Content-Type: application/json' -d'
+{
+  "properties": {
+    "email": {
+      "type": "keyword"
+    }
+  }
+}
+'
+
+curl -X GET "35.232.178.35:9200/_all?pretty"
+
+curl -X DELETE "35.232.178.35:9200/testindex2?pretty"

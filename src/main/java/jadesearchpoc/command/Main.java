@@ -10,7 +10,9 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.ParseResult;
 
 @Command(name = "poc",
-        subcommands = { IndexSnapshot.class, SearchIndex.class, DumpIndex.class, CommandLine.HelpCommand.class },
+        subcommands = { CreateIndex.class, IndexSnapshot.class,
+                SearchIndex.class, DumpIndex.class,
+                CommandLine.HelpCommand.class },
         description = "search/indexing POC for data explorers")
 class Main implements Runnable {
 

@@ -17,6 +17,12 @@ import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
 import jadesearchpoc.utils.ProcessUtils;
+import org.elasticsearch.action.support.master.AcknowledgedResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.indices.CreateIndexRequest;
+import org.elasticsearch.client.indices.CreateIndexResponse;
+import org.elasticsearch.client.indices.PutMappingRequest;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -246,6 +252,47 @@ public class Indexer {
             return jsonMap;
         } catch (JsonProcessingException jsonEx) {
             throw new RuntimeException("Error processing JSON");
+        }
+    }
+
+    public void createIndex(String indexName, String indexStructure) {
+        try {
+            // build the create index request from the user-provided mapping (as a JSON-formatted string)
+            CreateIndexRequest createRequest = new CreateIndexRequest(indexName);
+            createRequest.mapping(indexStructure, XContentType.JSON);
+
+            // execute the create index request
+            CreateIndexResponse createIndexResponse = APIPointers.getElasticsearchApi().indices()
+                    .create(createRequest, RequestOptions.DEFAULT);
+            LOG.debug(createIndexResponse.toString());
+
+            // add on the Data Repo-specific mappings
+            PutMappingRequest putRequest = new PutMappingRequest(indexName);
+            putRequest.source(
+                    "{\n" +
+                            "  \"properties\": {\n" +
+                            "    \"datarepo_snapshotId\": {\n" +
+                            "      \"type\": \"keyword\"\n" +
+                            "    },\n" +
+                            "    \"datarepo_rootRowId\": {\n" +
+                            "      \"type\": \"keyword\"\n" +
+                            "    }\n" +
+                            "  }\n" +
+                            "}",
+                    XContentType.JSON);
+
+            // execute the put mapping request
+            AcknowledgedResponse putMappingResponse = APIPointers.getElasticsearchApi().indices()
+                    .putMapping(putRequest, RequestOptions.DEFAULT);
+            LOG.debug(putMappingResponse.toString());
+
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+        } catch (Exception ex) {
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+
+            throw new RuntimeException(ex);
         }
     }
 }
