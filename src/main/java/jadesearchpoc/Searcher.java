@@ -12,8 +12,8 @@ import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.common.xcontent.XContentParser;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.TermsQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.SearchModule;
@@ -22,6 +22,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Searcher {
 
@@ -49,8 +52,13 @@ public class Searcher {
             }
 
             // build a match query on the snapshotId
-            String snapshotId = IAMUtils.getSnapshotIdsForUser();
-            MatchQueryBuilder filterQuery = QueryBuilders.matchQuery("datarepo_snapshotId", snapshotId);
+            List<UUID> snapshotIdsList = IAMUtils.getSnapshotIdsForUserSAM();
+            List<String> snapshotIdsListOfStrs = snapshotIdsList
+                    .stream()
+                    .map(snapshotId -> snapshotId.toString())
+                    .collect(Collectors.toList());
+//            snapshotIdsListOfStrs.add("abc");
+            TermsQueryBuilder filterQuery = QueryBuilders.termsQuery("datarepo_snapshotId", snapshotIdsListOfStrs);
 
             // build a compound boolean query with the user-specified query as the must clause
             // and the filter query as the snapshotId filter built above.

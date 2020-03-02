@@ -91,7 +91,7 @@ curl -X GET "35.232.178.35:9200/testindex/_search?pretty" -H 'Content-Type: appl
   "query": {
     "bool": {
       "filter": [
-        { "term":  { "datarepo_rootRowId": "mariko" }}
+        { "terms":  { "datarepo_rootRowId": ["mariko","kimiko"] }}
       ]
     }
   }
