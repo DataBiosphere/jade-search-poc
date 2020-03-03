@@ -76,7 +76,7 @@ public class Searcher {
             SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, compoundQuerySource);
 
             // print response to stdout
-            System.out.println(DisplayUtils.prettyPrintJson(searchResponse));
+            LOG.info(DisplayUtils.prettyPrintJson(searchResponse));
 
             // cleanup
             APIPointers.closeElasticsearchApi();
@@ -118,7 +118,7 @@ public class Searcher {
                 String sourceAsString = hit.getSourceAsString();
                 LOG.trace(sourceAsString);
             }
-            System.out.println(DisplayUtils.prettyPrintJson(searchResponse));
+            LOG.info(DisplayUtils.prettyPrintJson(searchResponse));
 
             // cleanup
             APIPointers.closeElasticsearchApi();

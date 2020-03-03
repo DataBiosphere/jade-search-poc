@@ -297,7 +297,7 @@ public class Indexer {
                     .putMapping(putRequest, RequestOptions.DEFAULT);
             LOG.debug(putMappingResponse.toString());
 
-            System.out.println("Index created successfully");
+            LOG.info("Index created successfully");
 
             // cleanup
             APIPointers.closeElasticsearchApi();
@@ -323,7 +323,7 @@ public class Indexer {
                     .delete(request, RequestOptions.DEFAULT);
             LOG.debug(deleteIndexResponse.toString());
 
-            System.out.println("Index deleted successfully");
+            LOG.info("Index deleted successfully");
 
             // cleanup
             APIPointers.closeElasticsearchApi();
@@ -353,10 +353,10 @@ public class Indexer {
             // write the response properties and aliases to stdout
             MappingMetaData indexMappings = getIndexResponse.getMappings().get(indexName);
             Map<String, Object> indexTypeMappings = indexMappings.getSourceAsMap();
-            System.out.println(DisplayUtils.prettyPrintJson(indexTypeMappings));
+            LOG.info(DisplayUtils.prettyPrintJson(indexTypeMappings));
 
             List<AliasMetaData> indexAliases = getIndexResponse.getAliases().get(indexName);
-            System.out.println(DisplayUtils.prettyPrintJson(indexAliases));
+            LOG.info(DisplayUtils.prettyPrintJson(indexAliases));
 
             // cleanup
             APIPointers.closeElasticsearchApi();

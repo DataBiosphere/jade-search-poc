@@ -104,35 +104,10 @@ These will be used to filter the documents on search.
 Expected output:
 
     19:51:18.181 [main] INFO jadesearchpoc.Indexer - indexing snapshot (name): 1000GenomesSnapshotA
-    19:51:19.421 [main] DEBUG jadesearchpoc.Indexer - SELECT sample AS root_column FROM `broad-jade-mm-data.1000GenomesSnapshotA.sample_info` WHERE sample IS NOT NULL ORDER BY sample ASC
-    19:51:21.553 [main] DEBUG jadesearchpoc.Indexer - processing root_row_id: HG00096
     19:51:21.557 [main] INFO jadesearchpoc.utils.ElasticSearchUtils - searching for root_row_id: HG00096 in index: sampleindex
-    19:51:22.746 [main] DEBUG jadesearchpoc.Indexer - documentIdExists: null
-    19:51:22.754 [main] DEBUG jadesearchpoc.utils.ProcessUtils - started process: sh 1000Genomes/BuildIndexDocument1000Genomes.sh HG00096 504eb790-a858-479f-b9b6-0e28656458e1 1000GenomesSnapshotA broad-jade-mm-data
-    19:51:25.120 [main] DEBUG jadesearchpoc.Indexer - { "EBV_Coverage": "20.31", "Phase1_E_Platform": "ILLUMINA", "Phase1_LC_Centers": "WUGSC", "Population": "GBR", "Super_Population": "EUR", "family_id": "HG00096", "population_description": "British in England and Scotland", "sample": "HG00096", "super_population_description": "European", "date_created": "$now" }
-    19:51:25.754 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - index: sampleindex, id: qlzgnXABZyY_x0meQ2df
-    19:51:25.754 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - new index document created
-    19:51:25.754 [main] DEBUG jadesearchpoc.Indexer - processing root_row_id: HG00097
     19:51:25.754 [main] INFO jadesearchpoc.utils.ElasticSearchUtils - searching for root_row_id: HG00097 in index: sampleindex
-    19:51:25.805 [main] DEBUG jadesearchpoc.Indexer - documentIdExists: null
-    19:51:25.809 [main] DEBUG jadesearchpoc.utils.ProcessUtils - started process: sh 1000Genomes/BuildIndexDocument1000Genomes.sh HG00097 504eb790-a858-479f-b9b6-0e28656458e1 1000GenomesSnapshotA broad-jade-mm-data
-    19:51:27.883 [main] DEBUG jadesearchpoc.Indexer - { "EBV_Coverage": "169.49", "Phase1_E_Platform": "ABI_SOLID", "Phase1_LC_Centers": "BCM", "Population": "GBR", "Super_Population": "EUR", "family_id": "HG00097", "population_description": "British in England and Scotland", "sample": "HG00097", "super_population_description": "European", "date_created": "$now" }
-    19:51:27.952 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - index: sampleindex, id: q1zgnXABZyY_x0meTmch
-    19:51:27.952 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - new index document created
-    19:51:27.952 [main] DEBUG jadesearchpoc.Indexer - processing root_row_id: HG00099
     19:51:27.952 [main] INFO jadesearchpoc.utils.ElasticSearchUtils - searching for root_row_id: HG00099 in index: sampleindex
-    19:51:28.007 [main] DEBUG jadesearchpoc.Indexer - documentIdExists: null
-    19:51:28.012 [main] DEBUG jadesearchpoc.utils.ProcessUtils - started process: sh 1000Genomes/BuildIndexDocument1000Genomes.sh HG00099 504eb790-a858-479f-b9b6-0e28656458e1 1000GenomesSnapshotA broad-jade-mm-data
-    19:51:30.133 [main] DEBUG jadesearchpoc.Indexer - { "EBV_Coverage": "23.04", "Phase1_E_Platform": "ABI_SOLID", "Phase1_LC_Centers": "BCM", "Population": "GBR", "Super_Population": "EUR", "family_id": "HG00099", "population_description": "British in England and Scotland", "sample": "HG00099", "super_population_description": "European", "date_created": "$now" }
-    19:51:30.211 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - index: sampleindex, id: rFzgnXABZyY_x0meVmfv
-    19:51:30.211 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - new index document created
-    19:51:30.211 [main] DEBUG jadesearchpoc.Indexer - processing root_row_id: HG00100
     19:51:30.212 [main] INFO jadesearchpoc.utils.ElasticSearchUtils - searching for root_row_id: HG00100 in index: sampleindex
-    19:51:30.262 [main] DEBUG jadesearchpoc.Indexer - documentIdExists: null
-    19:51:30.266 [main] DEBUG jadesearchpoc.utils.ProcessUtils - started process: sh 1000Genomes/BuildIndexDocument1000Genomes.sh HG00100 504eb790-a858-479f-b9b6-0e28656458e1 1000GenomesSnapshotA broad-jade-mm-data
-    19:51:32.491 [main] DEBUG jadesearchpoc.Indexer - { "EBV_Coverage": "116.22", "Phase1_E_Platform": "ILLUMINA", "Phase1_LC_Centers": "SC", "Population": "GBR", "Super_Population": "EUR", "family_id": "HG00100", "population_description": "British in England and Scotland", "sample": "HG00100", "super_population_description": "European", "date_created": "$now" }
-    19:51:32.568 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - index: sampleindex, id: rVzgnXABZyY_x0meYGco
-    19:51:32.569 [main] DEBUG jadesearchpoc.utils.ElasticSearchUtils - new index document created
 
 1000GenomesSnapshotB has two readers: `mmdevverily@gmail.com` and `mmdevverily2@gmail.com`.
 
