@@ -22,7 +22,11 @@ import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
+import org.elasticsearch.client.indices.GetIndexRequest;
+import org.elasticsearch.client.indices.GetIndexResponse;
 import org.elasticsearch.client.indices.PutMappingRequest;
+import org.elasticsearch.cluster.metadata.AliasMetaData;
+import org.elasticsearch.cluster.metadata.MappingMetaData;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -256,6 +260,12 @@ public class Indexer {
         }
     }
 
+    /**
+     * Create a new index with the user-specified index structure, passed as a JSON-formatted string.
+     * The structure ]may include the settings, properties, and aliases sections.
+     * @param indexName name of the index to create
+     * @param indexStructure ElasticSearch index specification as a JSON-formatted string
+     */
     public void createIndex(String indexName, String indexStructure) {
         try {
             // build the create index request from the user-provided mapping (as a JSON-formatted string)
@@ -287,6 +297,8 @@ public class Indexer {
                     .putMapping(putRequest, RequestOptions.DEFAULT);
             LOG.debug(putMappingResponse.toString());
 
+            System.out.println("Index created successfully");
+
             // cleanup
             APIPointers.closeElasticsearchApi();
         } catch (Exception ex) {
@@ -297,6 +309,10 @@ public class Indexer {
         }
     }
 
+    /**
+     * Delete the specified index.
+     * @param indexName the name of the index to delete
+     */
     public void deleteIndex(String indexName) {
         try {
             // build the delete index request
@@ -306,6 +322,41 @@ public class Indexer {
             AcknowledgedResponse deleteIndexResponse = APIPointers.getElasticsearchApi().indices()
                     .delete(request, RequestOptions.DEFAULT);
             LOG.debug(deleteIndexResponse.toString());
+
+            System.out.println("Index deleted successfully");
+
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+        } catch (Exception ex) {
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+
+            throw new RuntimeException(ex);
+        }
+    }
+
+    /**
+     * Show the metadata for the specified index. Use _all to show the metadata for all indices.
+     * Currently, this method prints the properties and aliases sections of the metadata.
+     * @param indexName the name of the index to lookup
+     */
+    public void showIndex(String indexName) {
+        try {
+            // build the show index request
+            GetIndexRequest request = new GetIndexRequest(indexName);
+            request.includeDefaults(false);
+
+            // execute the show index request
+            GetIndexResponse getIndexResponse = APIPointers.getElasticsearchApi().indices()
+                    .get(request, RequestOptions.DEFAULT);
+
+            // write the response properties and aliases to stdout
+            MappingMetaData indexMappings = getIndexResponse.getMappings().get(indexName);
+            Map<String, Object> indexTypeMappings = indexMappings.getSourceAsMap();
+            System.out.println(DisplayUtils.prettyPrintJson(indexTypeMappings));
+
+            List<AliasMetaData> indexAliases = getIndexResponse.getAliases().get(indexName);
+            System.out.println(DisplayUtils.prettyPrintJson(indexAliases));
 
             // cleanup
             APIPointers.closeElasticsearchApi();
