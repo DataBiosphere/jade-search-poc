@@ -17,6 +17,7 @@ import jadesearchpoc.utils.DataRepoUtils;
 import jadesearchpoc.utils.DisplayUtils;
 import jadesearchpoc.utils.ElasticSearchUtils;
 import jadesearchpoc.utils.ProcessUtils;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.support.master.AcknowledgedResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.indices.CreateIndexRequest;
@@ -285,6 +286,26 @@ public class Indexer {
             AcknowledgedResponse putMappingResponse = APIPointers.getElasticsearchApi().indices()
                     .putMapping(putRequest, RequestOptions.DEFAULT);
             LOG.debug(putMappingResponse.toString());
+
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+        } catch (Exception ex) {
+            // cleanup
+            APIPointers.closeElasticsearchApi();
+
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public void deleteIndex(String indexName) {
+        try {
+            // build the delete index request
+            DeleteIndexRequest request = new DeleteIndexRequest(indexName);
+
+            // execute the delete index request
+            AcknowledgedResponse deleteIndexResponse = APIPointers.getElasticsearchApi().indices()
+                    .delete(request, RequestOptions.DEFAULT);
+            LOG.debug(deleteIndexResponse.toString());
 
             // cleanup
             APIPointers.closeElasticsearchApi();
