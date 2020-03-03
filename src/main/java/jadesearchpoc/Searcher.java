@@ -52,13 +52,9 @@ public class Searcher {
             }
 
             // build a match query on the snapshotId
-            List<UUID> snapshotIdsList = IAMUtils.getSnapshotIdsForUserSAM();
-            List<String> snapshotIdsListOfStrs = snapshotIdsList
-                    .stream()
-                    .map(snapshotId -> snapshotId.toString())
-                    .collect(Collectors.toList());
-//            snapshotIdsListOfStrs.add("abc");
-            TermsQueryBuilder filterQuery = QueryBuilders.termsQuery("datarepo_snapshotId", snapshotIdsListOfStrs);
+            List<String> snapshotIdsList = IAMUtils.getSnapshotIdsForUserSAM();
+//            snapshotIdsList.add("abc");
+            TermsQueryBuilder filterQuery = QueryBuilders.termsQuery("datarepo_snapshotId", snapshotIdsList);
 
             // build a compound boolean query with the user-specified query as the must clause
             // and the filter query as the snapshotId filter built above.

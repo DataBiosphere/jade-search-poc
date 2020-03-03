@@ -270,3 +270,20 @@ curl -X PUT "35.232.178.35:9200/testindex2/_mapping?pretty" -H 'Content-Type: ap
 curl -X GET "35.232.178.35:9200/_all?pretty"
 
 curl -X DELETE "35.232.178.35:9200/testindex2?pretty"
+
+'
+{
+  "properties": {
+    "email": {
+      "type": "keyword"
+    }
+  }
+}
+'
+
+
+
+20:18:52.946 [main] DEBUG jadesearchpoc.utils.IAMUtils - 6636cc64-3685-4a03-a120-00db883d80b1->reader
+20:18:52.948 [main] DEBUG jadesearchpoc.utils.IAMUtils - 76ebdbfd-40f4-42e1-b67c-29b0369e34a0->reader
+20:18:52.948 [main] DEBUG jadesearchpoc.utils.IAMUtils - bb2ea099-d621-42b6-b2b3-faaa95b20849->reader
+20:18:52.948 [main] DEBUG jadesearchpoc.utils.IAMUtils - 504eb790-a858-479f-b9b6-0e28656458e1->reader

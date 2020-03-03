@@ -8,6 +8,8 @@ import org.broadinstitute.dsde.workbench.client.sam.api.ResourcesApi;
 import org.broadinstitute.dsde.workbench.client.sam.model.ResourceAndAccessPolicy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -24,10 +26,22 @@ public final class IAMUtils {
      * Lookup in SAM the Snapshot IDs to which the current user has read access.
      * @return a list of snapshot IDs
      */
-    public static List<UUID> getSnapshotIdsForUserSAM() {
+    public static List<String> getSnapshotIdsForUserSAM() {
 //        return "bb2ea099-d621-42b6-b2b3-faaa95b20849";
         try {
-            List<UUID> snapshotIds = listAuthorizedResources("datasnapshot");
+            List<ResourceAndAccessPolicy> resources = listAuthorizedResources("datasnapshot");
+
+            List<String> snapshotIds = new ArrayList<>();
+
+            for (int ctr=0; ctr<resources.size(); ctr++) {
+                ResourceAndAccessPolicy resource = resources.get(ctr);
+                if (resource.getAccessPolicyName().equals("reader")) {
+                    snapshotIds.add(resource.getResourceId());
+                    LOG.debug(resources.get(ctr).getResourceId() + "->" + resources.get(ctr).getAccessPolicyName());
+                }
+                LOG.trace(resources.get(ctr).getResourceId() + "->" + resources.get(ctr).getAccessPolicyName());
+            }
+
             return snapshotIds;
         } catch (ApiException apiEx) {
             LOG.debug("Error fetching snapshot IDs from SAM");
@@ -35,14 +49,9 @@ public final class IAMUtils {
         }
     }
 
-    private static List<UUID> listAuthorizedResources(String iamResourceType) throws ApiException {
+    private static List<ResourceAndAccessPolicy> listAuthorizedResources(String iamResourceType) throws ApiException {
         ResourcesApi samResourcesApi = getSAMResourcesApi();
-        List<ResourceAndAccessPolicy> resources = samResourcesApi.listResourcesAndPolicies(iamResourceType);
-
-        return resources
-            .stream()
-            .map(resource -> UUID.fromString(resource.getResourceId()))
-            .collect(Collectors.toList());
+        return samResourcesApi.listResourcesAndPolicies(iamResourceType);
     }
 
     private static boolean isAuthorized(String iamResourceType, String resourceId, String action) throws ApiException {
