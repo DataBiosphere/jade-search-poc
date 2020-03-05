@@ -96,6 +96,7 @@ public final class APIPointers {
     }
 
     public static BigQuery getBigQueryApi() {
+        Login.checkLogin();
         if (bigQueryApi == null) {
             GoogleCredentials googleCredentials = GoogleCredentials.create(
                     new AccessToken(Login.getUserCredential().getAccessToken(), null));

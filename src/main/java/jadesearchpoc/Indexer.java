@@ -28,11 +28,13 @@ import org.elasticsearch.client.indices.PutMappingRequest;
 import org.elasticsearch.cluster.metadata.AliasMetaData;
 import org.elasticsearch.cluster.metadata.MappingMetaData;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +60,7 @@ public class Indexer {
     public void indexSnapshotByName(String snapshotName, String indexName, String buildIndexDocumentCmd,
                                     String rootTableName, String rootColumnName, Boolean update) {
         try {
-            LOG.info("indexing snapshot (name): " + snapshotName);
+            LOG.info("indexing snapshot : " + snapshotName);
 
             // lookup snapshot id from name
             SnapshotSummaryModel snapshotSummaryModel = DataRepoUtils.snapshotFromName(snapshotName);
@@ -110,23 +112,27 @@ public class Indexer {
             LOG.debug("processing root_row_id: " + rootRowId);
 
             // check if there exists an ElasticSearch document with this id already
-            String documentIdExists = ElasticSearchUtils.findExistingDocumentId(indexName, rootRowId);
-            LOG.debug("documentIdExists: " + documentIdExists);
+            SearchHit existingDocument = ElasticSearchUtils.findExistingDocumentId(indexName, rootRowId);
+            LOG.debug("existingDocument id: " + ((existingDocument == null) ? null : existingDocument.getId()));
 
-            // if yes and NOT overwriting, then continue
-            if (documentIdExists != null && !update.booleanValue()) {
-                continue;
+            // if document does not already exist, or update is true,
+            // then call user-supplied document generation code
+            String jsonStr;
+            if (existingDocument == null || update.booleanValue()) {
+                jsonStr = buildIndexDocument(snapshot, rootRowId, buildIndexDocumentCmd);
             }
-
-            // call user-supplied document generation code
-            String jsonStr = buildIndexDocument(snapshot, rootRowId, buildIndexDocumentCmd);
+            // otherwise keep the existing document
+            else {
+                jsonStr = existingDocument.getSourceAsString();
+            }
             LOG.debug(jsonStr);
 
-            // add two fields to the index document: snapshot_id, root_row_id
-            Map<String, String> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshot.getId(), rootRowId);
+            // add or update two fields to the index document: snapshot_id, root_row_id
+            Map<String, Object> jsonMap = addSupplementaryFieldsToDocument(jsonStr, snapshot.getId(), rootRowId);
 
             // add document to elasticsearch via REST API
-            ElasticSearchUtils.addDocumentToIndex(indexName, documentIdExists, jsonMap);
+            String existingDocumentId = (existingDocument == null) ? null : existingDocument.getId();
+            ElasticSearchUtils.addDocumentToIndex(indexName, existingDocumentId, jsonMap);
         }
     }
 
@@ -245,15 +251,29 @@ public class Indexer {
      * @param jsonStr ElasticSearch document as a JSON-formatted string
      * @param snapshotId the snapshot_id to add as a supplementary field
      * @param rootRowId the root_row_id to add as a supplementary field
-     * @return the updated document as a JSON-formatted string, including the supplementary fields
+     * @return the updated document as a map, including the supplementary fields
      */
-    private Map<String, String> addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
+    private Map<String, Object> addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
         try {
+            LOG.debug("inside addSupplementaryFieldsToDocument");
             ObjectMapper jacksonMapper = APIPointers.getJacksonObjectMapper();
-            Map<String, String> jsonMap = jacksonMapper
-                    .readValue(jsonStr, new TypeReference<Map<String, String>>() { });
-            jsonMap.put("datarepo_snapshotId", snapshotId);
+            Map<String, Object> jsonMap = jacksonMapper
+                    .readValue(jsonStr, new TypeReference<Map<String, Object>>() { });
             jsonMap.put("datarepo_rootRowId", rootRowId);
+            LOG.debug("after jackson parsing");
+
+            Object snapshotIds = jsonMap.get("datarepo_snapshotId");
+            List<String> snapshotIdsList;
+            try {
+                snapshotIdsList = (ArrayList<String>) snapshotIds;
+            } catch (ClassCastException ccEx) {
+                LOG.error("failed to parse datarepo_snapshotId field into a List");
+                throw new RuntimeException("Error parsing existing document");
+            }
+            if (!snapshotIdsList.contains(snapshotId)) {
+                snapshotIdsList.add(snapshotId);
+            }
+            jsonMap.put("datarepo_snapshotId", snapshotIdsList);
             return jsonMap;
         } catch (JsonProcessingException jsonEx) {
             throw new RuntimeException("Error processing JSON");
@@ -275,7 +295,6 @@ public class Indexer {
             // execute the create index request
             CreateIndexResponse createIndexResponse = APIPointers.getElasticsearchApi().indices()
                     .create(createRequest, RequestOptions.DEFAULT);
-            LOG.debug(createIndexResponse.toString());
 
             // add on the Data Repo-specific mappings
             PutMappingRequest putRequest = new PutMappingRequest(indexName);
@@ -295,7 +314,6 @@ public class Indexer {
             // execute the put mapping request
             AcknowledgedResponse putMappingResponse = APIPointers.getElasticsearchApi().indices()
                     .putMapping(putRequest, RequestOptions.DEFAULT);
-            LOG.debug(putMappingResponse.toString());
 
             LOG.info("Index created successfully");
 
@@ -321,7 +339,6 @@ public class Indexer {
             // execute the delete index request
             AcknowledgedResponse deleteIndexResponse = APIPointers.getElasticsearchApi().indices()
                     .delete(request, RequestOptions.DEFAULT);
-            LOG.debug(deleteIndexResponse.toString());
 
             LOG.info("Index deleted successfully");
 
@@ -353,10 +370,10 @@ public class Indexer {
             // write the response properties and aliases to stdout
             MappingMetaData indexMappings = getIndexResponse.getMappings().get(indexName);
             Map<String, Object> indexTypeMappings = indexMappings.getSourceAsMap();
-            LOG.info(DisplayUtils.prettyPrintJson(indexTypeMappings));
+            LOG.info("properties = " + DisplayUtils.prettyPrintJson(indexTypeMappings));
 
             List<AliasMetaData> indexAliases = getIndexResponse.getAliases().get(indexName);
-            LOG.info(DisplayUtils.prettyPrintJson(indexAliases));
+            LOG.info("aliases = " + DisplayUtils.prettyPrintJson(indexAliases));
 
             // cleanup
             APIPointers.closeElasticsearchApi();

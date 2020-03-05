@@ -14,6 +14,8 @@ import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.rest.RestStatus;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.filter.Filter;
@@ -38,9 +40,9 @@ public final class ElasticSearchUtils {
      * Check the ElasticSearch index to see if a document with the given root_row_id exists.
      * @param indexName the index to search
      * @param rootRowId the root_row_id by which to filter the documents
-     * @return the id of the ElasticSearch document that matches the given root_row_id, null if none exists
+     * @return the ElasticSearch document that matches the given root_row_id, null if none exists
      */
-    public static String findExistingDocumentId(String indexName, String rootRowId) {
+    public static SearchHit findExistingDocumentId(String indexName, String rootRowId) {
         LOG.info("searching for root_row_id: " + rootRowId + " in index: " + indexName);
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -52,16 +54,16 @@ public final class ElasticSearchUtils {
         SearchResponse searchResponse = searchAndCheckErrors(indexName, searchSourceBuilder);
 
         // parse the result object to find how many documents matched
-        TotalHits totalHits = searchResponse.getHits().getTotalHits();
-        if (totalHits == null) {
+        SearchHits searchHits = searchResponse.getHits();
+        if (searchHits == null) {
             throw new RuntimeException("Error parsing ElasticSearch search response");
         }
-        long count = totalHits.value;
+        long count = searchHits.getHits().length;
         LOG.trace("count: " + count);
         if (count == 0) {
             return null; // no document exists
         } else if (count == 1) {
-            return searchResponse.getHits().getAt(0).getId(); // document exists, return its id
+            return searchResponse.getHits().getAt(0); // document exists, return it
         } else {
             // bad count, something is wrong
             throw new RuntimeException("Unexpected count (" + count + ") of documents with the same root_row_id");
@@ -75,7 +77,7 @@ public final class ElasticSearchUtils {
      * @param documentId the id of the document to update, null to create a new document
      * @param jsonMap the JSON document as a Java Map
      */
-    public static void addDocumentToIndex(String indexName, String documentId, Map<String, String> jsonMap) {
+    public static void addDocumentToIndex(String indexName, String documentId, Map<String, Object> jsonMap) {
         try {
             IndexRequest request = new IndexRequest(indexName);
             if (documentId != null) {

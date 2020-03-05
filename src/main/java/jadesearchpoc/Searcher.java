@@ -23,8 +23,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Searcher {
 
@@ -53,7 +51,6 @@ public class Searcher {
 
             // build a match query on the snapshotId
             List<String> snapshotIdsList = IAMUtils.getSnapshotIdsForUserSAM();
-//            snapshotIdsList.add("abc");
             TermsQueryBuilder filterQuery = QueryBuilders.termsQuery("datarepo_snapshotId", snapshotIdsList);
 
             // build a compound boolean query with the user-specified query as the must clause
