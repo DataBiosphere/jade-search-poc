@@ -255,25 +255,35 @@ public class Indexer {
      */
     private Map<String, Object> addSupplementaryFieldsToDocument(String jsonStr, String snapshotId, String rootRowId) {
         try {
-            LOG.debug("inside addSupplementaryFieldsToDocument");
+            // parse the document JSON string into a Map
             ObjectMapper jacksonMapper = APIPointers.getJacksonObjectMapper();
             Map<String, Object> jsonMap = jacksonMapper
                     .readValue(jsonStr, new TypeReference<Map<String, Object>>() { });
             jsonMap.put("datarepo_rootRowId", rootRowId);
-            LOG.debug("after jackson parsing");
 
             Object snapshotIds = jsonMap.get("datarepo_snapshotId");
             List<String> snapshotIdsList;
             try {
+                // pull out the snapshotId field in a List, if it exists
                 snapshotIdsList = (ArrayList<String>) snapshotIds;
+
+                // if it does not exist, then start with an empty list
+                if (snapshotIdsList == null) {
+                    snapshotIdsList = new ArrayList<>();
+                }
             } catch (ClassCastException ccEx) {
                 LOG.error("failed to parse datarepo_snapshotId field into a List");
                 throw new RuntimeException("Error parsing existing document");
             }
+
+            // add the current snapshot id to the List
             if (!snapshotIdsList.contains(snapshotId)) {
                 snapshotIdsList.add(snapshotId);
             }
+
+            // set the JSON property to the List
             jsonMap.put("datarepo_snapshotId", snapshotIdsList);
+
             return jsonMap;
         } catch (JsonProcessingException jsonEx) {
             throw new RuntimeException("Error processing JSON");
