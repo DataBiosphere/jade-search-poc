@@ -1,0 +1,75 @@
+=====================================================
+create a new index
+
+14:43:11.842 [main] INFO jadesearchpoc.Indexer - Index created successfully
+
+=====================================================
+confirm structure is correct
+
+14:45:09.636 [main] INFO jadesearchpoc.Indexer - properties = {
+  "properties" : {
+    "family_id" : {
+      "type" : "keyword"
+    },
+    "Phase1_E_Platform" : {
+      "type" : "keyword"
+    },
+    "population_description" : {
+      "type" : "text"
+    },
+    "EBV_Coverage" : {
+      "type" : "keyword"
+    },
+    "datarepo_rootRowId" : {
+      "type" : "keyword"
+    },
+    "super_population_description" : {
+      "type" : "text"
+    },
+    "Population" : {
+      "type" : "keyword"
+    },
+    "Super_Population" : {
+      "type" : "keyword"
+    },
+    "Phase1_LC_Centers" : {
+      "type" : "keyword"
+    },
+    "sample" : {
+      "type" : "keyword"
+    },
+    "datarepo_snapshotId" : {
+      "type" : "keyword"
+    }
+  }
+}
+14:45:09.640 [main] INFO jadesearchpoc.Indexer - aliases = [ ]
+
+=====================================================
+show the reader policy
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jadecli snapshot policy show 1000GenomesSnapshotE
+Policy steward
+  JadeStewards-dev@dev.test.firecloud.org
+
+Policy reader
+  mmdevverily@gmail.com
+
+Policy custodian
+  mmdevverily@gmail.com
+
+Policy discoverer
+
+marikomedlock-macbookpro:jade-search-poc marikomedlock$ jadecli snapshot policy show 1000GenomesSnapshotF
+Policy steward
+  JadeStewards-dev@dev.test.firecloud.org
+
+Policy discoverer
+
+Policy reader
+  mmdevverily@gmail.com
+  mmdevverily2@gmail.com
+
+Policy custodian
+  mmdevverily@gmail.com
+

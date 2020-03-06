@@ -1,0 +1,97 @@
+=====================================================
+create a new index
+
+poc create-index sampleindex7 --structure='
+{
+ "properties": {
+   "sample": {
+     "type": "keyword"
+   },
+   "family_id": {
+     "type": "keyword"
+   },
+   "population_description": {
+     "type": "text"
+   },
+   "Phase1_E_Platform": {
+     "type": "keyword"
+   },
+   "Super_Population": {
+     "type": "keyword"
+   },
+   "Phase1_LC_Centers": {
+     "type": "keyword"
+   },
+   "Population": {
+     "type": "keyword"
+   },
+   "super_population_description": {
+     "type": "text"
+   },
+   "EBV_Coverage": {
+     "type": "keyword"
+   }
+ }
+}
+'
+
+
+=====================================================
+confirm structure is correct
+
+poc show-index sampleindex7
+
+
+=====================================================
+index the rows in snapshots
+
+poc index-snapshot 1000GenomesSnapshotF --index=sampleindex7 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
+
+poc index-snapshot 1000GenomesSnapshotG --index=sampleindex7 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
+
+
+=====================================================
+show reader policy
+
+mmdevverily  =reader for A,B,F,G (so it can index all of the snapshots)
+mmdevverily2 =reader for B,G (so we should see fewer search results)
+
+jadecli snapshot policy show 1000GenomesSnapshotF
+jadecli snapshot policy show 1000GenomesSnapshotG
+
+
+=====================================================
+execute queries as mmdevverily, then mmdevverily2
+
+poc search-index sampleindex7 --query='
+{
+    "query": {
+        "term":  { "Population": "FIN" }
+    }
+}
+'
+
+poc search-index sampleindex7 --maxReturned=0 --query='
+{
+    "query": {
+        "match_all": { }
+    }
+}
+'
+
+rm ~/.jadecli/creds/StoredCredential
+
+
+=====================================================
+compare to what we see in BigQuery table
+
+select Snapshot,Access,Sample,Population,Population_Description from 
+
+  (select 'SnapshotF' as Snapshot, 'just mmdevverily' as Access,Sample,Population,Population_Description from `broad-jade-mm-data`.1000GenomesSnapshotF.sample_info
+
+  union all
+
+  select 'SnapshotG' as Snapshot, 'both' as Access,Sample,Population,Population_Description from `broad-jade-mm-data`.1000GenomesSnapshotG.sample_info)
+
+where Population='FIN'
+

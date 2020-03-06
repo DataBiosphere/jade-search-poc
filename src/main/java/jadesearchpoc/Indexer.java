@@ -114,6 +114,7 @@ public class Indexer {
             // check if there exists an ElasticSearch document with this id already
             SearchHit existingDocument = ElasticSearchUtils.findExistingDocumentId(indexName, rootRowId);
             LOG.debug("existingDocument id: " + ((existingDocument == null) ? null : existingDocument.getId()));
+            LOG.info("found existing document: " + (existingDocument != null));
 
             // if document does not already exist, or update is true,
             // then call user-supplied document generation code

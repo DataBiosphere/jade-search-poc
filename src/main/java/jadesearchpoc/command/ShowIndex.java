@@ -7,7 +7,7 @@ import picocli.CommandLine.Parameters;
 
 import java.util.concurrent.Callable;
 
-@Command(name = "show-index", description = "show the metadata for an index, use _all for all indices",
+@Command(name = "show-index", description = "show the metadata for an index",
         subcommands = { CommandLine.HelpCommand.class })
 public class ShowIndex implements Callable<Integer> {
 

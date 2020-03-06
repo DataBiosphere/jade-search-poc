@@ -102,6 +102,8 @@ public final class ElasticSearchUtils {
             } else if (indexResponse.getResult() == DocWriteResponse.Result.UPDATED) {
                 LOG.debug("existing index document updated");
             }
+
+            LOG.info("index document: " + request.source().utf8ToString());
         } catch (IOException ioEx) {
             LOG.debug(ioEx.getMessage());
             throw new RuntimeException("Error executing ElasticSearch index request");
