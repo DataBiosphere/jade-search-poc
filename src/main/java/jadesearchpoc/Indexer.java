@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -121,9 +120,7 @@ public class Indexer {
             String jsonStr;
             if (existingDocument == null || update.booleanValue()) {
                 jsonStr = buildIndexDocument(snapshot, rootRowId, buildIndexDocumentCmd);
-            }
-            // otherwise keep the existing document
-            else {
+            } else { // otherwise keep the existing document
                 jsonStr = existingDocument.getSourceAsString();
             }
             LOG.debug(jsonStr);
@@ -306,6 +303,7 @@ public class Indexer {
             // execute the create index request
             CreateIndexResponse createIndexResponse = APIPointers.getElasticsearchApi().indices()
                     .create(createRequest, RequestOptions.DEFAULT);
+            LOG.debug(createIndexResponse.index());
 
             // add on the Data Repo-specific mappings
             PutMappingRequest putRequest = new PutMappingRequest(indexName);
@@ -325,6 +323,7 @@ public class Indexer {
             // execute the put mapping request
             AcknowledgedResponse putMappingResponse = APIPointers.getElasticsearchApi().indices()
                     .putMapping(putRequest, RequestOptions.DEFAULT);
+            LOG.debug("putMapping isAcknowledged = " + putMappingResponse.isAcknowledged());
 
             LOG.info("Index created successfully");
 
@@ -350,6 +349,7 @@ public class Indexer {
             // execute the delete index request
             AcknowledgedResponse deleteIndexResponse = APIPointers.getElasticsearchApi().indices()
                     .delete(request, RequestOptions.DEFAULT);
+            LOG.debug("deleteIndex isAcknowledged = " + deleteIndexResponse.isAcknowledged());
 
             LOG.info("Index deleted successfully");
 

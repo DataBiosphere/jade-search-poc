@@ -46,7 +46,7 @@ rm -f tmp_sqloutput.json
 now=$(date '+%Y-%m-%d %H:%M:%S')
 
 # add the current date to the JSON document
-index_doc=$(echo $single_row | jq '. += {"date_created":"$now"}')
+index_doc=$(echo $single_row | jq '. += {"date_created":"'"$now"'"}')
 
 # print the final JSON document to stdout
 echo $index_doc

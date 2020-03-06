@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 public final class IAMUtils {
 
@@ -27,13 +25,12 @@ public final class IAMUtils {
      * @return a list of snapshot IDs
      */
     public static List<String> getSnapshotIdsForUserSAM() {
-//        return "bb2ea099-d621-42b6-b2b3-faaa95b20849";
         try {
             List<ResourceAndAccessPolicy> resources = listAuthorizedResources("datasnapshot");
 
             List<String> snapshotIds = new ArrayList<>();
 
-            for (int ctr=0; ctr<resources.size(); ctr++) {
+            for (int ctr = 0; ctr < resources.size(); ctr++) {
                 ResourceAndAccessPolicy resource = resources.get(ctr);
                 if (resource.getAccessPolicyName().equals("reader")) {
                     snapshotIds.add(resource.getResourceId());

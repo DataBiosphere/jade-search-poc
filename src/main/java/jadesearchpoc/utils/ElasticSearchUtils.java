@@ -3,7 +3,6 @@ package jadesearchpoc.utils;
 import com.google.api.client.http.HttpStatusCodes;
 import jadesearchpoc.application.APIPointers;
 import jadesearchpoc.application.Config;
-import org.apache.lucene.search.TotalHits;
 import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
