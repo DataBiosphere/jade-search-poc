@@ -44,8 +44,8 @@ public class Searcher {
             SearchSourceBuilder userQuerySource = new SearchSourceBuilder();
             SearchModule searchModule = new SearchModule(Settings.EMPTY, false, Collections.emptyList());
             try (XContentParser parser = XContentFactory.xContent(XContentType.JSON)
-                    .createParser(new NamedXContentRegistry(searchModule
-                    .getNamedXContents()), DeprecationHandler.THROW_UNSUPPORTED_OPERATION, queryStr)) {
+                    .createParser(new NamedXContentRegistry(searchModule.getNamedXContents()),
+                            DeprecationHandler.THROW_UNSUPPORTED_OPERATION, queryStr)) {
                 userQuerySource.parseXContent(parser);
             }
 
@@ -58,22 +58,27 @@ public class Searcher {
             BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
             boolQuery.must(userQuerySource.query());
             boolQuery.filter(filterQuery);
-            SearchSourceBuilder compoundQuerySource = new SearchSourceBuilder();
-            compoundQuerySource.query(boolQuery);
+
+            // update the query to be the wrapped query built above
+            userQuerySource.query(boolQuery);
+            // note the reason we don't build a new query source here is because re-using the existing one
+            // preserves any aggregations the user specified without having to parse and re-set them in the source
 
             // need to set top-level search parameters, such as size, on the compound query, not the user's query
             // other top-level parameters are here:
             // https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html
             if (maxReturned != null) {
-                compoundQuerySource.size(maxReturned);
+                userQuerySource.size(maxReturned);
             }
-            LOG.debug(compoundQuerySource.query().toString());
+            LOG.debug(userQuerySource.query().toString());
+            LOG.debug(userQuerySource.aggregations().toString());
 
             // execute search
-            SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, compoundQuerySource);
+            SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, userQuerySource);
 
             // print response to stdout
-            LOG.info(DisplayUtils.prettyPrintJson(searchResponse));
+            // (don't call Jackson to pretty-print here because it doesn't handle arrays of objects well)
+            LOG.info(searchResponse.toString());
 
             // cleanup
             APIPointers.closeElasticsearchApi();

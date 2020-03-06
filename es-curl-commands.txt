@@ -302,5 +302,53 @@ poc search-index sampleindex3 -q='
     ]
 
 
+curl -X POST "35.232.178.35:9200/sampleindex7/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "aggregations" : {
+        "population_count" : { "value_count" : { "field" : "Population" } },
+        "sample_count" : { "value_count" : { "field" : "sample" } }
+    }
+}
+'
 
-    
+curl -X GET "35.232.178.35:9200/sampleindex7/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "aggregations" : {
+        "populations" : {
+            "terms" : { "field" : "Population" }
+        }
+    }
+}
+'
+
+curl -X GET "35.232.178.35:9200/sampleindex7/_search?size=0&pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+            "term":  { "Population": "FIN" }
+        },
+    "aggregations" : {
+        "populations" : {
+            "terms" : { "field" : "Population" }
+        }
+    }
+}
+'
+
+
+'
+{
+    "query": {
+            "term":  { "Population": "FIN" }
+        }
+}
+'
+
+'
+ {
+     "aggregations" : {
+         "populations" : {
+             "terms" : { "field" : "Population" }
+         }
+     }
+ }
+ '
