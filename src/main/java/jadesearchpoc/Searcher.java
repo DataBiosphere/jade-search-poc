@@ -71,7 +71,9 @@ public class Searcher {
                 userQuerySource.size(maxReturned);
             }
             LOG.debug(userQuerySource.query().toString());
-            LOG.debug(userQuerySource.aggregations().toString());
+            if (userQuerySource.aggregations() != null) {
+                LOG.debug(userQuerySource.aggregations().toString());
+            }
 
             // execute search
             SearchResponse searchResponse = ElasticSearchUtils.searchAndCheckErrors(indexName, userQuerySource);

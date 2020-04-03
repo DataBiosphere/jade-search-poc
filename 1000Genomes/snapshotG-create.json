@@ -3,17 +3,18 @@
   "description": "Snapshot for public dataset 1000 Genomes.",
   "contents": [
     {
-      "source":
-      {
-        "datasetName": "1000GenomesDataset",
-        "assetName": "sample_pedigree"
-      },
-      "rootValues": [
-        "HG03167",
-        "NA20514",
-        "NA20792",
-        "HG00183"
-      ]
+      "datasetName": "1000GenomesDataset",
+      "mode": "byAsset",
+      "assetSpec": 
+        {
+          "assetName": "sample_pedigree",
+          "rootValues": [
+            "HG03167",
+            "NA20514",
+            "NA20792",
+            "HG00183"
+          ]
+        }
     }
   ]
 }
