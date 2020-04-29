@@ -1,7 +1,7 @@
 =====================================================
 create a new index
 
-poc create-index sampleindex7 --structure='
+poc create-index sampleindex8 --structure='
 {
  "properties": {
    "sample": {
@@ -39,15 +39,15 @@ poc create-index sampleindex7 --structure='
 =====================================================
 confirm structure is correct
 
-poc show-index sampleindex7
+poc show-index sampleindex8
 
 
 =====================================================
 index the rows in snapshots
 
-poc index-snapshot 1000GenomesSnapshotF --index=sampleindex7 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
+poc index-snapshot 1000GenomesSnapshotF --index=sampleindex8 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
 
-poc index-snapshot 1000GenomesSnapshotG --index=sampleindex7 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
+poc index-snapshot 1000GenomesSnapshotG --index=sampleindex8 --rootTable=sample_info --rootColumn=sample --buildIndexCmd="sh 1000Genomes/BuildIndexDocument1000Genomes.sh" --update=false
 
 
 =====================================================
@@ -63,7 +63,7 @@ jadecli snapshot policy show 1000GenomesSnapshotG
 =====================================================
 execute queries as mmdevverily, then mmdevverily2
 
-poc search-index sampleindex7 --query='
+poc search-index sampleindex8 --query='
 {
     "query": {
         "term":  { "Population": "FIN" }
@@ -71,7 +71,7 @@ poc search-index sampleindex7 --query='
 }
 '
 
-poc search-index sampleindex7 --maxReturned=0 --query='
+poc search-index sampleindex8 --maxReturned=0 --query='
 {
     "query": {
         "match_all": { }

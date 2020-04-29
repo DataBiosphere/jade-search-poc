@@ -28,11 +28,11 @@ rm ./dataset-create-tmp.json
 ===========================================
 - Create a dataset with the JSON request built above.
 
-alias jc=~/Workspaces/jade-data-repo-cli/build/install/jadecli/bin/jadecli
+alias jadecli=~/Workspaces/jade-data-repo-cli/build/install/jadecli/bin/jadecli
 
-jc profile create --name 1000GenomesProfile --account 00708C-45D19D-27AAFA
+jadecli profile create --name 1000GenomesProfile --account 00708C-45D19D-27AAFA
 
-jc dataset create --input-json ./dataset-create.json --profile 1000GenomesProfile
+jadecli dataset create --input-json ./dataset-create.json --profile 1000GenomesProfile
 
 If successful, the output looks like:
 class DatasetSummaryModel {
@@ -60,9 +60,9 @@ gsutil iam ch serviceAccount:jade-k8-sa@broad-jade-dev.iam.gserviceaccount.com:r
 ===========================================
 - Upload the BQ tabular data that does NOT include file references. This is the sample_info and pedigree tables.
 
-jc dataset table load --table sample_info --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_sample_info.json --input-format json 1000GenomesDataset
+jadecli dataset table load --table sample_info --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_sample_info.json --input-format json 1000GenomesDataset
 
-jc dataset table load --table pedigree  --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_pedigree.json --input-format json 1000GenomesDataset
+jadecli dataset table load --table pedigree  --input-gspath gs://broad-jade-mm-ingestdata/1000_genomes_pedigree.json --input-format json 1000GenomesDataset
 
 If successful, the output looks like:
 Loaded 3500 rows; 0 bad rows skipped
@@ -107,19 +107,19 @@ Loaded 5 rows; 0 bad rows skipped
 ===========================================
 - Create two Snapshots that contain different rows.
 
-jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotA --input-json ./snapshotA-create.json
+jadecli snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotF --input-json ./snapshotF-create.json
 
-jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotB --input-json ./snapshotB-create.json
+jc snapshot create --profile 1000GenomesProfile --name 1000GenomesSnapshotG --input-json ./snapshotG-create.json
 
 
 ===========================================
 - Add different users to the reader policy on each Snapshot. Note that the scrap Gmail accounts need to be registered users on dev Terra (https://bvdp-saturn-dev.appspot.com/).
 
-jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotA
+jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotF
 
-jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotB
+jc snapshot policy add --policy reader --email mmdevverily@gmail.com 1000GenomesSnapshotG
 
-jc snapshot policy add --policy reader --email mmdevverily2@gmail.com 1000GenomesSnapshotB
+jc snapshot policy add --policy reader --email mmdevverily2@gmail.com 1000GenomesSnapshotG
 
 If successful, the output looks like:
 Policy reader
