@@ -757,6 +757,71 @@
             "datatype": "STRING"
           }
         ]
+      },
+      {
+        "name":    "case",
+        "columns": [
+          {
+            "name": "CaseID",
+            "datatype": "STRING"
+          },
+          {
+            "name": "Project",
+            "datatype": "STRING"
+          },
+          {
+            "name": "PrimarySite",
+            "datatype": "STRING"
+          },
+          {
+            "name": "Gender",
+            "datatype": "STRING"
+          },
+          {
+            "name": "Files",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Seq",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Exp",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "SNV",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "CNV",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Meth",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Clinical",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Bio",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Mutations",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Genes",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Slides",
+            "datatype": "INTEGER"
+          }
+        ]
       }
     ],
     "relationships": [ ],

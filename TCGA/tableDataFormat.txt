@@ -4,10 +4,13 @@
 ## remove the nested objects and reformat it so that BigQuery will ingest it, and then to
 ## copy the files into the test bucket.
 
+# Table: biospecimen
 jq '.[] | .samples[] | del(.portions)' biospecimen.json > biospecimen_clean.json
 jq --slurp '.' biospecimen_clean.json | jq -c '.[]' >> biospecimen_clean_newline_delimited.json
 gsutil cp biospecimen_clean_newline_delimited.json gs://jade-testdata/tcga/biospecimen.json
 
+
+# Table: clinical
 # The clinical table download in JSON format seems to be broken on the website. Only TSV worked.
 awk 'BEGIN { FS="\t"; OFS="," } {$1=$1; print}' clinical.tsv > clinical.csv
 cat clinical.csv | perl -pe "s/\'--/null/g" >> clinical_withnull.csv
@@ -16,7 +19,19 @@ jq -f ../csv2json-helper.jq clinical_arrays.json | jq '.[]' | perl -pe "s/\"null
 jq --slurp '.' clinical_clean.json | jq -c '.[]' >> clinical_clean_newline_delimited.json
 gsutil cp clinical_clean_newline_delimited.json gs://jade-testdata/tcga/clinical.json
 
-# This is the command I used to generate the list of columns for the create-dataset payload.
+# This is the command I used to generate the list of columns in the clinical table for the create-dataset payload.
 # Afterwards, I manually modified the fields that had a different datatype.
 jq '.[0]' clinical_arrays.json | jq 'map({"name":.,"datatype":"STRING"})'
 
+
+# Table: case
+awk 'BEGIN { FS="\t"; OFS="," } {$1=$1; print}' explore-case-table.tsv > case.csv
+jq -R 'split(",")' case.csv | jq --slurp '.' >> case_arrays.json
+cat case_arrays.json | perl -pe "s/# //g" | perl -pe "s/Case ID/CaseID/g" | perl -pe "s/Primary Site/PrimarySite/g" >> case_arrays_clean.json
+jq -f ../csv2json-helper.jq case_arrays_clean.json | jq '.[]' >> case_clean.json
+jq --slurp '.' case_clean.json | jq -c '.[]' >> case_clean_newline_delimited.json
+gsutil cp case_clean_newline_delimited.json gs://jade-testdata/tcga/case.json
+
+# This is the command I used to generate the list of columns in the case table for the create-dataset payload.
+# Afterwards, I manually modified the fields that had a different datatype.
+jq '.[0]' case_arrays_clean.json | jq 'map({"name":.,"datatype":"STRING"})'
