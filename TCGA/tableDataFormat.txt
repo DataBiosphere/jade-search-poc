@@ -1,0 +1,22 @@
+## Scrap file.
+
+## These are the commands I used to process the downloaded tabular data in JSON format, to 
+## remove the nested objects and reformat it so that BigQuery will ingest it, and then to
+## copy the files into the test bucket.
+
+jq '.[] | .samples[] | del(.portions)' biospecimen.json > biospecimen_clean.json
+jq --slurp '.' biospecimen_clean.json | jq -c '.[]' >> biospecimen_clean_newline_delimited.json
+gsutil cp biospecimen_clean_newline_delimited.json gs://jade-testdata/tcga/biospecimen.json
+
+# The clinical table download in JSON format seems to be broken on the website. Only TSV worked.
+awk 'BEGIN { FS="\t"; OFS="," } {$1=$1; print}' clinical.tsv > clinical.csv
+cat clinical.csv | perl -pe "s/\'--/null/g" >> clinical_withnull.csv
+jq -R 'split(",")' clinical_withnull.csv | jq --slurp '.' >> clinical_arrays.json
+jq -f ../csv2json-helper.jq clinical_arrays.json | jq '.[]' | perl -pe "s/\"null\"/null/g" >> clinical_clean.json
+jq --slurp '.' clinical_clean.json | jq -c '.[]' >> clinical_clean_newline_delimited.json
+gsutil cp clinical_clean_newline_delimited.json gs://jade-testdata/tcga/clinical.json
+
+# This is the command I used to generate the list of columns for the create-dataset payload.
+# Afterwards, I manually modified the fields that had a different datatype.
+jq '.[0]' clinical_arrays.json | jq 'map({"name":.,"datatype":"STRING"})'
+

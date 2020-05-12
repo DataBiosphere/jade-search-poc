@@ -1,0 +1,765 @@
+{
+  "name": "TCGADatasetTemplate",
+  "defaultProfileId": "",
+  "description": "TCGA dataset.",
+  "schema": {
+    "tables": [
+      {
+        "name":    "biospecimen",
+        "columns": [
+          {
+            "name": "project_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "case_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "case_submitter_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sample_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sample_submitter_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "biospecimen_anatomic_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "biospecimen_laterality",
+            "datatype": "STRING"
+          },
+          {
+            "name": "catalog_reference",
+            "datatype": "STRING"
+          },
+          {
+            "name": "composition",
+            "datatype": "STRING"
+          },
+          {
+            "name": "current_weight",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "days_to_collection",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_sample_procurement",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "diagnosis_pathologically_confirmed",
+            "datatype": "BOOLEAN"
+          },
+          {
+            "name": "distance_normal_to_tumor",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "distributor_reference",
+            "datatype": "STRING"
+          },
+          {
+            "name": "freezing_method",
+            "datatype": "STRING"
+          },
+          {
+            "name": "growth_rate",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "initial_weight",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "intermediate_dimension",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "is_ffpe",
+            "datatype": "BOOLEAN"
+          },
+          {
+            "name": "longest_dimension",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "method_of_sample_procurement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "oct_embedded",
+            "datatype": "STRING"
+          },
+          {
+            "name": "passage_count",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "pathology_report_uuid",
+            "datatype": "STRING"
+          },
+          {
+            "name": "preservation_method",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sample_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sample_type_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "shortest_dimension",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "state",
+            "datatype": "STRING"
+          },
+          {
+            "name": "time_between_clamping_and_freezing",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "time_between_excision_and_freezing",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "tissue_collection_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tissue_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_code",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_code_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_descriptor",
+            "datatype": "STRING"
+          }
+        ]
+      },
+      {
+        "name":    "clinical",
+        "columns": [
+          {
+            "name": "case_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "case_submitter_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "project_id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "age_at_index",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "age_is_obfuscated",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cause_of_death",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cause_of_death_source",
+            "datatype": "STRING"
+          },
+          {
+            "name": "country_of_residence_at_enrollment",
+            "datatype": "STRING"
+          },
+          {
+            "name": "days_to_birth",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_death",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "ethnicity",
+            "datatype": "STRING"
+          },
+          {
+            "name": "gender",
+            "datatype": "STRING"
+          },
+          {
+            "name": "occupation_duration_years",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "premature_at_birth",
+            "datatype": "STRING"
+          },
+          {
+            "name": "race",
+            "datatype": "STRING"
+          },
+          {
+            "name": "vital_status",
+            "datatype": "STRING"
+          },
+          {
+            "name": "weeks_gestation_at_birth",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "year_of_birth",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "year_of_death",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "age_at_diagnosis",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "ajcc_clinical_m",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_clinical_n",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_clinical_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_clinical_t",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_pathologic_m",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_pathologic_n",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_pathologic_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_pathologic_t",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ajcc_staging_system_edition",
+            "datatype": "STRING"
+          },
+          {
+            "name": "anaplasia_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "anaplasia_present_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ann_arbor_b_symptoms",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ann_arbor_clinical_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ann_arbor_extranodal_involvement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ann_arbor_pathologic_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "best_overall_response",
+            "datatype": "STRING"
+          },
+          {
+            "name": "breslow_thickness",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "burkitt_lymphoma_clinical_variant",
+            "datatype": "STRING"
+          },
+          {
+            "name": "child_pugh_classification",
+            "datatype": "STRING"
+          },
+          {
+            "name": "circumferential_resection_margin",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "classification_of_tumor",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cog_liver_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cog_neuroblastoma_risk_group",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cog_renal_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "cog_rhabdomyosarcoma_risk_group",
+            "datatype": "STRING"
+          },
+          {
+            "name": "days_to_best_overall_response",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_diagnosis",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_last_follow_up",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_last_known_disease_status",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_recurrence",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "enneking_msts_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "enneking_msts_metastasis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "enneking_msts_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "enneking_msts_tumor_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "esophageal_columnar_dysplasia_degree",
+            "datatype": "STRING"
+          },
+          {
+            "name": "esophageal_columnar_metaplasia_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "figo_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "figo_staging_edition_year",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "first_symptom_prior_to_diagnosis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "gastric_esophageal_junction_involvement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "gleason_grade_group",
+            "datatype": "STRING"
+          },
+          {
+            "name": "gleason_grade_tertiary",
+            "datatype": "STRING"
+          },
+          {
+            "name": "gleason_patterns_percent",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "goblet_cells_columnar_mucosa_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "greatest_tumor_dimension",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "gross_tumor_weight",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "icd_10_code",
+            "datatype": "STRING"
+          },
+          {
+            "name": "igcccg_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "inpc_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "inpc_histologic_group",
+            "datatype": "STRING"
+          },
+          {
+            "name": "inrg_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "inss_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "international_prognostic_index",
+            "datatype": "STRING"
+          },
+          {
+            "name": "irs_group",
+            "datatype": "STRING"
+          },
+          {
+            "name": "irs_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ishak_fibrosis_score",
+            "datatype": "STRING"
+          },
+          {
+            "name": "iss_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "largest_extrapelvic_peritoneal_focus",
+            "datatype": "STRING"
+          },
+          {
+            "name": "last_known_disease_status",
+            "datatype": "STRING"
+          },
+          {
+            "name": "laterality",
+            "datatype": "STRING"
+          },
+          {
+            "name": "lymph_node_involved_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "lymph_nodes_positive",
+            "datatype": "STRING"
+          },
+          {
+            "name": "lymph_nodes_tested",
+            "datatype": "STRING"
+          },
+          {
+            "name": "lymphatic_invasion_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "margin_distance",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "margins_involved_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "masaoka_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "medulloblastoma_molecular_classification",
+            "datatype": "STRING"
+          },
+          {
+            "name": "metastasis_at_diagnosis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "metastasis_at_diagnosis_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "method_of_diagnosis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "micropapillary_features",
+            "datatype": "STRING"
+          },
+          {
+            "name": "mitosis_karyorrhexis_index",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "mitotic_count",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "morphology",
+            "datatype": "STRING"
+          },
+          {
+            "name": "non_nodal_regional_disease",
+            "datatype": "STRING"
+          },
+          {
+            "name": "non_nodal_tumor_deposits",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ovarian_specimen_status",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ovarian_surface_involvement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "papillary_renal_cell_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "percent_tumor_invasion",
+            "datatype": "STRING"
+          },
+          {
+            "name": "perineural_invasion_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "peripancreatic_lymph_nodes_positive",
+            "datatype": "STRING"
+          },
+          {
+            "name": "peripancreatic_lymph_nodes_tested",
+            "datatype": "STRING"
+          },
+          {
+            "name": "peritoneal_fluid_cytological_status",
+            "datatype": "STRING"
+          },
+          {
+            "name": "pregnant_at_diagnosis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_diagnosis",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_gleason_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "prior_malignancy",
+            "datatype": "STRING"
+          },
+          {
+            "name": "prior_treatment",
+            "datatype": "STRING"
+          },
+          {
+            "name": "progression_or_recurrence",
+            "datatype": "STRING"
+          },
+          {
+            "name": "residual_disease",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_gleason_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "site_of_resection_or_biopsy",
+            "datatype": "STRING"
+          },
+          {
+            "name": "supratentorial_localization",
+            "datatype": "STRING"
+          },
+          {
+            "name": "synchronous_malignancy",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tissue_or_organ_of_origin",
+            "datatype": "STRING"
+          },
+          {
+            "name": "transglottic_extension",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_confined_to_organ_of_origin",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_depth",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_focality",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_largest_dimension_diameter",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_regression_grade",
+            "datatype": "STRING"
+          },
+          {
+            "name": "tumor_stage",
+            "datatype": "STRING"
+          },
+          {
+            "name": "vascular_invasion_present",
+            "datatype": "STRING"
+          },
+          {
+            "name": "vascular_invasion_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "weiss_assessment_score",
+            "datatype": "STRING"
+          },
+          {
+            "name": "wilms_tumor_histologic_subtype",
+            "datatype": "STRING"
+          },
+          {
+            "name": "year_of_diagnosis",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "chemo_concurrent_to_radiation",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_treatment_end",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "days_to_treatment_start",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "initial_disease_status",
+            "datatype": "STRING"
+          },
+          {
+            "name": "number_of_cycles",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "reason_treatment_ended",
+            "datatype": "STRING"
+          },
+          {
+            "name": "regimen_or_line_of_therapy",
+            "datatype": "STRING"
+          },
+          {
+            "name": "therapeutic_agents",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_anatomic_site",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_arm",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_dose",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "treatment_dose_units",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_effect",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_effect_indicator",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_frequency",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_intent_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_or_therapy",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_outcome",
+            "datatype": "STRING"
+          },
+          {
+            "name": "treatment_type",
+            "datatype": "STRING"
+          }
+        ]
+      }
+    ],
+    "relationships": [ ],
+    "assets":        [ ]
+  }
+}
