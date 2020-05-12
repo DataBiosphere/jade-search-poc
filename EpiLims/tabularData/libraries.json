@@ -1,0 +1,565 @@
+{
+  "id": "DNA_Lib 9268",
+  "aliases": [],
+  "generated_by": "ChIP 9434",
+  "used_by": [
+    "sequencing_copa_13824",
+    "sequencing_copa_14334"
+  ]
+}
+{
+  "id": "DNA_Lib 10083",
+  "aliases": [],
+  "generated_by": "ChIP 10128",
+  "used_by": [
+    "sequencing_copa_16176"
+  ]
+}
+{
+  "id": "DNA_Lib 9370",
+  "aliases": [],
+  "generated_by": "ChIP 9526",
+  "used_by": [
+    "sequencing_copa_14002",
+    "sequencing_copa_14342"
+  ]
+}
+{
+  "id": "DNA_Lib 9581",
+  "aliases": [],
+  "generated_by": "ChIP 9658",
+  "used_by": [
+    "sequencing_copa_14409"
+  ]
+}
+{
+  "id": "DNA_Lib 9380",
+  "aliases": [],
+  "generated_by": "ChIP 9536",
+  "used_by": [
+    "sequencing_copa_13878",
+    "sequencing_copa_14356"
+  ]
+}
+{
+  "id": "DNA_Lib 9373",
+  "aliases": [],
+  "generated_by": "ChIP 9529",
+  "used_by": [
+    "sequencing_copa_14349",
+    "sequencing_copa_13871"
+  ]
+}
+{
+  "id": "DNA_Lib 9586",
+  "aliases": [],
+  "generated_by": "ChIP 9663",
+  "used_by": [
+    "sequencing_copa_14513",
+    "sequencing_copa_14398"
+  ]
+}
+{
+  "id": "DNA_Lib 9587",
+  "aliases": [],
+  "generated_by": "ChIP 9664",
+  "used_by": [
+    "sequencing_copa_14399",
+    "sequencing_copa_14514"
+  ]
+}
+{
+  "id": "DNA_Lib 9366",
+  "aliases": [],
+  "generated_by": "ChIP 9522",
+  "used_by": [
+    "sequencing_copa_13998",
+    "sequencing_copa_14338"
+  ]
+}
+{
+  "id": "DNA_Lib 9577",
+  "aliases": [],
+  "generated_by": "ChIP 9654",
+  "used_by": [
+    "sequencing_copa_14391",
+    "sequencing_copa_14506"
+  ]
+}
+{
+  "id": "DNA_Lib 9368",
+  "aliases": [],
+  "generated_by": "ChIP 9524",
+  "used_by": [
+    "sequencing_copa_14000",
+    "sequencing_copa_14340"
+  ]
+}
+{
+  "id": "DNA_Lib 10084",
+  "aliases": [],
+  "generated_by": "ChIP 10129",
+  "used_by": [
+    "sequencing_copa_16177"
+  ]
+}
+{
+  "id": "DNA_Lib 10095",
+  "aliases": [],
+  "generated_by": "ChIP 10140",
+  "used_by": [
+    "sequencing_copa_16187"
+  ]
+}
+{
+  "id": "DNA_Lib 9375",
+  "aliases": [],
+  "generated_by": "ChIP 9531",
+  "used_by": [
+    "sequencing_copa_13873",
+    "sequencing_copa_14351"
+  ]
+}
+{
+  "id": "DNA_Lib 10078",
+  "aliases": [],
+  "generated_by": "ChIP 10123",
+  "used_by": [
+    "sequencing_copa_16170"
+  ]
+}
+{
+  "id": "DNA_Lib 9381",
+  "aliases": [],
+  "generated_by": "ChIP 9537",
+  "used_by": [
+    "sequencing_copa_13879",
+    "sequencing_copa_14357"
+  ]
+}
+{
+  "id": "DNA_Lib 9590",
+  "aliases": [],
+  "generated_by": "ChIP 9667",
+  "used_by": [
+    "sequencing_copa_14411"
+  ]
+}
+{
+  "id": "DNA_Lib 10082",
+  "aliases": [],
+  "generated_by": "ChIP 10127",
+  "used_by": [
+    "sequencing_copa_16175"
+  ]
+}
+{
+  "id": "DNA_Lib 9269",
+  "aliases": [],
+  "generated_by": "ChIP 9443",
+  "used_by": [
+    "sequencing_copa_13825",
+    "sequencing_copa_13619",
+    "sequencing_copa_14335"
+  ]
+}
+{
+  "id": "DNA_Lib 9367",
+  "aliases": [],
+  "generated_by": "ChIP 9523",
+  "used_by": [
+    "sequencing_copa_14339",
+    "sequencing_copa_13999"
+  ]
+}
+{
+  "id": "DNA_Lib 9580",
+  "aliases": [],
+  "generated_by": "ChIP 9657",
+  "used_by": [
+    "sequencing_copa_14509",
+    "sequencing_copa_14394"
+  ]
+}
+{
+  "id": "DNA_Lib 10080",
+  "aliases": [],
+  "generated_by": "ChIP 10125",
+  "used_by": [
+    "sequencing_copa_16173"
+  ]
+}
+{
+  "id": "DNA_Lib 9582",
+  "aliases": [],
+  "generated_by": "ChIP 9659",
+  "used_by": [
+    "sequencing_copa_14510",
+    "sequencing_copa_14395"
+  ]
+}
+{
+  "id": "DNA_Lib 10092",
+  "aliases": [],
+  "generated_by": "ChIP 10137",
+  "used_by": [
+    "sequencing_copa_16184"
+  ]
+}
+{
+  "id": "DNA_Lib 10085",
+  "aliases": [],
+  "generated_by": "ChIP 10130",
+  "used_by": [
+    "sequencing_copa_16172"
+  ]
+}
+{
+  "id": "DNA_Lib 9377",
+  "aliases": [],
+  "generated_by": "ChIP 9533",
+  "used_by": [
+    "sequencing_copa_13875",
+    "sequencing_copa_14353"
+  ]
+}
+{
+  "id": "DNA_Lib 9383",
+  "aliases": [],
+  "generated_by": "ChIP 9539",
+  "used_by": [
+    "sequencing_copa_13881",
+    "sequencing_copa_14359"
+  ]
+}
+{
+  "id": "DNA_Lib 9584",
+  "aliases": [],
+  "generated_by": "ChIP 9661",
+  "used_by": [
+    "sequencing_copa_14512",
+    "sequencing_copa_14397"
+  ]
+}
+{
+  "id": "DNA_Lib 9382",
+  "aliases": [],
+  "generated_by": "ChIP 9538",
+  "used_by": [
+    "sequencing_copa_13880",
+    "sequencing_copa_14358"
+  ]
+}
+{
+  "id": "DNA_Lib 9583",
+  "aliases": [],
+  "generated_by": "ChIP 9660",
+  "used_by": [
+    "sequencing_copa_14396",
+    "sequencing_copa_14511"
+  ]
+}
+{
+  "id": "DNA_Lib 10096",
+  "aliases": [],
+  "generated_by": "ChIP 10141",
+  "used_by": [
+    "sequencing_copa_16188"
+  ]
+}
+{
+  "id": "DNA_Lib 10093",
+  "aliases": [],
+  "generated_by": "ChIP 10138",
+  "used_by": [
+    "sequencing_copa_16185"
+  ]
+}
+{
+  "id": "DNA_Lib 9270",
+  "aliases": [],
+  "generated_by": "ChIP 9444",
+  "used_by": [
+    "sequencing_copa_14336",
+    "sequencing_copa_13826"
+  ]
+}
+{
+  "id": "DNA_Lib 10076",
+  "aliases": [],
+  "generated_by": "ChIP 10121",
+  "used_by": [
+    "sequencing_copa_16168"
+  ]
+}
+{
+  "id": "DNA_Lib 9378",
+  "aliases": [],
+  "generated_by": "ChIP 9534",
+  "used_by": [
+    "sequencing_copa_13876",
+    "sequencing_copa_14354"
+  ]
+}
+{
+  "id": "DNA_Lib 9376",
+  "aliases": [],
+  "generated_by": "ChIP 9532",
+  "used_by": [
+    "sequencing_copa_13874",
+    "sequencing_copa_14352"
+  ]
+}
+{
+  "id": "DNA_Lib 10073",
+  "aliases": [],
+  "generated_by": "ChIP 10118",
+  "used_by": [
+    "sequencing_copa_16165"
+  ]
+}
+{
+  "id": "DNA_Lib 10079",
+  "aliases": [],
+  "generated_by": "ChIP 10124",
+  "used_by": [
+    "sequencing_copa_16171"
+  ]
+}
+{
+  "id": "DNA_Lib 10081",
+  "aliases": [],
+  "generated_by": "ChIP 10126",
+  "used_by": [
+    "sequencing_copa_16174"
+  ]
+}
+{
+  "id": "DNA_Lib 10094",
+  "aliases": [],
+  "generated_by": "ChIP 10139",
+  "used_by": [
+    "sequencing_copa_16186"
+  ]
+}
+{
+  "id": "DNA_Lib 9579",
+  "aliases": [],
+  "generated_by": "ChIP 9656",
+  "used_by": [
+    "sequencing_copa_14508",
+    "sequencing_copa_14393"
+  ]
+}
+{
+  "id": "DNA_Lib 9578",
+  "aliases": [],
+  "generated_by": "ChIP 9655",
+  "used_by": [
+    "sequencing_copa_14392",
+    "sequencing_copa_14507"
+  ]
+}
+{
+  "id": "DNA_Lib 9371",
+  "aliases": [],
+  "generated_by": "ChIP 9527",
+  "used_by": [
+    "sequencing_copa_13869",
+    "sequencing_copa_14347"
+  ]
+}
+{
+  "id": "DNA_Lib 10088",
+  "aliases": [],
+  "generated_by": "ChIP 10133",
+  "used_by": [
+    "sequencing_copa_16180"
+  ]
+}
+{
+  "id": "DNA_Lib 10089",
+  "aliases": [],
+  "generated_by": "ChIP 10134",
+  "used_by": [
+    "sequencing_copa_16181"
+  ]
+}
+{
+  "id": "DNA_Lib 9576",
+  "aliases": [],
+  "generated_by": "ChIP 9653",
+  "used_by": [
+    "sequencing_copa_14505",
+    "sequencing_copa_14390"
+  ]
+}
+{
+  "id": "DNA_Lib 10086",
+  "aliases": [],
+  "generated_by": "ChIP 10131",
+  "used_by": [
+    "sequencing_copa_16178"
+  ]
+}
+{
+  "id": "DNA_Lib 9364",
+  "aliases": [],
+  "generated_by": "ChIP 9520",
+  "used_by": [
+    "sequencing_copa_13868",
+    "sequencing_copa_14346"
+  ]
+}
+{
+  "id": "DNA_Lib 9589",
+  "aliases": [],
+  "generated_by": "ChIP 9666",
+  "used_by": [
+    "sequencing_copa_14410"
+  ]
+}
+{
+  "id": "DNA_Lib 10075",
+  "aliases": [],
+  "generated_by": "ChIP 10120",
+  "used_by": [
+    "sequencing_copa_16167"
+  ]
+}
+{
+  "id": "DNA_Lib 9591",
+  "aliases": [],
+  "generated_by": "ChIP 9668",
+  "used_by": [
+    "sequencing_copa_14412"
+  ]
+}
+{
+  "id": "DNA_Lib 9575",
+  "aliases": [],
+  "generated_by": "ChIP 9652",
+  "used_by": [
+    "sequencing_copa_14504",
+    "sequencing_copa_14389"
+  ]
+}
+{
+  "id": "DNA_Lib 9588",
+  "aliases": [],
+  "generated_by": "ChIP 9665",
+  "used_by": [
+    "sequencing_copa_14515",
+    "sequencing_copa_14400"
+  ]
+}
+{
+  "id": "DNA_Lib 9372",
+  "aliases": [],
+  "generated_by": "ChIP 9528",
+  "used_by": [
+    "sequencing_copa_13870",
+    "sequencing_copa_14348"
+  ]
+}
+{
+  "id": "DNA_Lib 10091",
+  "aliases": [],
+  "generated_by": "ChIP 10136",
+  "used_by": [
+    "sequencing_copa_16183"
+  ]
+}
+{
+  "id": "DNA_Lib 9369",
+  "aliases": [],
+  "generated_by": "ChIP 9525",
+  "used_by": [
+    "sequencing_copa_14341",
+    "sequencing_copa_14001"
+  ]
+}
+{
+  "id": "DNA_Lib 9374",
+  "aliases": [],
+  "generated_by": "ChIP 9530",
+  "used_by": [
+    "sequencing_copa_14350",
+    "sequencing_copa_13872"
+  ]
+}
+{
+  "id": "DNA_Lib 9365",
+  "aliases": [],
+  "generated_by": "ChIP 9521",
+  "used_by": [
+    "sequencing_copa_13997",
+    "sequencing_copa_14337"
+  ]
+}
+{
+  "id": "DNA_Lib 9363",
+  "aliases": [],
+  "generated_by": "ChIP 9519",
+  "used_by": [
+    "sequencing_copa_13867",
+    "sequencing_copa_14345"
+  ]
+}
+{
+  "id": "DNA_Lib 10098",
+  "aliases": [],
+  "generated_by": "ChIP 10143",
+  "used_by": [
+    "sequencing_copa_16190"
+  ]
+}
+{
+  "id": "DNA_Lib 10090",
+  "aliases": [],
+  "generated_by": "ChIP 10135",
+  "used_by": [
+    "sequencing_copa_16182"
+  ]
+}
+{
+  "id": "DNA_Lib 10074",
+  "aliases": [],
+  "generated_by": "ChIP 10119",
+  "used_by": [
+    "sequencing_copa_16166"
+  ]
+}
+{
+  "id": "DNA_Lib 10097",
+  "aliases": [],
+  "generated_by": "ChIP 10142",
+  "used_by": [
+    "sequencing_copa_16189"
+  ]
+}
+{
+  "id": "DNA_Lib 10087",
+  "aliases": [],
+  "generated_by": "ChIP 10132",
+  "used_by": [
+    "sequencing_copa_16179"
+  ]
+}
+{
+  "id": "DNA_Lib 10077",
+  "aliases": [],
+  "generated_by": "ChIP 10122",
+  "used_by": [
+    "sequencing_copa_16169"
+  ]
+}
+{
+  "id": "DNA_Lib 9379",
+  "aliases": [],
+  "generated_by": "ChIP 9535",
+  "used_by": [
+    "sequencing_copa_14355",
+    "sequencing_copa_13877"
+  ]
+}

@@ -1,0 +1,906 @@
+{
+  "id": "BioSam 3168",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived": [
+    "BioSAli 7164"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3173",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 966"
+  ],
+  "derived": [
+    "BioSAli 7167"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3172",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived": [
+    "BioSAli 6798"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3171",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived": [
+    "BioSAli 6799"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3169",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived": [
+    "BioSAli 7165"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3170",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived": [
+    "BioSAli 6800"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3174",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:32 UTC",
+  "modified_at": "2018-04-09 18:50:32 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 966"
+  ],
+  "derived": [
+    "BioSAli 7166"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3451",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:13 UTC",
+  "modified_at": "2019-01-24 15:02:13 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1139"
+  ],
+  "derived": [
+    "BioSAli 7441"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3452",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:13 UTC",
+  "modified_at": "2019-01-24 15:02:14 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1139"
+  ],
+  "derived": [
+    "BioSAli 7442"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3453",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:14 UTC",
+  "modified_at": "2019-01-24 15:02:14 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1140"
+  ],
+  "derived": [
+    "BioSAli 7443"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3457",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:14 UTC",
+  "modified_at": "2019-01-24 15:02:14 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1142"
+  ],
+  "derived": [
+    "BioSAli 7447"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3458",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:14 UTC",
+  "modified_at": "2019-01-24 15:02:14 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1142"
+  ],
+  "derived": [
+    "BioSAli 7448"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3454",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:14 UTC",
+  "modified_at": "2019-01-24 15:02:14 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1140"
+  ],
+  "derived": [
+    "BioSAli 7444"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3165",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived": [
+    "BioSAli 6706"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3160",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived": [
+    "BioSAli 6804"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3164",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived": [
+    "BioSAli 6802"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3161",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived": [
+    "BioSAli 6803"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3159",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:30 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived": [
+    "BioSAli 6805"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3166",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived": [
+    "BioSAli 6801"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3167",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived": [
+    "BioSAli 7163"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3162",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 962"
+  ],
+  "derived": [
+    "BioSAli 7161"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3163",
+  "aliases": [],
+  "created_at": "2018-04-09 18:50:31 UTC",
+  "modified_at": "2018-04-09 18:50:31 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 962"
+  ],
+  "derived": [
+    "BioSAli 7162"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3472",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1149"
+  ],
+  "derived": [
+    "BioSAli 7462"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3470",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1148"
+  ],
+  "derived": [
+    "BioSAli 7460"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3468",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1147"
+  ],
+  "derived": [
+    "BioSAli 7458"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3471",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1149"
+  ],
+  "derived": [
+    "BioSAli 7461"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3467",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1147"
+  ],
+  "derived": [
+    "BioSAli 7457"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSam 3469",
+  "aliases": [],
+  "created_at": "2019-01-24 15:02:15 UTC",
+  "modified_at": "2019-01-24 15:02:15 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1148"
+  ],
+  "derived": [
+    "BioSAli 7459"
+  ],
+  "used_by": []
+}
+{
+  "id": "BioSAli 7441",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:50 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1139"
+  ],
+  "derived_from": "BioSam 3451",
+  "derived": [],
+  "used_by": [
+    "ChIP 10118",
+    "ChIP 10132"
+  ]
+}
+{
+  "id": "BioSAli 7442",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:50 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1139"
+  ],
+  "derived_from": "BioSam 3452",
+  "derived": [],
+  "used_by": [
+    "ChIP 10133",
+    "ChIP 10119"
+  ]
+}
+{
+  "id": "BioSAli 7443",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:51 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1140"
+  ],
+  "derived_from": "BioSam 3453",
+  "derived": [],
+  "used_by": [
+    "ChIP 10120",
+    "ChIP 10134",
+    "ChIP 10130"
+  ]
+}
+{
+  "id": "BioSAli 7444",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:51 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1140"
+  ],
+  "derived_from": "BioSam 3454",
+  "derived": [],
+  "used_by": [
+    "ChIP 10121",
+    "ChIP 10135"
+  ]
+}
+{
+  "id": "BioSAli 7447",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:51 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1142"
+  ],
+  "derived_from": "BioSam 3457",
+  "derived": [],
+  "used_by": [
+    "ChIP 10136",
+    "ChIP 10122"
+  ]
+}
+{
+  "id": "BioSAli 7448",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:51 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1142"
+  ],
+  "derived_from": "BioSam 3458",
+  "derived": [],
+  "used_by": [
+    "ChIP 10123",
+    "ChIP 10137"
+  ]
+}
+{
+  "id": "BioSAli 7457",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:51 UTC",
+  "modified_at": "2019-02-06 16:39:25 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1147"
+  ],
+  "derived_from": "BioSam 3467",
+  "derived": [],
+  "used_by": [
+    "ChIP 10124",
+    "ChIP 10138"
+  ]
+}
+{
+  "id": "BioSAli 7458",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:52 UTC",
+  "modified_at": "2019-02-06 16:39:26 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1147"
+  ],
+  "derived_from": "BioSam 3468",
+  "derived": [],
+  "used_by": [
+    "ChIP 10125",
+    "ChIP 10139"
+  ]
+}
+{
+  "id": "BioSAli 7459",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:52 UTC",
+  "modified_at": "2019-02-06 16:39:26 UTC",
+  "obtained_at": "2018-04-06 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1148"
+  ],
+  "derived_from": "BioSam 3469",
+  "derived": [],
+  "used_by": [
+    "ChIP 10126",
+    "ChIP 10140"
+  ]
+}
+{
+  "id": "BioSAli 7460",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:52 UTC",
+  "modified_at": "2019-02-06 16:39:26 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1148"
+  ],
+  "derived_from": "BioSam 3470",
+  "derived": [],
+  "used_by": [
+    "ChIP 10127",
+    "ChIP 10141"
+  ]
+}
+{
+  "id": "BioSAli 7461",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:52 UTC",
+  "modified_at": "2019-02-06 16:39:26 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1149"
+  ],
+  "derived_from": "BioSam 3471",
+  "derived": [],
+  "used_by": [
+    "ChIP 10128",
+    "ChIP 10142",
+    "ChIP 10131"
+  ]
+}
+{
+  "id": "BioSAli 7462",
+  "aliases": [],
+  "created_at": "2019-01-24 15:20:52 UTC",
+  "modified_at": "2019-02-06 16:39:26 UTC",
+  "obtained_at": "2018-05-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 1149"
+  ],
+  "derived_from": "BioSam 3472",
+  "derived": [],
+  "used_by": [
+    "ChIP 10143",
+    "ChIP 10129"
+  ]
+}
+{
+  "id": "BioSAli 6706",
+  "aliases": [],
+  "created_at": "2018-05-03 15:54:48 UTC",
+  "modified_at": "2018-05-03 15:55:30 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived_from": "BioSAli 6649",
+  "derived": [],
+  "used_by": [
+    "ChIP 9443",
+    "ChIP 9434",
+    "ChIP 9444"
+  ]
+}
+{
+  "id": "BioSAli 6805",
+  "aliases": [],
+  "created_at": "2018-06-13 20:38:36 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived_from": "BioSAli 6790",
+  "derived": [],
+  "used_by": [
+    "ChIP 9526",
+    "ChIP 9534",
+    "ChIP 9539"
+  ]
+}
+{
+  "id": "BioSAli 6804",
+  "aliases": [],
+  "created_at": "2018-06-13 20:38:18 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived_from": "BioSAli 6791",
+  "derived": [],
+  "used_by": [
+    "ChIP 9533",
+    "ChIP 9525",
+    "ChIP 9538"
+  ]
+}
+{
+  "id": "BioSAli 6803",
+  "aliases": [],
+  "created_at": "2018-06-13 20:38:05 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 961"
+  ],
+  "derived_from": "BioSAli 6792",
+  "derived": [],
+  "used_by": [
+    "ChIP 9532",
+    "ChIP 9537",
+    "ChIP 9524"
+  ]
+}
+{
+  "id": "BioSAli 6802",
+  "aliases": [],
+  "created_at": "2018-06-13 20:37:50 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived_from": "BioSAli 6793",
+  "derived": [],
+  "used_by": [
+    "ChIP 9523",
+    "ChIP 9531"
+  ]
+}
+{
+  "id": "BioSAli 6801",
+  "aliases": [],
+  "created_at": "2018-06-13 20:37:39 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 963"
+  ],
+  "derived_from": "BioSAli 6794",
+  "derived": [],
+  "used_by": [
+    "ChIP 9530",
+    "ChIP 9536",
+    "ChIP 9522"
+  ]
+}
+{
+  "id": "BioSAli 6800",
+  "aliases": [],
+  "created_at": "2018-06-13 20:37:25 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived_from": "BioSAli 6795",
+  "derived": [],
+  "used_by": [
+    "ChIP 9521",
+    "ChIP 9529"
+  ]
+}
+{
+  "id": "BioSAli 6799",
+  "aliases": [],
+  "created_at": "2018-06-13 20:37:14 UTC",
+  "modified_at": "2018-08-13 14:11:44 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived_from": "BioSAli 6796",
+  "derived": [],
+  "used_by": [
+    "ChIP 9528",
+    "ChIP 9520"
+  ]
+}
+{
+  "id": "BioSAli 6798",
+  "aliases": [],
+  "created_at": "2018-06-13 20:36:59 UTC",
+  "modified_at": "2018-08-13 14:11:43 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 965"
+  ],
+  "derived_from": "BioSAli 6797",
+  "derived": [],
+  "used_by": [
+    "ChIP 9519",
+    "ChIP 9535",
+    "ChIP 9527"
+  ]
+}
+{
+  "id": "BioSAli 7161",
+  "aliases": [],
+  "created_at": "2018-08-13 14:18:23 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 962"
+  ],
+  "derived_from": "BioSAli 7154",
+  "derived": [],
+  "used_by": [
+    "ChIP 9652",
+    "ChIP 9659"
+  ]
+}
+{
+  "id": "BioSAli 7162",
+  "aliases": [],
+  "created_at": "2018-08-13 14:18:35 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 962"
+  ],
+  "derived_from": "BioSAli 7155",
+  "derived": [],
+  "used_by": [
+    "ChIP 9666",
+    "ChIP 9653",
+    "ChIP 9660"
+  ]
+}
+{
+  "id": "BioSAli 7163",
+  "aliases": [],
+  "created_at": "2018-08-13 14:18:44 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived_from": "BioSAli 7156",
+  "derived": [],
+  "used_by": [
+    "ChIP 9661",
+    "ChIP 9654"
+  ]
+}
+{
+  "id": "BioSAli 7164",
+  "aliases": [],
+  "created_at": "2018-08-13 14:19:10 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived_from": "BioSAli 7157",
+  "derived": [],
+  "used_by": [
+    "ChIP 9655"
+  ]
+}
+{
+  "id": "BioSAli 7165",
+  "aliases": [],
+  "created_at": "2018-08-13 14:19:26 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 964"
+  ],
+  "derived_from": "BioSAli 7158",
+  "derived": [],
+  "used_by": [
+    "ChIP 9663",
+    "ChIP 9667",
+    "ChIP 9656"
+  ]
+}
+{
+  "id": "BioSAli 7166",
+  "aliases": [],
+  "created_at": "2018-08-13 14:19:38 UTC",
+  "modified_at": "2018-08-13 14:22:12 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 966"
+  ],
+  "derived_from": "BioSAli 7159",
+  "derived": [],
+  "used_by": [
+    "ChIP 9657",
+    "ChIP 9664",
+    "ChIP 9668"
+  ]
+}
+{
+  "id": "BioSAli 7167",
+  "aliases": [],
+  "created_at": "2018-08-13 14:19:51 UTC",
+  "modified_at": "2018-08-13 14:22:13 UTC",
+  "obtained_at": "2018-04-04 04:00:00 UTC",
+  "sample_type": "Primary Tissue",
+  "donated_by": [
+    "Donor 966"
+  ],
+  "derived_from": "BioSAli 7160",
+  "derived": [],
+  "used_by": [
+    "ChIP 9658",
+    "ChIP 9665"
+  ]
+}

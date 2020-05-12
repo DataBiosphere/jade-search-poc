@@ -1,0 +1,6344 @@
+{
+  "id": "sequencing_file_lane_subset_23772_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13619"
+  ],
+  "used_by": [
+    "alignment_36333"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23773_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13619"
+  ],
+  "used_by": [
+    "alignment_36334"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23955_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13824"
+  ],
+  "used_by": [
+    "alignment_36706"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23954_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13824"
+  ],
+  "used_by": [
+    "alignment_36705"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23953_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13825"
+  ],
+  "used_by": [
+    "alignment_36686"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23952_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13825"
+  ],
+  "used_by": [
+    "alignment_36685"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23950_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13826"
+  ],
+  "used_by": [
+    "alignment_36693"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_23951_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13826"
+  ],
+  "used_by": [
+    "alignment_36694"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24595_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13997"
+  ],
+  "used_by": [
+    "alignment_37332"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24594_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13997"
+  ],
+  "used_by": [
+    "alignment_37331"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24597_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13998"
+  ],
+  "used_by": [
+    "alignment_37338"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24596_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13998"
+  ],
+  "used_by": [
+    "alignment_37337"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24599_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13999"
+  ],
+  "used_by": [
+    "alignment_37342"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24598_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_13999"
+  ],
+  "used_by": [
+    "alignment_37341"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24601_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14000"
+  ],
+  "used_by": [
+    "alignment_37344"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24600_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14000"
+  ],
+  "used_by": [
+    "alignment_37343"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24580_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14001"
+  ],
+  "used_by": [
+    "alignment_37333"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24581_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14001"
+  ],
+  "used_by": [
+    "alignment_37334"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24588_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14002"
+  ],
+  "used_by": [
+    "alignment_37339"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24589_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14002"
+  ],
+  "used_by": [
+    "alignment_37340"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25032_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14334"
+  ],
+  "used_by": [
+    "alignment_37861"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25033_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14334"
+  ],
+  "used_by": [
+    "alignment_37862"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25034_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14335"
+  ],
+  "used_by": [
+    "alignment_37853"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25035_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14335"
+  ],
+  "used_by": [
+    "alignment_37854"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25037_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14336"
+  ],
+  "used_by": [
+    "alignment_37850"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25036_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14336"
+  ],
+  "used_by": [
+    "alignment_37849"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25039_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14337"
+  ],
+  "used_by": [
+    "alignment_37846"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25038_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14337"
+  ],
+  "used_by": [
+    "alignment_37845"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25021_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14338"
+  ],
+  "used_by": [
+    "alignment_37858"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25020_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14338"
+  ],
+  "used_by": [
+    "alignment_37857"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25030_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14339"
+  ],
+  "used_by": [
+    "alignment_37855"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25031_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14339"
+  ],
+  "used_by": [
+    "alignment_37856"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25029_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14340"
+  ],
+  "used_by": [
+    "alignment_38424"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25028_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14340"
+  ],
+  "used_by": [
+    "alignment_38423"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25027_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14341"
+  ],
+  "used_by": [
+    "alignment_37848"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25026_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14341"
+  ],
+  "used_by": [
+    "alignment_37847"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25024_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14342"
+  ],
+  "used_by": [
+    "alignment_37851"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25025_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14342"
+  ],
+  "used_by": [
+    "alignment_37852"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25065_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14345"
+  ],
+  "used_by": [
+    "alignment_37772"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24308_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14345"
+  ],
+  "used_by": [
+    "alignment_37051"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24309_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14345"
+  ],
+  "used_by": [
+    "alignment_37052"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25064_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14345"
+  ],
+  "used_by": [
+    "alignment_37771"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24299_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14346"
+  ],
+  "used_by": [
+    "alignment_37054"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24298_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14346"
+  ],
+  "used_by": [
+    "alignment_37053"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25066_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14346"
+  ],
+  "used_by": [
+    "alignment_38421"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25067_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14346"
+  ],
+  "used_by": [
+    "alignment_38422"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25068_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14347"
+  ],
+  "used_by": [
+    "alignment_37841"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24307_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14347"
+  ],
+  "used_by": [
+    "alignment_37020"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24306_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14347"
+  ],
+  "used_by": [
+    "alignment_37019"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25069_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14347"
+  ],
+  "used_by": [
+    "alignment_37842"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24304_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14348"
+  ],
+  "used_by": [
+    "alignment_37029"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25055_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14348"
+  ],
+  "used_by": [
+    "alignment_38404"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24305_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14348"
+  ],
+  "used_by": [
+    "alignment_37030"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25054_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14348"
+  ],
+  "used_by": [
+    "alignment_38403"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24303_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14349"
+  ],
+  "used_by": [
+    "alignment_37008"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24302_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14349"
+  ],
+  "used_by": [
+    "alignment_37007"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25062_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14349"
+  ],
+  "used_by": [
+    "alignment_38411"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25063_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14349"
+  ],
+  "used_by": [
+    "alignment_38412"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24301_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14350"
+  ],
+  "used_by": [
+    "alignment_37038"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24300_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14350"
+  ],
+  "used_by": [
+    "alignment_37037"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25061_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14350"
+  ],
+  "used_by": [
+    "alignment_37768"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25060_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14350"
+  ],
+  "used_by": [
+    "alignment_37767"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24286_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14351"
+  ],
+  "used_by": [
+    "alignment_37021"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24287_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14351"
+  ],
+  "used_by": [
+    "alignment_37022"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25058_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14351"
+  ],
+  "used_by": [
+    "alignment_38409"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25059_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14351"
+  ],
+  "used_by": [
+    "alignment_38410"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25057_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14352"
+  ],
+  "used_by": [
+    "alignment_38418"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25056_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14352"
+  ],
+  "used_by": [
+    "alignment_38417"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24297_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14352"
+  ],
+  "used_by": [
+    "alignment_37014"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24296_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14352"
+  ],
+  "used_by": [
+    "alignment_37013"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24295_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14353"
+  ],
+  "used_by": [
+    "alignment_37032"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25045_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14353"
+  ],
+  "used_by": [
+    "alignment_37800"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25044_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14353"
+  ],
+  "used_by": [
+    "alignment_37799"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24294_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14353"
+  ],
+  "used_by": [
+    "alignment_37031"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25053_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14354"
+  ],
+  "used_by": [
+    "alignment_37806"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24292_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14354"
+  ],
+  "used_by": [
+    "alignment_37033"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25052_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14354"
+  ],
+  "used_by": [
+    "alignment_37805"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24293_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14354"
+  ],
+  "used_by": [
+    "alignment_37034"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24290_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14355"
+  ],
+  "used_by": [
+    "alignment_37027"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25050_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14355"
+  ],
+  "used_by": [
+    "alignment_38419"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25051_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14355"
+  ],
+  "used_by": [
+    "alignment_38420"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24291_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14355"
+  ],
+  "used_by": [
+    "alignment_37028"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24289_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14356"
+  ],
+  "used_by": [
+    "alignment_37012"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25048_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14356"
+  ],
+  "used_by": [
+    "alignment_37747"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24288_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14356"
+  ],
+  "used_by": [
+    "alignment_37011"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25049_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14356"
+  ],
+  "used_by": [
+    "alignment_37748"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24281_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14357"
+  ],
+  "used_by": [
+    "alignment_37018"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25046_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14357"
+  ],
+  "used_by": [
+    "alignment_37801"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24280_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14357"
+  ],
+  "used_by": [
+    "alignment_37017"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25047_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14357"
+  ],
+  "used_by": [
+    "alignment_37802"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25041_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14358"
+  ],
+  "used_by": [
+    "alignment_38392"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24285_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14358"
+  ],
+  "used_by": [
+    "alignment_36984"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25040_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14358"
+  ],
+  "used_by": [
+    "alignment_38391"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24284_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14358"
+  ],
+  "used_by": [
+    "alignment_36983"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25043_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14359"
+  ],
+  "used_by": [
+    "alignment_37762"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25042_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14359"
+  ],
+  "used_by": [
+    "alignment_37761"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24283_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14359"
+  ],
+  "used_by": [
+    "alignment_37002"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_24282_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14359"
+  ],
+  "used_by": [
+    "alignment_37001"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25536_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14409"
+  ],
+  "used_by": [
+    "alignment_38255"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25537_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14409"
+  ],
+  "used_by": [
+    "alignment_38256"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25534_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14410"
+  ],
+  "used_by": [
+    "alignment_38289"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25535_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14410"
+  ],
+  "used_by": [
+    "alignment_38290"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25532_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14411"
+  ],
+  "used_by": [
+    "alignment_38291"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25533_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14411"
+  ],
+  "used_by": [
+    "alignment_38292"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25531_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14412"
+  ],
+  "used_by": [
+    "alignment_38262"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25530_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14412"
+  ],
+  "used_by": [
+    "alignment_38261"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25527_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14504"
+  ],
+  "used_by": [
+    "alignment_38320"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25526_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14504"
+  ],
+  "used_by": [
+    "alignment_38319"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25600_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14504"
+  ],
+  "used_by": [
+    "alignment_38371"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25601_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14504"
+  ],
+  "used_by": [
+    "alignment_38372"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25602_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14505"
+  ],
+  "used_by": [
+    "alignment_38393"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25515_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14505"
+  ],
+  "used_by": [
+    "alignment_38300"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25514_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14505"
+  ],
+  "used_by": [
+    "alignment_38299"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25603_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14505"
+  ],
+  "used_by": [
+    "alignment_38394"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25524_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14506"
+  ],
+  "used_by": [
+    "alignment_38321"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25605_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14506"
+  ],
+  "used_by": [
+    "alignment_38354"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25525_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14506"
+  ],
+  "used_by": [
+    "alignment_38322"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25604_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14506"
+  ],
+  "used_by": [
+    "alignment_38353"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25592_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14507"
+  ],
+  "used_by": [
+    "alignment_38363"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25522_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14507"
+  ],
+  "used_by": [
+    "alignment_38303"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25523_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14507"
+  ],
+  "used_by": [
+    "alignment_38304"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25593_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14507"
+  ],
+  "used_by": [
+    "alignment_38364"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25521_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14508"
+  ],
+  "used_by": [
+    "alignment_38318"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25599_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14508"
+  ],
+  "used_by": [
+    "alignment_38356"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25520_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14508"
+  ],
+  "used_by": [
+    "alignment_38317"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25598_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14508"
+  ],
+  "used_by": [
+    "alignment_38355"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25519_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14509"
+  ],
+  "used_by": [
+    "alignment_38310"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25596_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14509"
+  ],
+  "used_by": [
+    "alignment_38373"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25518_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14509"
+  ],
+  "used_by": [
+    "alignment_38309"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25597_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14509"
+  ],
+  "used_by": [
+    "alignment_38374"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25594_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14510"
+  ],
+  "used_by": [
+    "alignment_38357"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25517_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14510"
+  ],
+  "used_by": [
+    "alignment_38258"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25595_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14510"
+  ],
+  "used_by": [
+    "alignment_38358"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25516_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14510"
+  ],
+  "used_by": [
+    "alignment_38257"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25582_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14511"
+  ],
+  "used_by": [
+    "alignment_38367"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25504_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14511"
+  ],
+  "used_by": [
+    "alignment_38283"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25505_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14511"
+  ],
+  "used_by": [
+    "alignment_38284"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25583_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14511"
+  ],
+  "used_by": [
+    "alignment_38368"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25591_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14512"
+  ],
+  "used_by": [
+    "alignment_38362"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25513_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14512"
+  ],
+  "used_by": [
+    "alignment_38270"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25512_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14512"
+  ],
+  "used_by": [
+    "alignment_38269"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25590_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14512"
+  ],
+  "used_by": [
+    "alignment_38361"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25588_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14513"
+  ],
+  "used_by": [
+    "alignment_38359"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25510_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14513"
+  ],
+  "used_by": [
+    "alignment_38297"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25589_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14513"
+  ],
+  "used_by": [
+    "alignment_38360"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25511_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14513"
+  ],
+  "used_by": [
+    "alignment_38298"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25509_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14514"
+  ],
+  "used_by": [
+    "alignment_38268"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25508_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14514"
+  ],
+  "used_by": [
+    "alignment_38267"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25586_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14514"
+  ],
+  "used_by": [
+    "alignment_38365"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25587_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14514"
+  ],
+  "used_by": [
+    "alignment_38366"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25585_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14515"
+  ],
+  "used_by": [
+    "alignment_38370"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25584_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14515"
+  ],
+  "used_by": [
+    "alignment_38369"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25506_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14515"
+  ],
+  "used_by": [
+    "alignment_38275"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_25507_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_14515"
+  ],
+  "used_by": [
+    "alignment_38276"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28150_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16165"
+  ],
+  "used_by": [
+    "alignment_40766"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28142_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16165"
+  ],
+  "used_by": [
+    "alignment_40765"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28139_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16166"
+  ],
+  "used_by": [
+    "alignment_40747"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28147_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16166"
+  ],
+  "used_by": [
+    "alignment_40748"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28145_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16167"
+  ],
+  "used_by": [
+    "alignment_40775"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28153_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16167"
+  ],
+  "used_by": [
+    "alignment_40776"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28149_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16168"
+  ],
+  "used_by": [
+    "alignment_40752"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28141_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16168"
+  ],
+  "used_by": [
+    "alignment_40751"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28138_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16169"
+  ],
+  "used_by": [
+    "alignment_40757"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28146_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16169"
+  ],
+  "used_by": [
+    "alignment_40758"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28140_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16170"
+  ],
+  "used_by": [
+    "alignment_40767"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28148_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16170"
+  ],
+  "used_by": [
+    "alignment_40768"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28152_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16171"
+  ],
+  "used_by": [
+    "alignment_40780"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28144_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16171"
+  ],
+  "used_by": [
+    "alignment_40779"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28143_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16172"
+  ],
+  "used_by": [
+    "alignment_40759"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28151_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16172"
+  ],
+  "used_by": [
+    "alignment_40760"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28158_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16173"
+  ],
+  "used_by": [
+    "alignment_40763"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28165_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16173"
+  ],
+  "used_by": [
+    "alignment_40764"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28164_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16174"
+  ],
+  "used_by": [
+    "alignment_40750"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28157_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16174"
+  ],
+  "used_by": [
+    "alignment_40749"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28160_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16175"
+  ],
+  "used_by": [
+    "alignment_40821"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28167_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16175"
+  ],
+  "used_by": [
+    "alignment_40822"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28166_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16176"
+  ],
+  "used_by": [
+    "alignment_40778"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28159_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16176"
+  ],
+  "used_by": [
+    "alignment_40777"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28162_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16177"
+  ],
+  "used_by": [
+    "alignment_40762"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28155_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16177"
+  ],
+  "used_by": [
+    "alignment_40761"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28156_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16178"
+  ],
+  "used_by": [
+    "alignment_40773"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28163_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16178"
+  ],
+  "used_by": [
+    "alignment_40774"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28154_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16179"
+  ],
+  "used_by": [
+    "alignment_40855"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28161_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16179"
+  ],
+  "used_by": [
+    "alignment_40856"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28282_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16180"
+  ],
+  "used_by": [
+    "alignment_40899"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28288_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16180"
+  ],
+  "used_by": [
+    "alignment_40900"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28284_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16181"
+  ],
+  "used_by": [
+    "alignment_40897"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28290_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16181"
+  ],
+  "used_by": [
+    "alignment_40898"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28285_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16182"
+  ],
+  "used_by": [
+    "alignment_40889"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28291_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16182"
+  ],
+  "used_by": [
+    "alignment_40890"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28280_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16183"
+  ],
+  "used_by": [
+    "alignment_40905"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28286_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16183"
+  ],
+  "used_by": [
+    "alignment_40906"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28283_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16184"
+  ],
+  "used_by": [
+    "alignment_40907"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28289_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16184"
+  ],
+  "used_by": [
+    "alignment_40908"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28287_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16185"
+  ],
+  "used_by": [
+    "alignment_40892"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28281_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16185"
+  ],
+  "used_by": [
+    "alignment_40891"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28298_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16186"
+  ],
+  "used_by": [
+    "alignment_40904"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28293_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16186"
+  ],
+  "used_by": [
+    "alignment_40903"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28300_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16187"
+  ],
+  "used_by": [
+    "alignment_40902"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28295_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16187"
+  ],
+  "used_by": [
+    "alignment_40901"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28296_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16188"
+  ],
+  "used_by": [
+    "alignment_40893"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28301_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16188"
+  ],
+  "used_by": [
+    "alignment_40894"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28292_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16189"
+  ],
+  "used_by": [
+    "alignment_40909"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28297_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16189"
+  ],
+  "used_by": [
+    "alignment_40910"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28299_l2_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16190"
+  ],
+  "used_by": [
+    "alignment_40896"
+  ]
+}
+{
+  "id": "sequencing_file_lane_subset_28294_l1_r1",
+  "aliases": [],
+  "type": "sequencing",
+  "format": "fastq",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "sequencing_copa_16190"
+  ],
+  "used_by": [
+    "alignment_40895"
+  ]
+}
+{
+  "id": "lane_alignment_file_alignment_36333",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36333"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36334",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36334"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36685",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36685"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36686",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36686"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36693",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36693"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36694",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36694"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36705",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36705"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36706",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36706"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36983",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36983"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_36984",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_36984"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37001",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37001"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37002",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37002"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37007",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37007"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37008",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37008"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37011",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37011"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37012",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37012"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37013",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37013"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37014",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37014"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37017",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37017"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37018",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37018"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37019",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37019"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37020",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37020"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37021",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37021"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37022",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37022"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37027",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37027"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37028",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37028"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37029",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37029"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37030",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37030"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37031",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37031"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37032",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37032"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37033",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37033"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37034",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37034"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37037",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37037"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37038",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37038"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37051",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37051"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37052",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37052"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37053",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37053"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37054",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37054"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37331",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37331"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37332",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37332"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37333",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37333"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37334",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37334"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37337",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37337"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37338",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37338"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37339",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37339"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37340",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37340"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37341",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37341"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37342",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37342"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37343",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37343"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37344",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37344"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37747",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37747"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37748",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37748"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37761",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37761"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37762",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37762"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37767",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37767"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37768",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37768"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37771",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37771"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37772",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37772"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37799",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37799"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37800",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37800"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37801",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37801"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37802",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37802"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37805",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37805"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37806",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37806"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37841",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37841"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37842",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37842"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37845",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37845"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37846",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37846"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37847",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37847"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37848",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37848"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37849",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37849"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37850",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37850"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37851",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37851"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37852",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37852"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37853",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37853"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37854",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37854"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37855",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37855"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37856",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37856"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37857",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37857"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37858",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37858"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37861",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37861"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_37862",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_37862"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38255",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38255"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38256",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38256"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38257",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38257"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38258",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38258"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38261",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38261"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38262",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38262"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38267",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38267"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38268",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38268"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38269",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38269"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38270",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38270"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38275",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38275"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38276",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38276"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38283",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38283"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38284",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38284"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38289",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38289"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38290",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38290"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38291",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38291"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38292",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38292"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38297",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38297"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38298",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38298"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38299",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38299"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38300",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38300"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38303",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38303"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38304",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38304"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38309",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38309"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38310",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38310"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38317",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38317"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38318",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38318"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38319",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38319"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38320",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38320"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38321",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38321"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38322",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38322"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38353",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38353"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38354",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38354"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38355",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38355"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38356",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38356"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38357",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38357"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38358",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38358"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38359",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38359"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38360",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38360"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38361",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38361"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38362",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38362"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38363",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38363"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38364",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38364"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38365",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38365"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38366",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38366"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38367",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38367"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38368",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38368"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38369",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38369"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38370",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38370"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38371",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38371"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38372",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38372"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38373",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38373"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38374",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38374"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38391",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38391"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38392",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38392"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38393",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38393"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38394",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38394"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38403",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38403"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38404",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38404"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38409",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38409"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38410",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38410"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38411",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38411"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38412",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38412"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38417",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38417"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38418",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38418"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38419",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38419"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38420",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38420"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38421",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38421"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38422",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38422"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38423",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38423"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_38424",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_38424"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40747",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40747"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40748",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40748"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40749",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40749"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40750",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40750"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40751",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40751"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40752",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40752"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40757",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40757"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40758",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40758"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40759",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40759"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40760",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40760"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40761",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40761"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40762",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40762"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40763",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40763"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40764",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40764"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40765",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40765"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40766",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40766"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40767",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40767"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40768",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40768"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40773",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40773"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40774",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40774"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40775",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40775"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40776",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40776"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40777",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40777"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40778",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40778"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40779",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40779"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40780",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40780"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40821",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40821"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40822",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40822"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40855",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40855"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40856",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40856"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40889",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40889"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40890",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40890"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40891",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40891"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40892",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40892"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40893",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40893"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40894",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40894"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40895",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40895"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40896",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40896"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40897",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40897"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40898",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40898"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40899",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40899"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40900",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40900"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40901",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40901"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40902",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40902"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40903",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40903"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40904",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40904"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40905",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40905"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40906",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40906"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40907",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40907"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40908",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40908"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40909",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40909"
+  ],
+  "used_by": []
+}
+{
+  "id": "lane_alignment_file_alignment_40910",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "generated_by": [
+    "alignment_40910"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19040",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19040"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19212",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19212"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19216",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19216"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19222",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19222"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19482",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19482"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19483",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19483"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19485",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19485"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19486",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19486"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19487",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19487"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19488",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19488"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19623",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19623"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19630",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19630"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19633",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19633"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19635",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19635"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19644",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19644"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19645",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19645"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19647",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19647"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19660",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19660"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19662",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19662"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19663",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19663"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19664",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19664"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19665",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19665"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19666",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19666"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19667",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19667"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19668",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19668"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19670",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19670"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19784",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19784"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19787",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19787"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19801",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19801"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19802",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19802"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19833",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19833"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19834",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19834"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19835",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19835"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19836",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19836"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19837",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19837"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19838",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19838"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19839",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19839"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19840",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19840"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19841",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19841"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19842",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19842"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19843",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19843"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19849",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19849"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19850",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19850"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19853",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19853"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19856",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19856"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19857",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19857"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19859",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19859"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19860",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19860"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19861",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19861"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_19862",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_19862"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20903",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20903"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20904",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20904"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20905",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20905"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20907",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20907"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20908",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20908"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20909",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20909"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20910",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20910"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20911",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20911"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20912",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20912"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20914",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20914"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20915",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20915"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20916",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20916"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20917",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20917"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20928",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20928"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20937",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20937"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20946",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20946"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20947",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20947"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20948",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20948"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20949",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20949"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20950",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20950"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20951",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20951"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20952",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20952"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20953",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20953"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20954",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20954"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20955",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20955"
+  ],
+  "used_by": []
+}
+{
+  "id": "aggregated_alignment_file_alignment_post_processing_20956",
+  "aliases": [],
+  "type": "alignment",
+  "format": "bam",
+  "path": "",
+  "read_length": "76",
+  "percent_duplicate_fragments": 0,
+  "generated_by": [
+    "alignment_post_processing_20956"
+  ],
+  "used_by": []
+}

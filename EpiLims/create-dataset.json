@@ -1,0 +1,382 @@
+{
+  "name": "EpiLIMSDatasetTemplate",
+  "defaultProfileId": "",
+  "description": "EpiLIMS dataset.",
+  "schema": {
+    "tables": [
+      {
+        "name":    "activities",
+        "columns": [
+          {
+            "name": "id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "aliases",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "created_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "modified_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "data_use_requirement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "used",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "generated",
+            "datatype": "STRING",
+            "array_of": true
+          }
+        ]
+      },
+      {
+        "name":    "biosamples",
+        "columns": [
+          {
+            "name": "id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "aliases",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "created_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "modified_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "data_use_requirement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sponsor",
+            "datatype": "STRING"
+          },
+          {
+            "name": "obtained_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "cell_isolation_method",
+            "datatype": "STRING"
+          },
+          {
+            "name": "organ",
+            "datatype": "STRING"
+          },
+          {
+            "name": "replication_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sample_type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "donated_by",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "derived_from",
+            "datatype": "STRING"
+          },
+          {
+            "name": "derived",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "used_by",
+            "datatype": "STRING",
+            "array_of": true
+          }
+        ]
+      },
+      {
+        "name":    "donors",
+        "columns": [
+          {
+            "name": "id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "aliases",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "created_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "modified_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "data_use_requirement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sponsor",
+            "datatype": "STRING"
+          },
+          {
+            "name": "age_category",
+            "datatype": "STRING"
+          },
+          {
+            "name": "age_unit",
+            "datatype": "STRING"
+          },
+          {
+            "name": "age_lower_bound",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "age_upper_bound",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "sex",
+            "datatype": "STRING"
+          },
+          {
+            "name": "ethnicity",
+            "datatype": "STRING"
+          },
+          {
+            "name": "organism",
+            "datatype": "STRING"
+          },
+          {
+            "name": "phenotype",
+            "datatype": "STRING"
+          },
+          {
+            "name": "donated",
+            "datatype": "STRING",
+            "array_of": true
+          }
+        ]
+      },
+      {
+        "name":    "files",
+        "columns": [
+          {
+            "name": "id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "aliases",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "created_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "modified_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "data_use_requirement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sponsor",
+            "datatype": "STRING"
+          },
+          {
+            "name": "type",
+            "datatype": "STRING"
+          },
+          {
+            "name": "format",
+            "datatype": "STRING"
+          },
+          {
+            "name": "path",
+            "datatype": "FILEREF"
+          },
+          {
+            "name": "size",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "md5sum",
+            "datatype": "STRING"
+          },
+          {
+            "name": "reference_assembly",
+            "datatype": "STRING"
+          },
+          {
+            "name": "paired_end",
+            "datatype": "BOOLEAN"
+          },
+          {
+            "name": "read_length",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "mapped_paired_end",
+            "datatype": "BOOLEAN"
+          },
+          {
+            "name": "mapped_read_length",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "platform",
+            "datatype": "STRING"
+          },
+          {
+            "name": "read_count",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "percent_aligned_reads",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "total_fragments",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "aligned_fragments",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "non_duplicated_fragments",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "percent_duplicate_fragments",
+            "datatype": "FLOAT"
+          },
+          {
+            "name": "estimated_library_size",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "generated_by",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "used_by",
+            "datatype": "STRING",
+            "array_of": true
+          }
+        ]
+      },
+      {
+        "name":    "libraries",
+        "columns": [
+          {
+            "name": "id",
+            "datatype": "STRING"
+          },
+          {
+            "name": "aliases",
+            "datatype": "STRING",
+            "array_of": true
+          },
+          {
+            "name": "created_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "modified_at",
+            "datatype": "TIMESTAMP"
+          },
+          {
+            "name": "data_use_requirement",
+            "datatype": "STRING"
+          },
+          {
+            "name": "primary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "secondary_consent",
+            "datatype": "STRING"
+          },
+          {
+            "name": "sponsor",
+            "datatype": "STRING"
+          },
+          {
+            "name": "molecule",
+            "datatype": "STRING"
+          },
+          {
+            "name": "generated_by",
+            "datatype": "STRING"
+          },
+          {
+            "name": "used_by",
+            "datatype": "STRING",
+            "array_of": true
+          }
+        ]
+      }
+    ],
+    "relationships": [ ],
+    "assets":        [ ]
+  }
+}

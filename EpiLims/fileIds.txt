@@ -1,0 +1,129 @@
+## Scrap file.
+## These are the commands I used to copy files from the DR prod project into the test bucket.
+## There are ~488 files and I only copied over 11 for testing purposes.
+## To copy over more or all of the files, it's better to export the FireStore collection as JSON and parse it
+## to generate the gsutil cp commands to execute, or script calls to the prod DR manager to correlate the file
+## ids to the file names.
+
+
+fileId: "3a83a6a3-dac7-477a-aa7a-0a204276f3ea"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019040.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/3a83a6a3-dac7-477a-aa7a-0a204276f3ea gs://jade-testdata/epiLims/files/aggregated_aln_019040.bam
+
+
+fileId: "823bdf86-4172-449e-a068-b793404320d2"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019212.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/823bdf86-4172-449e-a068-b793404320d2 gs://jade-testdata/epiLims/files/aggregated_aln_019212.bam
+
+
+fileId: "e9171e2c-cf14-435d-9234-52f5144cd34e"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019216.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/e9171e2c-cf14-435d-9234-52f5144cd34e gs://jade-testdata/epiLims/files/aggregated_aln_019216.bam
+
+
+fileId: "e83737b5-4a45-4ef0-851f-b208e2503c57"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019222.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/e83737b5-4a45-4ef0-851f-b208e2503c57 gs://jade-testdata/epiLims/files/aggregated_aln_019222.bam
+
+
+fileId: "ba76e778-02fd-40d4-baff-9749a7e34947"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019482.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/ba76e778-02fd-40d4-baff-9749a7e34947 gs://jade-testdata/epiLims/files/aggregated_aln_019482.bam
+
+
+fileId: "0edef343-b5d2-4184-8957-57894911bf98"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019483.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/0edef343-b5d2-4184-8957-57894911bf98 gs://jade-testdata/epiLims/files/aggregated_aln_019483.bam
+
+
+fileId: "66a7c02c-2111-44df-b2b8-e91ce2c81fe8"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019485.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/66a7c02c-2111-44df-b2b8-e91ce2c81fe8 gs://jade-testdata/epiLims/files/aggregated_aln_019485.bam
+
+
+fileId: "fa4ca6ad-c7fe-45e7-ac23-83d9026f0a30"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019486.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/fa4ca6ad-c7fe-45e7-ac23-83d9026f0a30 gs://jade-testdata/epiLims/files/aggregated_aln_019486.bam
+
+
+fileId: "e1971472-1f83-45e7-8b77-54baf1567169"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019487.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/e1971472-1f83-45e7-8b77-54baf1567169 gs://jade-testdata/epiLims/files/aggregated_aln_019487.bam
+
+
+fileId: "fa843014-5094-44f1-9192-3c0f80723f11"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019488.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/fa843014-5094-44f1-9192-3c0f80723f11 gs://jade-testdata/epiLims/files/aggregated_aln_019488.bam
+
+
+fileId: "00f968b1-1452-44a8-846f-2f9e9563632c"
+(string) 
+isFileRef: true
+(boolean) 
+name: "aggregated_aln_019623.bam"
+(string) 
+path: "/broad-epi-aggregated-alns"
+
+gsutil cp gs://broad-datarepo-terra-prod-core-bucket/0b992f11-6cc1-43bd-9578-9866b49bafd2/00f968b1-1452-44a8-846f-2f9e9563632c gs://jade-testdata/epiLims/files/aggregated_aln_019623.bam
+
+
