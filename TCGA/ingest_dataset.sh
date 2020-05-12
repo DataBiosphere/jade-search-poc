@@ -9,7 +9,7 @@ DR_PROFILE_NAME="TCGAProfile"
 DR_BILLING_ACCT="00708C-45D19D-27AAFA"
 DR_DATASET_NAME="TCGADataset"
 JADECLI_EXECUTABLE="~/Workspaces/jade-data-repo-cli/build/install/jadecli/bin/jadecli"
-TABLE_NAMES_WITHOUT_FILEREFS=("case") # "biospecimen" "clinical" "case" "file"
+TABLE_NAMES_WITHOUT_FILEREFS=("biospecimen" "clinical" "case" "file")
 FILE_NAMES=()
 
 alias jadecli=$JADECLI_EXECUTABLE

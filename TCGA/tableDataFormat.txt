@@ -35,3 +35,12 @@ gsutil cp case_clean_newline_delimited.json gs://jade-testdata/tcga/case.json
 # This is the command I used to generate the list of columns in the case table for the create-dataset payload.
 # Afterwards, I manually modified the fields that had a different datatype.
 jq '.[0]' case_arrays_clean.json | jq 'map({"name":.,"datatype":"STRING"})'
+
+
+# Table: file
+awk 'BEGIN { FS="\t"; OFS="," } {$1=$1; print}' repository-files-table.tsv > file.csv
+jq -R 'split(",")' file.csv | jq --slurp '.' >> file_arrays.json
+cat file_arrays.json | perl -pe "s/File Name/FileName/g" | perl -pe "s/Data Category/DataCategory/g" | perl -pe "s/Data Format/DataFormat/g" | perl -pe "s/File Size/FileSize/g" >> file_arrays_clean.json
+jq -f ../csv2json-helper.jq file_arrays_clean.json | jq '.[]' >> file_clean.json
+jq --slurp '.' file_clean.json | jq -c '.[]' >> file_clean_newline_delimited.json
+gsutil cp file_clean_newline_delimited.json gs://jade-testdata/tcga/file.json

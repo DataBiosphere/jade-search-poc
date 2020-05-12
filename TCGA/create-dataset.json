@@ -822,6 +822,43 @@
             "datatype": "INTEGER"
           }
         ]
+      },
+      {
+        "name":    "file",
+        "columns": [
+          {
+            "name": "Access",
+            "datatype": "STRING"
+          },
+          {
+            "name": "FileName",
+            "datatype": "STRING"
+          },
+          {
+            "name": "Cases",
+            "datatype": "INTEGER"
+          },
+          {
+            "name": "Project",
+            "datatype": "STRING"
+          },
+          {
+            "name": "DataCategory",
+            "datatype": "STRING"
+          },
+          {
+            "name": "DataFormat",
+            "datatype": "STRING"
+          },
+          {
+            "name": "FileSize",
+            "datatype": "STRING"
+          },
+          {
+            "name": "Annotations",
+            "datatype": "INTEGER"
+          }
+        ]
       }
     ],
     "relationships": [ ],

@@ -1,0 +1,21 @@
+Access	File Name	Cases	Project	Data Category	Data Format	File Size	Annotations
+controlled	2ce7891f-c003-483d-889d-866d590f02e4.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	123.66 KB	0
+open	TCGA-CZ-5457-01Z-00-DX1.87f21980-bf6b-4da6-ae8e-f7fef7396d52.svs	1	TCGA-KIRC	Biospecimen	SVS	1.03 GB	0
+controlled	fa05d81a-6fe9-4fc4-adcd-8b7187d34b98_gdc_realn_rehead.bam	1	TCGA-KIRC	Sequencing Reads	BAM	8.27 GB	0
+controlled	1d6cff50-efb5-47eb-90f7-f8641114226a_gdc_realn_rehead.bam	1	TCGA-KIRC	Sequencing Reads	BAM	10.68 GB	0
+controlled	6abc7d24-74d1-4e62-975c-753aec620201.vep.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	5.09 MB	0
+open	nationwidechildrens.org_ssf.TCGA-BP-4174.xml	1	TCGA-KIRC	Biospecimen	BCR SSF XML	15.87 KB	0
+controlled	ef76d294-4f2c-4714-adec-fed082a86d8b.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	34.34 KB	0
+open	TCGA-CZ-5457-11A-01-TS1.57b6a44a-8253-47de-bee2-a35b9e3c833a.svs	1	TCGA-KIRC	Biospecimen	SVS	245.27 MB	0
+open	nationwidechildrens.org_ssf.TCGA-B0-5705.xml	1	TCGA-KIRC	Biospecimen	BCR SSF XML	15.84 KB	0
+open	TCGA-BP-4346-01Z-00-DX1.e2f7b4ce-fbe8-482e-822e-ef428731f68b.svs	1	TCGA-KIRC	Biospecimen	SVS	877.14 MB	0
+controlled	C345.TCGA-CJ-6030-01A-11D-1669-08.6_gdc_realn.bam	1	TCGA-KIRC	Sequencing Reads	BAM	11.52 GB	1
+controlled	cfb00e91-52f3-49ab-bb40-773ab84c245a.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	129.53 KB	0
+open	TCGA-BP-4329-01A-02-BS2.79ad9a9e-92e5-4f8d-9e6a-31feea84c4c3.svs	1	TCGA-KIRC	Biospecimen	SVS	264.2 MB	0
+controlled	TCGA-B0-5117-01A-01R-1419-13_mirna_gdc_realn.bam	1	TCGA-KIRC	Sequencing Reads	BAM	65.38 MB	0
+open	nationwidechildrens.org_biospecimen.TCGA-BP-4160.xml	1	TCGA-KIRC	Biospecimen	BCR XML	86.05 KB	2
+controlled	f89c4d9b-0bf4-4feb-ba92-8655f9c81e81.vep.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	248.04 KB	0
+open	TCGA-B0-4827-11A-01-TS1.30f7b8ce-2163-451b-803b-293c27646019.svs	1	TCGA-KIRC	Biospecimen	SVS	166.14 MB	0
+controlled	dc59034e-bc8f-4386-b881-747b9310cf1c.vep.vcf.gz	1	TCGA-KIRC	Simple Nucleotide Variation	VCF	3.69 MB	1
+controlled	bec75059-c8f8-4ca6-ac45-817b50707dcc_gdc_realn_rehead.bam	1	TCGA-KIRC	Sequencing Reads	BAM	12.89 GB	1
+controlled	TCGA-B2-5633-01A-01D-A270-10_Illumina_gdc_realn.bam	1	TCGA-KIRC	Sequencing Reads	BAM	18.53 GB	0
