@@ -44,3 +44,7 @@ cat file_arrays.json | perl -pe "s/File Name/FileName/g" | perl -pe "s/Data Cate
 jq -f ../csv2json-helper.jq file_arrays_clean.json | jq '.[]' >> file_clean.json
 jq --slurp '.' file_clean.json | jq -c '.[]' >> file_clean_newline_delimited.json
 gsutil cp file_clean_newline_delimited.json gs://jade-testdata/tcga/file.json
+
+# This is the command I used to generate the list of columns in the file table for the create-dataset payload.
+# Afterwards, I manually modified the fields that had a different datatype.
+jq '.[0]' file_arrays_clean.json | jq 'map({"name":.,"datatype":"STRING"})'
